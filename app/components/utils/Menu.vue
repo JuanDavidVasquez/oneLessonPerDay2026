@@ -18,7 +18,7 @@
           :href="href" 
           :class="{ 'active-link': isActive }"
           v-bind="props.action" 
-          @click="() => handleMenuClick(item, navigate)"
+          @click="() => handleMenuClick(navigate)"
         >
           <span v-if="item.icon" :class="item.icon" />
           <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
@@ -53,8 +53,7 @@ const { t } = useI18n();
 
 const items = ref(menuItems);
 const isScrolled = ref(false);
-const handleMenuClick = (item: any, navigate?: () => void) => {
- 
+const handleMenuClick = (navigate?: () => void) => {
   if (navigate) navigate();
 };
 

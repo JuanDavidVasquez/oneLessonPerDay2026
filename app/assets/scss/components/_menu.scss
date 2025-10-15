@@ -7,14 +7,14 @@
   left: 50%;
   transform: translateX(-50%);
   height: 75px;
-  width: 90%;
+  width: 100%;
   max-width: $container-width-lg;
   z-index: 1000;
   
   // Glassmorphism effect
   background: var(--glass-bg-light);
-  backdrop-filter: var(--glass-blur-md) saturate(180%);
   -webkit-backdrop-filter: var(--glass-blur-md) saturate(180%);
+  backdrop-filter: var(--glass-blur-md) saturate(180%);
   border: 1px solid var(--glass-border-light);
   border-radius: $radius-2xl;
   box-shadow: var(--shadow-xl);

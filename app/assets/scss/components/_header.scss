@@ -70,6 +70,8 @@
      CONTENIDO PRINCIPAL
      =========================== */
   .header-content {
+    width: 75%;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1.2fr 1fr;
     align-items: center;
