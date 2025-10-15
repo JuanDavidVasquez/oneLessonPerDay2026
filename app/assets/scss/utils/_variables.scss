@@ -1,0 +1,88 @@
+/* ===========================
+   🐶 Paleta de colores - Etología & Veterinaria
+   =========================== */
+
+/* Variables base que no cambian */
+$font-primary: 'Inter', sans-serif;
+$font-heading: 'Poppins', sans-serif;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$container-width: 1200px;
+$spacing-unit: 1rem;
+$radius-md: 8px;
+$radius-lg: 12px;
+
+/* ===========================
+   🌞 TEMA CLARO (por defecto)
+   =========================== */
+
+:root {
+  /* Paleta principal */
+  --color-primary: #2E8B57;
+  --color-accent: #4CC9F0;
+  --color-secondary: #F4A261;
+  
+  /* Neutros */
+  --color-bg: #F9FAF9;
+  --color-surface: #FFFFFF;
+  --color-border: #D1D5DB;
+  
+  /* Texto */
+  --color-text: #374151;
+  --color-heading: #1E3A2E;
+  --color-muted: #6B7280;
+  
+  /* Estados */
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+  --color-danger: #EF4444;
+  
+  /* Sombras */
+  --shadow-md: 0 4px 6px rgba(46, 139, 87, 0.15);
+  --shadow-lg: 0 10px 15px rgba(46, 139, 87, 0.2);
+}
+
+/* ===========================
+   🌙 TEMA OSCURO
+   =========================== */
+
+.dark {
+  /* Paleta principal - ajustada para oscuro */
+  --color-primary: #3FAA6C;
+  --color-accent: #5DD5F7;
+  --color-secondary: #FFB077;
+  
+  /* Neutros */
+  --color-bg: #0F1419;
+  --color-surface: #1A1F26;
+  --color-border: #2D3748;
+  
+  /* Texto */
+  --color-text: #E5E7EB;
+  --color-heading: #F3F4F6;
+  --color-muted: #9CA3AF;
+  
+  /* Estados */
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+  
+  /* Sombras */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   🎨 Funciones helper para usar en SCSS
+   =========================== */
+
+// Usar estas funciones en lugar de las variables directas
+@function color($name) {
+  @return var(--color-#{$name});
+}
+
+@function shadow($name) {
+  @return var(--shadow-#{$name});
+}
