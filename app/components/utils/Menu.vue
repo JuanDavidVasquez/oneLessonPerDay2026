@@ -13,19 +13,19 @@
         :to="item.route" 
         custom
       >
-        <a 
+        <NuxtLink
           v-ripple 
           :href="href" 
           :class="{ 'active-link': isActive }"
           v-bind="props.action" 
-          @click="navigate"
+          @click="() => handleMenuClick(item, navigate)"
         >
           <span v-if="item.icon" :class="item.icon" />
           <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
-        </a>
+        </NuxtLink>
       </router-link>
       
-      <a 
+      <NuxtLink 
         v-else 
         v-ripple 
         :href="item.url" 
@@ -35,7 +35,7 @@
         <span v-if="item.icon" :class="item.icon" />
         <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
         <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down submenu-icon" />
-      </a>
+      </NuxtLink>
     </template>
     
     <template #end>
@@ -53,6 +53,10 @@ const { t } = useI18n();
 
 const items = ref(menuItems);
 const isScrolled = ref(false);
+const handleMenuClick = (item: any, navigate?: () => void) => {
+ 
+  if (navigate) navigate();
+};
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;

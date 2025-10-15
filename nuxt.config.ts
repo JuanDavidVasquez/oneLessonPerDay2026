@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     buildAssetsDir: "/assets/",
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: { name: "page", mode: "out-in", },
   },
   css: ["animate.css", "@/assets/scss/main.scss", "primeicons/primeicons.css"],
   experimental: {

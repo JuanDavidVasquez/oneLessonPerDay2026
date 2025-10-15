@@ -120,7 +120,7 @@
 /* ===========================
    📱 MENU ITEMS - Solo Desktop
    =========================== */
-@media (min-width: 769px) {
+@media (min-width: 960px) {
   .p-menubar-root-list {
     display: flex;
     align-items: center;
@@ -174,10 +174,10 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: 8px;
+        bottom: 5.5px;
         left: 50%;
         transform: translateX(-50%) scaleX(0);
-        width: 60%;
+        width: 70%;
         height: 2px;
         background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
         border-radius: $radius-full;
@@ -187,7 +187,7 @@
       // Hover state
       &:hover {
         color: var(--color-primary);
-        background: var(--glass-bg-strong);
+        background: var(--glass-bg-light);
         transform: translateY(-2px);
         
         span[class*="pi-"] {
@@ -202,6 +202,7 @@
       // Active state
       &:active {
         transform: translateY(0);
+        background: var(--glass-bg-light);
       }
     }
     
@@ -222,7 +223,7 @@
 /* ===========================
    📱 MOBILE MENU - Estilos nativos PrimeVue
    =========================== */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   // Mantener el botón hamburguesa nativo
   .p-menubar-button {
     width: 40px;
@@ -284,6 +285,7 @@
         &:hover {
           background: var(--glass-bg-strong);
           transform: translateX(4px);
+          box-shadow: none;
         }
         
         &:active {
@@ -340,7 +342,7 @@
 /* ===========================
    📋 DROPDOWN SUBMENU - Desktop
    =========================== */
-@media (min-width: 769px) {
+@media (min-width: 960px) {
   .p-menubar-submenu {
     background: var(--glass-bg-ultra);
     backdrop-filter: var(--glass-blur-lg) saturate(180%);
@@ -370,7 +372,7 @@
 /* ===========================
    📋 SUBMENU - Mobile
    =========================== */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .p-menubar-submenu {
     padding-left: $spacing-4;
     
@@ -416,7 +418,7 @@
 }
 
 // Animación para items del menú (solo desktop)
-@media (min-width: 769px) {
+@media (min-width: 960px) {
   .p-menubar-item {
     animation: fadeInScale 0.5s $ease-out both;
     
@@ -467,7 +469,7 @@
     }
   }
   
-  @media (min-width: 769px) {
+  @media (min-width: 960px) {
     .p-menubar-item a {
       padding: $spacing-2 $spacing-4;
       
@@ -497,7 +499,7 @@
    📱 BREAKPOINTS ADICIONALES
    =========================== */
 // Tablet pequeña
-@media (max-width: 900px) and (min-width: 769px) {
+@media (max-width: 960px) and (min-width: 769px) {
   .p-menubar {
     width: 98%;
     
@@ -530,7 +532,7 @@
    =========================== */
 .p-menubar.p-component {
   // Mantener solo en desktop
-  @media (min-width: 769px) {
+  @media (min-width: 960px) {
     .p-menubar-root-list {
       margin: 0;
       padding: 0;
@@ -547,5 +549,12 @@
     display: block;
     margin: $spacing-2 0;
     border-top: 1px solid var(--glass-border-light);
+  }
+}
+
+.p-menubar-item .p-menubar-item-content{
+  &:hover {
+    box-shadow: none  !important;
+    background: transparent !important;
   }
 }

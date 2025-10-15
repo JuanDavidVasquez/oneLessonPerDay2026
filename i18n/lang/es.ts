@@ -119,5 +119,10 @@ export default {
     noHiddenCosts: 'Sin costo oculto',
     postAdoptionFollowUp: 'Seguimiento post-adopción',
     scrollHint: 'Desliza'
+  },
+
+  ethology:{
+    title: 'Etología',
+    description: 'La etología es el estudio del comportamiento animal, y es fundamental para entender las necesidades de nuestras mascotas.'
   }
 }

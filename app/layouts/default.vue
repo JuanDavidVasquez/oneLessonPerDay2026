@@ -1,7 +1,6 @@
 <template>
   <main class="default-layout">
-    <AppHeader />
+    <UtilsMenu />
     <slot />
-    <AppFooter />
   </main>
 </template>
