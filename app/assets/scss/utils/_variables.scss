@@ -1,47 +1,167 @@
 /* ===========================
-   🐶 Paleta de colores - Etología & Veterinaria
+   🐶 Sistema de Diseño - Etología & Veterinaria
+   Proyecto profesional de adopciones y cuidado animal
    =========================== */
 
-/* Variables base que no cambian */
+/* ===========================
+   ✍️ TIPOGRAFÍA BASE
+   =========================== */
+
 $font-primary: 'Inter', sans-serif;
 $font-heading: 'Poppins', sans-serif;
-$font-size-base: 1rem;
-$font-size-sm: 0.875rem;
-$font-size-lg: 1.125rem;
-$font-size-xl: 1.25rem;
+$font-mono: 'Fira Code', monospace;
+
+/* Escala tipográfica modular (escala 1.25 - Mayor Tercera) */
+$font-size-xs: 0.75rem;      // 12px - Etiquetas pequeñas
+$font-size-sm: 0.875rem;     // 14px - Texto secundario
+$font-size-base: 1rem;       // 16px - Texto principal
+$font-size-md: 1.125rem;     // 18px - Texto destacado
+$font-size-lg: 1.25rem;      // 20px - Subtítulos
+$font-size-xl: 1.5rem;       // 24px - H4
+$font-size-2xl: 1.875rem;    // 30px - H3
+$font-size-3xl: 2.25rem;     // 36px - H2
+$font-size-4xl: 3rem;        // 48px - H1
+$font-size-5xl: 3.75rem;     // 60px - Hero titles
+
+/* Pesos de fuente */
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+/* Alturas de línea */
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+$line-height-loose: 2;
+
+/* ===========================
+   📐 ESPACIADO Y LAYOUT
+   =========================== */
+
 $container-width: 1200px;
-$spacing-unit: 1rem;
+$container-width-lg: 1400px;
+$container-width-sm: 960px;
+
+/* Escala de espaciado (base 4px) */
+$spacing-0: 0;
+$spacing-1: 0.25rem;   // 4px
+$spacing-2: 0.5rem;    // 8px
+$spacing-3: 0.75rem;   // 12px
+$spacing-4: 1rem;      // 16px
+$spacing-5: 1.25rem;   // 20px
+$spacing-6: 1.5rem;    // 24px
+$spacing-8: 2rem;      // 32px
+$spacing-10: 2.5rem;   // 40px
+$spacing-12: 3rem;     // 48px
+$spacing-16: 4rem;     // 64px
+$spacing-20: 5rem;     // 80px
+$spacing-24: 6rem;     // 96px
+
+/* ===========================
+   🎨 BORDES Y RADIOS
+   =========================== */
+
+$radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 24px;
+$radius-full: 9999px;
+
+$border-width: 1px;
+$border-width-md: 2px;
+$border-width-lg: 4px;
+
+/* ===========================
+   ⏱️ TRANSICIONES
+   =========================== */
+
+$transition-fast: 150ms;
+$transition-base: 250ms;
+$transition-slow: 350ms;
+$transition-slower: 500ms;
+
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
 /* ===========================
    🌞 TEMA CLARO (por defecto)
    =========================== */
 
 :root {
-  /* Paleta principal */
-  --color-primary: #2E8B57;
-  --color-accent: #4CC9F0;
-  --color-secondary: #F4A261;
+  /* === Colores principales === */
+  --color-primary: #2E8B57;        // Verde bosque - salud, naturaleza
+  --color-primary-light: #3FAA6C;  // Verde claro
+  --color-primary-dark: #1E5A3A;   // Verde oscuro
+  --color-primary-50: #E8F5EE;     // Tint más claro
+  --color-primary-100: #D1EBE0;
+  --color-primary-200: #A3D7C1;
   
-  /* Neutros */
-  --color-bg: #F9FAF9;
-  --color-surface: #FFFFFF;
-  --color-border: #D1D5DB;
+  --color-accent: #4CC9F0;         // Azul cielo - confianza, serenidad
+  --color-accent-light: #6DD5F3;
+  --color-accent-dark: #2BAED6;
   
-  /* Texto */
-  --color-text: #374151;
-  --color-heading: #1E3A2E;
-  --color-muted: #6B7280;
+  --color-secondary: #F4A261;      // Terracota - calidez, cercanía
+  --color-secondary-light: #FFB77D;
+  --color-secondary-dark: #E08943;
   
-  /* Estados */
-  --color-success: #22C55E;
-  --color-warning: #EAB308;
-  --color-danger: #EF4444;
+  /* === Colores de apoyo === */
+  --color-info: #3B82F6;           // Azul información
+  --color-success: #22C55E;        // Verde éxito
+  --color-warning: #EAB308;        // Amarillo advertencia
+  --color-danger: #EF4444;         // Rojo peligro/urgencia
+  --color-help: #8B5CF6;           // Violeta ayuda/soporte
   
-  /* Sombras */
-  --shadow-md: 0 4px 6px rgba(46, 139, 87, 0.15);
-  --shadow-lg: 0 10px 15px rgba(46, 139, 87, 0.2);
+  /* === Neutros - Fondos === */
+  --color-bg-primary: #F9FAF9;     // Fondo principal
+  --color-bg-secondary: #F3F4F6;   // Fondo secundario
+  --color-bg-tertiary: #E5E7EB;    // Fondo terciario
+  
+  --color-surface: #FFFFFF;        // Superficie tarjetas
+  --color-surface-hover: #F9FAFB;  // Superficie hover
+  --color-surface-active: #F3F4F6; // Superficie activa
+  
+  --color-overlay: rgba(0, 0, 0, 0.5);        // Overlay modales
+  --color-overlay-light: rgba(0, 0, 0, 0.25); // Overlay ligero
+  
+  /* === Neutros - Bordes === */
+  --color-border: #D1D5DB;         // Borde principal
+  --color-border-light: #E5E7EB;   // Borde claro
+  --color-border-dark: #9CA3AF;    // Borde oscuro
+  --color-border-focus: #3B82F6;   // Borde en foco
+  
+  /* === Texto === */
+  --color-text-primary: #111827;   // Texto principal (casi negro)
+  --color-text-secondary: #374151; // Texto secundario
+  --color-text-tertiary: #6B7280;  // Texto terciario
+  --color-text-muted: #9CA3AF;     // Texto deshabilitado
+  --color-text-inverse: #FFFFFF;   // Texto sobre fondos oscuros
+  
+  --color-heading: #1E3A2E;        // Títulos (verde oscuro natural)
+  --color-link: #2563EB;           // Enlaces
+  --color-link-hover: #1D4ED8;     // Enlaces hover
+  
+  /* === Sombras === */
+  --shadow-xs: 0 1px 2px rgba(46, 139, 87, 0.05);
+  --shadow-sm: 0 2px 4px rgba(46, 139, 87, 0.08);
+  --shadow-md: 0 4px 6px rgba(46, 139, 87, 0.12);
+  --shadow-lg: 0 8px 16px rgba(46, 139, 87, 0.15);
+  --shadow-xl: 0 12px 24px rgba(46, 139, 87, 0.18);
+  --shadow-2xl: 0 24px 48px rgba(46, 139, 87, 0.22);
+  
+  /* Sombras de color */
+  --shadow-primary: 0 4px 12px rgba(46, 139, 87, 0.25);
+  --shadow-accent: 0 4px 12px rgba(76, 201, 240, 0.25);
+  --shadow-danger: 0 4px 12px rgba(239, 68, 68, 0.25);
+  
+  /* === Opacidades === */
+  --opacity-disabled: 0.4;
+  --opacity-hover: 0.8;
+  --opacity-active: 0.6;
 }
 
 /* ===========================
@@ -49,40 +169,303 @@ $radius-lg: 12px;
    =========================== */
 
 .dark {
-  /* Paleta principal - ajustada para oscuro */
-  --color-primary: #3FAA6C;
+  /* === Colores principales === */
+  --color-primary: #3FAA6C;        // Verde más brillante para oscuro
+  --color-primary-light: #52C07E;
+  --color-primary-dark: #2E8B57;
+  --color-primary-50: #1A3A2A;
+  --color-primary-100: #254A38;
+  --color-primary-200: #2E5A46;
+  
   --color-accent: #5DD5F7;
+  --color-accent-light: #7AE0F9;
+  --color-accent-dark: #4CC9F0;
+  
   --color-secondary: #FFB077;
+  --color-secondary-light: #FFC494;
+  --color-secondary-dark: #F4A261;
   
-  /* Neutros */
-  --color-bg: #0F1419;
-  --color-surface: #1A1F26;
-  --color-border: #2D3748;
-  
-  /* Texto */
-  --color-text: #E5E7EB;
-  --color-heading: #F3F4F6;
-  --color-muted: #9CA3AF;
-  
-  /* Estados */
+  /* === Colores de apoyo === */
+  --color-info: #60A5FA;
   --color-success: #34D399;
   --color-warning: #FBBF24;
   --color-danger: #F87171;
+  --color-help: #A78BFA;
   
-  /* Sombras */
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  /* === Neutros - Fondos === */
+  --color-bg-primary: #0F1419;     // Fondo principal muy oscuro
+  --color-bg-secondary: #1A1F26;   // Fondo secundario
+  --color-bg-tertiary: #252A31;    // Fondo terciario
+  
+  --color-surface: #1E2429;        // Superficie tarjetas
+  --color-surface-hover: #252B32;  // Superficie hover
+  --color-surface-active: #2D343C; // Superficie activa
+  
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-overlay-light: rgba(0, 0, 0, 0.4);
+  
+  /* === Neutros - Bordes === */
+  --color-border: #374151;
+  --color-border-light: #2D3748;
+  --color-border-dark: #4B5563;
+  --color-border-focus: #60A5FA;
+  
+  /* === Texto === */
+  --color-text-primary: #F9FAFB;   // Texto principal
+  --color-text-secondary: #E5E7EB; // Texto secundario
+  --color-text-tertiary: #D1D5DB;  // Texto terciario
+  --color-text-muted: #9CA3AF;     // Texto deshabilitado
+  --color-text-inverse: #111827;   // Texto sobre fondos claros
+  
+  --color-heading: #F3F4F6;        // Títulos
+  --color-link: #60A5FA;
+  --color-link-hover: #93C5FD;
+  
+  /* === Sombras === */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.7);
+  
+  --shadow-primary: 0 4px 12px rgba(63, 170, 108, 0.35);
+  --shadow-accent: 0 4px 12px rgba(93, 213, 247, 0.35);
+  --shadow-danger: 0 4px 12px rgba(248, 113, 113, 0.35);
+  
+  /* === Opacidades === */
+  --opacity-disabled: 0.3;
+  --opacity-hover: 0.9;
+  --opacity-active: 0.7;
 }
 
 /* ===========================
-   🎨 Funciones helper para usar en SCSS
+   🎯 ESTILOS GLOBALES DE TIPOGRAFÍA
    =========================== */
 
-// Usar estas funciones en lugar de las variables directas
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  font-weight: $font-weight-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Headings === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: var(--color-heading);
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-top: 0;
+  margin-bottom: $spacing-4;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
+  line-height: 1.1;
+  margin-bottom: $spacing-6;
+  
+  @media (max-width: 768px) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-5;
+  
+  @media (max-width: 768px) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-4;
+  
+  @media (max-width: 768px) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-3;
+}
+
+h5 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-3;
+}
+
+h6 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* === Párrafos y texto === */
+p {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: var(--color-text-secondary);
+  margin-top: 0;
+  margin-bottom: $spacing-4;
+  
+  &.lead {
+    font-size: $font-size-md;
+    line-height: $line-height-relaxed;
+    color: var(--color-text-primary);
+    font-weight: $font-weight-normal;
+  }
+  
+  &.small {
+    font-size: $font-size-sm;
+  }
+  
+  &.muted {
+    color: var(--color-text-muted);
+  }
+}
+
+/* === Enlaces === */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color $transition-base $ease-out;
+  
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+  }
+}
+
+/* === Listas === */
+ul, ol {
+  padding-left: $spacing-6;
+  margin-bottom: $spacing-4;
+  
+  li {
+    margin-bottom: $spacing-2;
+    line-height: $line-height-relaxed;
+    color: var(--color-text-secondary);
+  }
+}
+
+/* === Texto enfatizado === */
+strong, b {
+  font-weight: $font-weight-semibold;
+  color: var(--color-text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-sm;
+  color: var(--color-text-tertiary);
+}
+
+/* === Código === */
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  background: var(--color-bg-secondary);
+  padding: $spacing-1 $spacing-2;
+  border-radius: $radius-sm;
+  color: var(--color-text-primary);
+}
+
+pre {
+  font-family: $font-mono;
+  background: var(--color-bg-secondary);
+  padding: $spacing-4;
+  border-radius: $radius-md;
+  overflow-x: auto;
+  margin-bottom: $spacing-4;
+  
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+/* === Blockquote === */
+blockquote {
+  border-left: $border-width-lg solid var(--color-primary);
+  padding-left: $spacing-4;
+  margin-left: 0;
+  margin-bottom: $spacing-4;
+  font-style: italic;
+  color: var(--color-text-tertiary);
+}
+
+/* === Separadores === */
+hr {
+  border: none;
+  border-top: $border-width solid var(--color-border);
+  margin: $spacing-8 0;
+}
+
+/* ===========================
+   🎨 CLASES UTILITARIAS
+   =========================== */
+
+/* Texto */
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-md { font-size: $font-size-md; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+.text-2xl { font-size: $font-size-2xl; }
+.text-3xl { font-size: $font-size-3xl; }
+.text-4xl { font-size: $font-size-4xl; }
+
+.text-primary { color: var(--color-text-primary) !important; }
+.text-secondary { color: var(--color-text-secondary) !important; }
+.text-tertiary { color: var(--color-text-tertiary) !important; }
+.text-muted { color: var(--color-text-muted) !important; }
+.text-heading { color: var(--color-heading) !important; }
+
+.font-light { font-weight: $font-weight-light; }
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+.font-extrabold { font-weight: $font-weight-extrabold; }
+
+/* ===========================
+   🎭 FUNCIONES HELPER
+   =========================== */
+
 @function color($name) {
   @return var(--color-#{$name});
 }
 
 @function shadow($name) {
   @return var(--shadow-#{$name});
+}
+
+@function spacing($multiplier) {
+  @return calc($spacing-4 * #{$multiplier});
 }
