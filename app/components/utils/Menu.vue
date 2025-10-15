@@ -21,7 +21,7 @@
           @click="navigate"
         >
           <span v-if="item.icon" :class="item.icon" />
-          <span class="menu-label">{{ item.label }}</span>
+          <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
         </a>
       </router-link>
       
@@ -33,7 +33,7 @@
         v-bind="props.action"
       >
         <span v-if="item.icon" :class="item.icon" />
-        <span class="menu-label">{{ item.label }}</span>
+        <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
         <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down submenu-icon" />
       </a>
     </template>
@@ -49,6 +49,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import { menuItems } from '@/router/routes';
+const { t } = useI18n();
 
 const items = ref(menuItems);
 const isScrolled = ref(false);

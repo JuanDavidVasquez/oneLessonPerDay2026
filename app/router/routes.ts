@@ -1,23 +1,23 @@
 // Solo exporta los items del menú
 export const menuItems = [
     {
-        label: 'Home',
+        label: 'home',
         icon: 'pi pi-home',
         route: '/'
     },
     {
-        label: 'Etología',
+        label: 'ethology',
         icon: 'pi pi-book',
-        route: '/etologia'
+        route: '/ethology'
     },
     {
-        label: 'Adopción',
+        label: 'adoption',
         icon: 'pi pi-heart',
-        route: '/adopcion'
+        route: '/adoption'
     },
     {
-        label: 'Médicos',
+        label: 'veterinarians',
         icon: 'pi pi-user-plus',
-        route: '/medicos'
+        route: '/veterinarians'
     }
 ];

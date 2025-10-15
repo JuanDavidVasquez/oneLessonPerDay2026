@@ -14,20 +14,19 @@
       <!-- Columna Izquierda -->
       <div class="text-left">
         <h1 class="hero-title">
-          <span class="title-line">One Lesson</span>
-          <span class="title-line">Per Day</span>
+          <span class="title-line">{{ t('common.appFirstName') }}</span>
+          <span class="title-line">{{ t('common.appSecondName') }}</span>
         </h1>
         <p class="hero-subtitle">
-          Aprende sobre el cuidado responsable de mascotas mientras 
-          encuentras a tu compañero perfecto
+          {{ t('header.heroSubtitle') }}
         </p>
         <div class="cta-buttons">
           <NuxtLink to="/adopcion" class="btn-primary">
-            <span>Adoptar ahora</span>
+            <span>{{ t('common.adoptNow') }}</span>
             <i class="pi pi-arrow-right"></i>
           </NuxtLink>
           <NuxtLink to="/etologia" class="btn-secondary">
-            <span>Conoce más</span>
+            <span>{{ t('common.learnMore') }}</span>
           </NuxtLink>
         </div>
         
@@ -35,15 +34,15 @@
         <div class="stats">
           <div class="stat-item">
             <span class="stat-number">500+</span>
-            <span class="stat-label">Adopciones</span>
+            <span class="stat-label">{{ t('common.adoption') }}</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">98%</span>
-            <span class="stat-label">Satisfacción</span>
+            <span class="stat-label">{{ t('common.satisfaction') }}</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">24/7</span>
-            <span class="stat-label">Soporte</span>
+            <span class="stat-label">{{ t('common.support') }}</span>
           </div>
         </div>
       </div>
@@ -55,37 +54,37 @@
         <img src="/home.png" alt="Perro feliz" class="img-header" />
         <div class="floating-badge badge-1">
           <i class="pi pi-heart-fill"></i>
-          <span>Amor incondicional</span>
+          <span>{{ t('header.unconditionalLove') }}</span>
         </div>
         <div class="floating-badge badge-2">
           <i class="pi pi-shield"></i>
-          <span>Certificados</span>
+          <span>{{ t('header.certificates') }}</span>
         </div>
       </div>
 
       <!-- Columna Derecha -->
       <div class="text-right">
         <h2 class="hero-secondary">
-          <span class="highlight-line">Adopta una</span>
-          <span class="highlight-line large">mascota</span>
-          <span class="divider">y</span>
-          <span class="highlight-line">cambia</span>
-          <span class="highlight-line large">una vida</span>
+          <span class="highlight-line">{{ t('header.adoptPet') }}</span>
+          <span class="highlight-line large">{{ t('header.pet') }}</span>
+          <span class="divider">{{ t('common.y') }}</span>
+          <span class="highlight-line">{{ t('header.changeALife') }}</span>
+          <span class="highlight-line large">{{ t('header.aLife') }}</span>
         </h2>
         
         <!-- Características -->
         <div class="features">
           <div class="feature-item">
             <i class="pi pi-check-circle"></i>
-            <span>Proceso simple</span>
+            <span>{{ t('header.simpleProcess') }}</span>
           </div>
           <div class="feature-item">
             <i class="pi pi-check-circle"></i>
-            <span>Sin costo oculto</span>
+            <span>{{ t('header.noHiddenCosts') }}</span>
           </div>
           <div class="feature-item">
             <i class="pi pi-check-circle"></i>
-            <span>Seguimiento post-adopción</span>
+            <span>{{ t('header.postAdoptionFollowUp') }}</span>
           </div>
         </div>
       </div>
@@ -93,7 +92,7 @@
 
     <!-- Scroll indicator -->
     <div class="scroll-indicator">
-      <span>Desliza</span>
+      <span>{{ t('header.scrollHint') }}</span>
       <i class="pi pi-arrow-down"></i>
     </div>
   </header>
@@ -101,6 +100,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
+const { t } = useI18n();
 
 onMounted(() => {
   // Animación de entrada para las líneas de título

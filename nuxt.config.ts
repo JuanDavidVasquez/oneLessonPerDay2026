@@ -1,42 +1,55 @@
-import Aura from '@primeuix/themes/aura';
+import Aura from "@primeuix/themes/aura";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   ssr: false,
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@primevue/nuxt-module'],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@primevue/nuxt-module",
+    [
+      "@nuxtjs/i18n",
+      {
+        locales: [
+          { code: "es", language: "es-ES", file: "es.ts", name: "Español" },
+        ],
+        defaultLocale: "es",
+        lazy: true,
+        langDir: "lang/",
+        strategy: "prefix_except_default",
+      },
+    ],
+  ],
   primevue: {
     options: {
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: '.dark',
-          cssLayer: false
-        }
-      }
-    }
+          darkModeSelector: ".dark",
+          cssLayer: false,
+        },
+      },
+    },
   },
   colorMode: {
-    preference: 'system', // 'light', 'dark' o 'system'
-    fallback: 'light',
-    classSuffix: '',
+    preference: "system", // 'light', 'dark' o 'system'
+    fallback: "light",
+    classSuffix: "",
   },
   app: {
-    baseURL: '/',
-    buildAssetsDir: '/assets/',
-    pageTransition: { name: 'page', mode: 'out-in' },
+    baseURL: "/",
+    buildAssetsDir: "/assets/",
+    pageTransition: { name: "page", mode: "out-in" },
   },
-  css: [
-    'animate.css',
-    '@/assets/scss/main.scss',
-    'primeicons/primeicons.css',
-  ],
+  css: ["animate.css", "@/assets/scss/main.scss", "primeicons/primeicons.css"],
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
   },
   $production: {
     routeRules: {
-      '/**': { isr: true },
+      "/**": { isr: true },
     },
   },
   $development: {
@@ -57,8 +70,8 @@ export default defineNuxtConfig({
   vite: {
     css: {
       preprocessorOptions: {
-         scss: {
-            additionalData: `
+        scss: {
+          additionalData: `
             @use "sass:math";
             @use "~/assets/scss/utils/_variables" as *;
           `,
@@ -75,4 +88,4 @@ export default defineNuxtConfig({
   vue: {
     propsDestructure: true,
   },
-})
+});
