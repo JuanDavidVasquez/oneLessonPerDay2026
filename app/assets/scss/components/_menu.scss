@@ -1,5 +1,3 @@
-@use "../utils/variables" as *;
-
 /* ===========================
    🎯 MENUBAR PRINCIPAL
    =========================== */
@@ -30,10 +28,12 @@
   // Transición suave
   transition: all $transition-base $ease-out;
   
-  // Hover effect
-  &:hover {
-    background: var(--glass-bg-medium);
-    box-shadow: var(--shadow-2xl);
+  // Hover effect (solo desktop)
+  @media (min-width: 769px) {
+    &:hover {
+      background: var(--glass-bg-medium);
+      box-shadow: var(--shadow-2xl);
+    }
   }
   
   // Responsive - Tablet
@@ -48,11 +48,7 @@
     width: 98%;
     top: $spacing-2;
     border-radius: $radius-xl;
-    padding: $spacing-2;
-    
-    // Cambiar a layout columnar en mobile
-    flex-direction: row;
-    justify-content: space-between;
+    padding: $spacing-2 $spacing-4;
   }
 }
 
@@ -60,13 +56,9 @@
    🏠 LOGO SECTION
    =========================== */
 .p-menubar-start {
-  height: 75px;
   display: flex;
   align-items: center;
-  
-  @media (max-width: 768px) {
-    height: 65px;
-  }
+  height: 100%;
   
   .logo {
     display: flex;
@@ -110,7 +102,7 @@
     }
     
     .logo-image {
-      height: 50px;
+      height: 100px;
       width: auto;
       transition: filter $transition-base $ease-out;
       
@@ -126,106 +118,197 @@
 }
 
 /* ===========================
-   📱 MENU ITEMS
+   📱 MENU ITEMS - Solo Desktop
    =========================== */
-.p-menubar-root-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $spacing-2;
-  height: 100%;
-  flex: 1;
-  
-  @media (max-width: 1024px) {
-    gap: $spacing-1;
-  }
-  
-  // En mobile, el menú se oculta y aparece el botón hamburguesa
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-// Menu item individual
-.p-menubar-item {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  
-  a {
+@media (min-width: 769px) {
+  .p-menubar-root-list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: $spacing-2;
-    padding: $spacing-3 $spacing-5;
-    border-radius: $radius-lg;
-    font-weight: $font-weight-medium;
-    font-size: $font-size-base;
-    color: var(--color-text-primary);
-    transition: all $transition-base $ease-out;
-    position: relative;
-    text-decoration: none;
-    white-space: nowrap;
+    height: 100%;
+    flex: 1;
     
     @media (max-width: 1024px) {
-      padding: $spacing-2 $spacing-3;
-      font-size: $font-size-sm;
       gap: $spacing-1;
     }
+  }
+  
+  // Menu item individual
+  .p-menubar-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
     
-    // Icono
-    span[class*="pi-"] {
-      font-size: $font-size-lg;
-      transition: transform $transition-base $ease-out;
+    a {
+      display: flex;
+      align-items: center;
+      gap: $spacing-2;
+      padding: $spacing-3 $spacing-5;
+      border-radius: $radius-lg;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-base;
+      color: var(--color-text-primary);
+      transition: all $transition-base $ease-out;
+      position: relative;
+      text-decoration: none;
+      white-space: nowrap;
       
       @media (max-width: 1024px) {
-        font-size: $font-size-base;
+        padding: $spacing-2 $spacing-3;
+        font-size: $font-size-sm;
+        gap: $spacing-1;
       }
-    }
-    
-    // Underline effect
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 8px;
-      left: 50%;
-      transform: translateX(-50%) scaleX(0);
-      width: 60%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-      border-radius: $radius-full;
-      transition: transform $transition-base $ease-out;
-    }
-    
-    // Hover state
-    &:hover {
-      color: var(--color-primary);
-      background: var(--glass-bg-strong);
-      transform: translateY(-2px);
       
+      // Icono
       span[class*="pi-"] {
-        transform: scale(1.1);
+        font-size: $font-size-lg;
+        transition: transform $transition-base $ease-out;
+        
+        @media (max-width: 1024px) {
+          font-size: $font-size-base;
+        }
       }
+      
+      // Underline effect
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+        border-radius: $radius-full;
+        transition: transform $transition-base $ease-out;
+      }
+      
+      // Hover state
+      &:hover {
+        color: var(--color-primary);
+        background: var(--glass-bg-strong);
+        transform: translateY(-2px);
+        
+        span[class*="pi-"] {
+          transform: scale(1.1);
+        }
+        
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
+      
+      // Active state
+      &:active {
+        transform: translateY(0);
+      }
+    }
+    
+    // Active route
+    &.router-link-active a,
+    a.active-link {
+      color: var(--color-primary);
+      background: var(--color-primary-50);
+      font-weight: $font-weight-semibold;
       
       &::after {
         transform: translateX(-50%) scaleX(1);
       }
     }
+  }
+}
+
+/* ===========================
+   📱 MOBILE MENU - Estilos nativos PrimeVue
+   =========================== */
+@media (max-width: 768px) {
+  // Mantener el botón hamburguesa nativo
+  .p-menubar-button {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-md;
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border-light);
+    color: var(--color-text-primary);
+    transition: all $transition-base $ease-out;
     
-    // Active state
-    &:active {
-      transform: translateY(0);
+    &:hover {
+      background: var(--glass-bg-medium);
+      transform: scale(1.05);
+    }
+    
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+    
+    span {
+      font-size: 1.25rem;
     }
   }
   
-  // Active route
-  &.router-link-active a,
-  a.active-link {
-    color: var(--color-primary);
-    background: var(--color-primary-50);
-    font-weight: $font-weight-semibold;
+  // Menú desplegable móvil con glassmorphism
+  .p-menubar-root-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: $spacing-2;
+    background: var(--glass-bg-ultra);
+    backdrop-filter: var(--glass-blur-xl) saturate(180%);
+    -webkit-backdrop-filter: var(--glass-blur-xl) saturate(180%);
+    border: 1px solid var(--glass-border-medium);
+    border-radius: $radius-xl;
+    box-shadow: var(--shadow-2xl);
+    padding: $spacing-2;
     
-    &::after {
-      transform: translateX(-50%) scaleX(1);
+    // Items del menú móvil
+    .p-menubar-item {
+      width: 100%;
+      
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: $spacing-3 $spacing-4;
+        border-radius: $radius-md;
+        color: var(--color-text-primary);
+        text-decoration: none;
+        transition: all $transition-base $ease-out;
+        
+        span[class*="pi-"] {
+          margin-right: $spacing-2;
+        }
+        
+        &:hover {
+          background: var(--glass-bg-strong);
+          transform: translateX(4px);
+        }
+        
+        &:active {
+          transform: translateX(2px);
+        }
+      }
+      
+      // Estado activo
+      &.router-link-active a,
+      a.active-link {
+        background: var(--color-primary-50);
+        color: var(--color-primary);
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+  
+  // Animación del menú móvil
+  .p-menubar-root-list {
+    &.p-hidden {
+      display: none;
+    }
+    
+    &:not(.p-hidden) {
+      animation: slideDownMobile 0.3s $ease-out;
     }
   }
 }
@@ -234,13 +317,12 @@
    🎨 END SECTION (Actions)
    =========================== */
 .p-menubar-end {
-  height: 75px;
   display: flex;
   align-items: center;
   gap: $spacing-3;
+  height: 100%;
   
   @media (max-width: 768px) {
-    height: 65px;
     gap: $spacing-2;
   }
   
@@ -256,74 +338,29 @@
 }
 
 /* ===========================
-   📱 MOBILE MENU BUTTON
+   📋 DROPDOWN SUBMENU - Desktop
    =========================== */
-.p-menubar-button {
-  width: 45px;
-  height: 45px;
-  border-radius: $radius-lg;
-  background: var(--glass-bg-strong);
-  border: 1px solid var(--glass-border-light);
-  color: var(--color-text-primary);
-  transition: all $transition-base $ease-out;
-  display: none;
-  
-  // Mostrar solo en mobile
-  @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  &:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  &:active {
-    transform: scale(0.95);
-  }
-}
-
-/* ===========================
-   📋 MOBILE OVERLAY MENU
-   =========================== */
-.p-menubar-mobile {
-  @media (max-width: 768px) {
-    position: fixed;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-    
+@media (min-width: 769px) {
+  .p-menubar-submenu {
     background: var(--glass-bg-ultra);
-    backdrop-filter: var(--glass-blur-xl) saturate(180%);
-    -webkit-backdrop-filter: var(--glass-blur-xl) saturate(180%);
+    backdrop-filter: var(--glass-blur-lg) saturate(180%);
+    -webkit-backdrop-filter: var(--glass-blur-lg) saturate(180%);
     border: 1px solid var(--glass-border-medium);
     border-radius: $radius-xl;
     box-shadow: var(--shadow-2xl);
-    padding: $spacing-4;
+    padding: $spacing-2;
+    margin-top: $spacing-2;
+    min-width: 200px;
     
-    .p-menubar-root-list {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-2;
+    .p-menubar-item {
+      width: 100%;
       
-      .p-menubar-item {
+      a {
         width: 100%;
+        justify-content: flex-start;
         
-        a {
-          width: 100%;
-          justify-content: flex-start;
-          padding: $spacing-4;
-          font-size: $font-size-base;
-          
-          &:hover {
-            transform: translateX(4px);
-          }
+        &:hover {
+          transform: translateX(4px);
         }
       }
     }
@@ -331,43 +368,15 @@
 }
 
 /* ===========================
-   📋 DROPDOWN SUBMENU
+   📋 SUBMENU - Mobile
    =========================== */
-.p-menubar-submenu {
-  background: var(--glass-bg-ultra);
-  backdrop-filter: var(--glass-blur-lg) saturate(180%);
-  -webkit-backdrop-filter: var(--glass-blur-lg) saturate(180%);
-  border: 1px solid var(--glass-border-medium);
-  border-radius: $radius-xl;
-  box-shadow: var(--shadow-2xl);
-  padding: $spacing-2;
-  margin-top: $spacing-2;
-  min-width: 200px;
-  
-  .p-menubar-item {
-    width: 100%;
-    
-    a {
-      width: 100%;
-      justify-content: flex-start;
-      
-      &:hover {
-        transform: translateX(4px);
-      }
-    }
-  }
-  
-  @media (max-width: 768px) {
-    position: static;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+@media (max-width: 768px) {
+  .p-menubar-submenu {
     padding-left: $spacing-4;
-    margin-top: 0;
     
     .p-menubar-item a {
       font-size: $font-size-sm;
-      padding: $spacing-2 $spacing-3;
+      padding: $spacing-2 $spacing-4;
     }
   }
 }
@@ -434,16 +443,12 @@
 @keyframes slideDownMobile {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
-}
-
-.p-menubar-mobile-active {
-  animation: slideDownMobile 0.3s $ease-out;
 }
 
 /* ===========================
@@ -454,67 +459,26 @@
   background: var(--glass-bg-medium);
   box-shadow: var(--shadow-2xl);
   
-  .p-menubar-start {
-    height: 65px;
+  .logo .logo-image {
+    height: 40px;
     
-    .logo .logo-image {
-      height: 40px;
-      
-      @media (max-width: 768px) {
-        height: 35px;
-      }
+    @media (max-width: 768px) {
+      height: 55px;
     }
   }
   
-  .p-menubar-end {
-    height: 65px;
-  }
-  
-  .p-menubar-root-list {
-    height: 65px;
-  }
-  
-  .p-menubar-item a {
-    padding: $spacing-2 $spacing-4;
-    
-    @media (max-width: 1024px) {
-      padding: $spacing-2 $spacing-3;
+  @media (min-width: 769px) {
+    .p-menubar-item a {
+      padding: $spacing-2 $spacing-4;
+      
+      @media (max-width: 1024px) {
+        padding: $spacing-2 $spacing-3;
+      }
     }
   }
   
   @media (max-width: 768px) {
     height: 60px;
-    
-    .p-menubar-start,
-    .p-menubar-end {
-      height: 60px;
-    }
-  }
-}
-
-/* ===========================
-   🎨 OVERRIDE PRIMEVUE DEFAULTS
-   =========================== */
-.p-menubar.p-component {
-  background: transparent;
-  border: none;
-}
-
-// Remover padding por defecto
-.p-menubar .p-menubar-root-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-// Ajustar separadores de PrimeVue
-.p-menubar-separator {
-  display: none;
-  
-  @media (max-width: 768px) {
-    display: block;
-    margin: $spacing-2 0;
-    border-top: 1px solid var(--glass-border-light);
   }
 }
 
@@ -552,8 +516,36 @@
     top: $spacing-1;
     
     .p-menubar-button {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
     }
+    .logo .logo-image {
+      height: 55px;
+    }
+  }
+}
+
+/* ===========================
+   🎨 LIMPIEZA DE ESTILOS BASE
+   =========================== */
+.p-menubar.p-component {
+  // Mantener solo en desktop
+  @media (min-width: 769px) {
+    .p-menubar-root-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
+
+// Separadores
+.p-menubar-separator {
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: block;
+    margin: $spacing-2 0;
+    border-top: 1px solid var(--glass-border-light);
   }
 }
