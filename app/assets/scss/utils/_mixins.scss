@@ -1,0 +1,40 @@
+/* ===========================
+   🪟 GLASSMORPHISM MIXINS
+   =========================== */
+
+// Glass básico
+@mixin glass-light {
+  background: $glass-bg-light;
+  backdrop-filter: $glass-blur-md $glass-saturate;
+  -webkit-backdrop-filter: $glass-blur-md $glass-saturate;
+  border: 1px solid $glass-border-light;
+}
+
+@mixin glass-medium {
+  background: $glass-bg-medium;
+  backdrop-filter: $glass-blur-md $glass-saturate;
+  -webkit-backdrop-filter: $glass-blur-md $glass-saturate;
+  border: 1px solid $glass-border-medium;
+}
+
+@mixin glass-strong {
+  background: $glass-bg-strong;
+  backdrop-filter: $glass-blur-lg $glass-saturate;
+  -webkit-backdrop-filter: $glass-blur-lg $glass-saturate;
+  border: 1px solid $glass-border-strong;
+}
+
+@mixin glass-ultra {
+  background: $glass-bg-ultra;
+  backdrop-filter: $glass-blur-xl $glass-saturate;
+  -webkit-backdrop-filter: $glass-blur-xl $glass-saturate;
+  border: 1px solid $glass-border-strong;
+}
+
+// Glass personalizado
+@mixin glass-custom($bg, $blur, $border) {
+  background: $bg;
+  backdrop-filter: $blur $glass-saturate;
+  -webkit-backdrop-filter: $blur $glass-saturate;
+  border: 1px solid $border;
+}

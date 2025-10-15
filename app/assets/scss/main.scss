@@ -1,3 +1,5 @@
-
-@use './components/theamButton';
+@use './utils/fonts';
 @use './utils/variables';
+@use './components/theamButton';
+@use './components/menu';
+@use './components/header';

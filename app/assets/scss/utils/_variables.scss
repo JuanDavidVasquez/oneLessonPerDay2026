@@ -2,14 +2,16 @@
    🐶 Sistema de Diseño - Etología & Veterinaria
    Proyecto profesional de adopciones y cuidado animal
    =========================== */
-
+@use 'fonts';
 /* ===========================
    ✍️ TIPOGRAFÍA BASE
    =========================== */
 
 $font-primary: 'Inter', sans-serif;
 $font-heading: 'Poppins', sans-serif;
-$font-mono: 'Fira Code', monospace;
+$font-mono: 'JetBrains Mono', monospace;
+$font-display: 'Playfair Display', serif;
+$font-secondary: 'Fira Sans', sans-serif; 
 
 /* Escala tipográfica modular (escala 1.25 - Mayor Tercera) */
 $font-size-xs: 0.75rem;      // 12px - Etiquetas pequeñas
@@ -89,6 +91,39 @@ $ease-out: cubic-bezier(0, 0, 0.2, 1);
 $ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
 /* ===========================
+   🪟 EFECTOS GLASSMORPHISM
+   =========================== */
+
+/* Fondos glass con diferentes opacidades */
+$glass-bg-light: rgba(255, 255, 255, 0.1);
+$glass-bg-medium: rgba(255, 255, 255, 0.15);
+$glass-bg-strong: rgba(255, 255, 255, 0.25);
+$glass-bg-ultra: rgba(255, 255, 255, 0.8);
+
+$glass-bg-dark-light: rgba(0, 0, 0, 0.1);
+$glass-bg-dark-medium: rgba(0, 0, 0, 0.15);
+$glass-bg-dark-strong: rgba(0, 0, 0, 0.25);
+$glass-bg-dark-ultra: rgba(0, 0, 0, 0.8);
+
+/* Bordes glass */
+$glass-border-light: rgba(255, 255, 255, 0.2);
+$glass-border-medium: rgba(255, 255, 255, 0.3);
+$glass-border-strong: rgba(255, 255, 255, 0.5);
+
+$glass-border-dark-light: rgba(0, 0, 0, 0.2);
+$glass-border-dark-medium: rgba(0, 0, 0, 0.3);
+$glass-border-dark-strong: rgba(0, 0, 0, 0.5);
+
+/* Blur filters */
+$glass-blur-sm: blur(10px);
+$glass-blur-md: blur(20px);
+$glass-blur-lg: blur(30px);
+$glass-blur-xl: blur(40px);
+
+/* Saturación para glassmorphism */
+$glass-saturate: saturate(180%);
+
+/* ===========================
    🌞 TEMA CLARO (por defecto)
    =========================== */
 
@@ -162,6 +197,26 @@ $ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --opacity-disabled: 0.4;
   --opacity-hover: 0.8;
   --opacity-active: 0.6;
+
+    /* === Glassmorphism === */
+  --glass-bg-light: rgba(255, 255, 255, 0.1);
+  --glass-bg-medium: rgba(255, 255, 255, 0.15);
+  --glass-bg-strong: rgba(255, 255, 255, 0.25);
+  --glass-bg-ultra: rgba(255, 255, 255, 0.8);
+  
+  --glass-bg-dark-light: rgba(0, 0, 0, 0.1);
+  --glass-bg-dark-medium: rgba(0, 0, 0, 0.15);
+  --glass-bg-dark-strong: rgba(0, 0, 0, 0.25);
+  --glass-bg-dark-ultra: rgba(0, 0, 0, 0.8);
+  
+  --glass-border-light: rgba(255, 255, 255, 0.2);
+  --glass-border-medium: rgba(255, 255, 255, 0.3);
+  --glass-border-strong: rgba(255, 255, 255, 0.5);
+  
+  --glass-blur-sm: blur(10px);
+  --glass-blur-md: blur(20px);
+  --glass-blur-lg: blur(30px);
+  --glass-blur-xl: blur(40px);
 }
 
 /* ===========================
@@ -239,11 +294,17 @@ $ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --opacity-active: 0.7;
 }
 
+
+
 /* ===========================
    🎯 ESTILOS GLOBALES DE TIPOGRAFÍA
    =========================== */
-
+*{
+  padding: 0;
+  margin: 0;
+}
 body {
+  width: 100%;
   font-family: $font-primary;
   font-size: $font-size-base;
   line-height: $line-height-normal;
@@ -252,6 +313,7 @@ body {
   font-weight: $font-weight-normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* === Headings === */
