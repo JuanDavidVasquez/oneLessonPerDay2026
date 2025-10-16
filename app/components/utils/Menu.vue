@@ -37,10 +37,10 @@
         <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down submenu-icon" />
       </NuxtLink>
     </template>
-    
     <template #end>
       <div class="menu-actions">
         <UtilsTeamButton />
+        <UtilsIn18Change />
       </div>
     </template>
   </Menubar>

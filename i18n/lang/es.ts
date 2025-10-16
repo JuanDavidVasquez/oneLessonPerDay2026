@@ -41,6 +41,7 @@ export default {
     termsOfService: 'Términos de Servicio',
     privacyPolicy: 'Política de Privacidad',
     followUs: 'Síguenos',
+    language: 'Idioma',
   },
   
   // Navigation

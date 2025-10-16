@@ -1,4 +1,4 @@
-import es from "./lang/es";
+import {en,es} from "./lang";
 
 
 
@@ -7,5 +7,6 @@ export default {
   locale: 'es',
   messages: {
     es: es,
+    en: en,
   },
 }

@@ -9,11 +9,13 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
     "@primevue/nuxt-module",
+    "@pinia/nuxt",
     [
       "@nuxtjs/i18n",
       {
         locales: [
           { code: "es", language: "es-ES", file: "es.ts", name: "Español" },
+          { code: "en", language: "en-US", file: "en.ts", name: "English" },
         ],
         defaultLocale: "es",
         lazy: true,
@@ -87,5 +89,8 @@ export default defineNuxtConfig({
   },
   vue: {
     propsDestructure: true,
+  },
+  pinia: {
+    storesDirs: ['./stores', './app/stores'],
   },
 });
