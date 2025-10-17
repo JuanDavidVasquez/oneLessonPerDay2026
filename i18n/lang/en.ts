@@ -359,4 +359,222 @@ export default {
     step4Title: "Adopt",
     step4Description: "Bring your new best friend home",
   },
-};
+  veterinarians: {
+    badge: 'Veterinary Care',
+    title: 'Veterinary Services',
+    subtitle: 'Professional care for your furry companions',
+    introduction: 'We have a team of highly trained veterinarians and state-of-the-art technology to provide the best care for your pet.',
+    
+    services: {
+      title: 'Our Services',
+      consultation: {
+        title: 'General Consultation',
+        description: 'Complete medical and preventive examinations to maintain your pet\'s health.',
+        feature1: 'Complete physical examination',
+        feature2: 'Digital medical record',
+        feature3: 'Personalized health plan',
+        feature4: 'Continuous follow-up'
+      },
+      vaccines: {
+        title: 'Vaccination',
+        description: 'Complete vaccination programs according to your pet\'s age and needs.',
+        feature1: 'Mandatory vaccines',
+        feature2: 'Optional vaccines',
+        feature3: 'Vaccination card',
+        feature4: 'Automatic reminders'
+      },
+      surgery: {
+        title: 'Surgery',
+        description: 'Surgical procedures with modern equipment and minimally invasive techniques.',
+        feature1: 'Routine surgeries',
+        feature2: 'Specialized surgeries',
+        feature3: 'Safe anesthesia',
+        feature4: 'Monitored recovery'
+      },
+      diagnostics: {
+        title: 'Diagnostics',
+        description: 'Laboratory and diagnostic equipment for early disease detection.',
+        feature1: 'Blood tests',
+        feature2: 'Digital X-rays',
+        feature3: 'Ultrasounds',
+        feature4: 'Fast results'
+      },
+      hospitalization: {
+        title: 'Hospitalization',
+        description: 'Comfortable and safe facilities for intensive care and recovery.',
+        feature1: '24/7 monitoring',
+        feature2: 'Intensive care',
+        feature3: 'Specialized treatments',
+        feature4: 'Constant updates'
+      },
+      grooming: {
+        title: 'Grooming',
+        description: 'Grooming and aesthetic care services to make your pet look beautiful.',
+        feature1: 'Medicated bath',
+        feature2: 'Haircut',
+        feature3: 'Nail trimming',
+        feature4: 'Dental cleaning'
+      }
+    },
+    
+    team: {
+      title: 'Our Veterinary Team',
+      subtitle: 'Professionals dedicated to your pet\'s wellbeing',
+      member1: {
+        role: 'General Veterinarian - Director',
+        description: '15 years of experience in veterinary medicine with specialization in small animals.',
+        specialty1: 'Internal Medicine',
+        specialty2: 'Cardiology',
+        specialty3: 'Geriatrics'
+      },
+      member2: {
+        role: 'Veterinary Surgeon',
+        description: 'Specialist in soft tissue surgery and minimally invasive procedures.',
+        specialty1: 'General Surgery',
+        specialty2: 'Orthopedics',
+        specialty3: 'Traumatology'
+      },
+      member3: {
+        role: 'Feline Veterinarian',
+        description: 'Exclusively dedicated to the care and treatment of cats.',
+        specialty1: 'Feline Medicine',
+        specialty2: 'Behavior',
+        specialty3: 'Nutrition'
+      },
+      member4: {
+        role: 'Emergency Veterinarian',
+        description: 'Specialist in emergency care and 24-hour critical care.',
+        specialty1: 'Emergency Medicine',
+        specialty2: 'Intensive Care',
+        specialty3: 'Toxicology'
+      }
+    },
+    
+    schedule: {
+      title: 'Opening Hours',
+      subtitle: 'We\'re here when you need us',
+      monday: 'Monday',
+      tuesday: 'Tuesday',
+      wednesday: 'Wednesday',
+      thursday: 'Thursday',
+      friday: 'Friday',
+      saturday: 'Saturday',
+      sunday: 'Sunday',
+      closed: 'Closed',
+      emergency: '⚠️ 24/7 emergency service available - Call +57 312 345 6789'
+    },
+    
+    contact: {
+      title: 'Contact',
+      subtitle: 'Have questions? We\'re here to help',
+      phone: 'Phone',
+      whatsapp: 'WhatsApp',
+      email: 'Email',
+      address: 'Address',
+      sendMessage: 'Send message'
+    },
+    
+    cta: {
+      title: 'Need an appointment?',
+      description: 'Schedule your veterinary consultation today. Our team is ready to care for your pet with the best medical attention.',
+      bookAppointment: 'Book appointment',
+      callUs: 'Call now'
+    }
+  },
+ adoption: {
+    "badge": "Adoption",
+    "title": "Find Your Perfect Companion",
+    "subtitle": "Every pet deserves a loving home",
+    "introduction": "Explore our available pets and find your ideal companion. All of our animals are vaccinated, dewormed and ready to become part of your family.",
+    "filters": {
+      "title": "Filter Your Search",
+      "clearAll": "Clear Filters",
+      "petType": "Pet Type",
+      "allTypes": "All Types",
+      "age": "Age",
+      "allAges": "All Ages",
+      "size": "Size",
+      "allSizes": "All Sizes",
+      "gender": "Gender",
+      "allGenders": "All Genders",
+      "traits": "Characteristics",
+      "selectTraits": "Select characteristics",
+      "showing": "Showing",
+      "results": "results"
+    },
+    "types": {
+      "all": "All",
+      "dog": "Dogs",
+      "cat": "Cats",
+      "other": "Others"
+    },
+    "ages": {
+      "all": "All Ages",
+      "puppy": "Puppy/Kitten (0-1 year)",
+      "young": "Young (1-3 years)",
+      "adult": "Adult (3-7 years)",
+      "senior": "Senior (7+ years)"
+    },
+    "sizes": {
+      "all": "All Sizes",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large"
+    },
+    "genders": {
+      "all": "All",
+      "male": "Male",
+      "female": "Female"
+    },
+    "traits": {
+      "friendly": "Friendly",
+      "energetic": "Energetic",
+      "calm": "Calm",
+      "trained": "Trained",
+      "goodWithKids": "Good with Kids",
+      "goodWithPets": "Good with Other Pets",
+      "vaccinated": "Vaccinated",
+      "sterilized": "Sterilized",
+      "playful": "Playful",
+      "independent": "Independent",
+      "affectionate": "Affectionate",
+      "protective": "Protective",
+      "intelligent": "Intelligent",
+      "loyal": "Loyal"
+    },
+    "status": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "urgent": "Urgent",
+      "adopted": "Adopted"
+    },
+    "badges": {
+      "featured": "Featured",
+      "urgent": "Urgent Adoption",
+      "new": "New",
+      "senior": "Senior",
+      "special": "Special Needs"
+    },
+    "view": {
+      "grid": "Grid View",
+      "list": "List View"
+    },
+    "actions": {
+      "adopt": "Adopt Me",
+      "favorite": "Add to Favorites",
+      "share": "Share",
+      "linkCopied": "Link copied to clipboard!"
+    },
+    "pagination": {
+      "page": "Page",
+      "of": "of"
+    },
+    "cta": {
+      "title": "Have Questions About Adoption?",
+      "description": "Our team is here to help you every step of the way. Contact us or check our frequently asked questions.",
+      "contact": "Contact Us",
+      "faq": "View FAQ",
+      "satisfaction": "Satisfaction"
+    }
+  }
+}

@@ -26,9 +26,9 @@ export const menuItems = [
   {
     label: 'adoption',
     icon: 'pi pi-heart',
-    route: '/pets',
+    route: '/adoption',
     command: () => {
-      navigateTo('/pets');
+      navigateTo('/adoption');
     }
   },
   {

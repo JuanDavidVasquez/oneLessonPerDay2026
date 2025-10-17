@@ -365,4 +365,223 @@ export default {
     step4Title: "Adopta",
     step4Description: "Lleva a casa a tu nuevo mejor amigo",
   },
+  veterinarians: {
+    badge: 'Atención Veterinaria',
+    title: 'Servicios Veterinarios',
+    subtitle: 'Cuidado profesional para tus compañeros peludos',
+    introduction: 'Contamos con un equipo de veterinarios altamente capacitados y tecnología de punta para brindar la mejor atención a tu mascota.',
+
+    services: {
+      title: 'Nuestros Servicios',
+      consultation: {
+        title: 'Consulta General',
+        description: 'Exámenes médicos completos y preventivos para mantener la salud de tu mascota.',
+        feature1: 'Revisión física completa',
+        feature2: 'Historia clínica digital',
+        feature3: 'Plan de salud personalizado',
+        feature4: 'Seguimiento continuo'
+      },
+      vaccines: {
+        title: 'Vacunación',
+        description: 'Programas de vacunación completos según la edad y necesidades de tu mascota.',
+        feature1: 'Vacunas obligatorias',
+        feature2: 'Vacunas opcionales',
+        feature3: 'Carnet de vacunación',
+        feature4: 'Recordatorios automáticos'
+      },
+      surgery: {
+        title: 'Cirugía',
+        description: 'Procedimientos quirúrgicos con equipamiento moderno y técnicas minimamente invasivas.',
+        feature1: 'Cirugías de rutina',
+        feature2: 'Cirugías especializadas',
+        feature3: 'Anestesia segura',
+        feature4: 'Recuperación monitoreada'
+      },
+      diagnostics: {
+        title: 'Diagnóstico',
+        description: 'Laboratorio y equipos de diagnóstico para detección temprana de enfermedades.',
+        feature1: 'Análisis de sangre',
+        feature2: 'Radiografías digitales',
+        feature3: 'Ecografías',
+        feature4: 'Resultados rápidos'
+      },
+      hospitalization: {
+        title: 'Hospitalización',
+        description: 'Instalaciones cómodas y seguras para cuidados intensivos y recuperación.',
+        feature1: 'Monitoreo 24/7',
+        feature2: 'Cuidados intensivos',
+        feature3: 'Tratamientos especializados',
+        feature4: 'Actualizaciones constantes'
+      },
+      grooming: {
+        title: 'Estética',
+        description: 'Servicios de peluquería y cuidado estético para que tu mascota luzca hermosa.',
+        feature1: 'Baño medicado',
+        feature2: 'Corte de pelo',
+        feature3: 'Corte de uñas',
+        feature4: 'Limpieza dental'
+      }
+    },
+
+    team: {
+      title: 'Nuestro Equipo Veterinario',
+      subtitle: 'Profesionales dedicados al bienestar de tu mascota',
+      member1: {
+        role: 'Veterinaria General - Directora',
+        description: '15 años de experiencia en medicina veterinaria con especialización en pequeños animales.',
+        specialty1: 'Medicina Interna',
+        specialty2: 'Cardiología',
+        specialty3: 'Geriatría'
+      },
+      member2: {
+        role: 'Cirujano Veterinario',
+        description: 'Especialista en cirugía de tejidos blandos y procedimientos mínimamente invasivos.',
+        specialty1: 'Cirugía General',
+        specialty2: 'Ortopedia',
+        specialty3: 'Traumatología'
+      },
+      member3: {
+        role: 'Veterinaria Felina',
+        description: 'Dedicada exclusivamente al cuidado y tratamiento de gatos.',
+        specialty1: 'Medicina Felina',
+        specialty2: 'Comportamiento',
+        specialty3: 'Nutrición'
+      },
+      member4: {
+        role: 'Veterinario de Emergencias',
+        description: 'Especialista en atención de urgencias y cuidados críticos las 24 horas.',
+        specialty1: 'Medicina de Urgencias',
+        specialty2: 'Cuidados Intensivos',
+        specialty3: 'Toxicología'
+      }
+    },
+
+    schedule: {
+      title: 'Horarios de Atención',
+      subtitle: 'Estamos aquí cuando nos necesites',
+      monday: 'Lunes',
+      tuesday: 'Martes',
+      wednesday: 'Miércoles',
+      thursday: 'Jueves',
+      friday: 'Viernes',
+      saturday: 'Sábado',
+      sunday: 'Domingo',
+      closed: 'Cerrado',
+      emergency: '⚠️ Servicio de emergencias disponible 24/7 - Llama al +57 312 345 6789'
+    },
+
+    contact: {
+      title: 'Contacto',
+      subtitle: '¿Tienes preguntas? Estamos aquí para ayudarte',
+      phone: 'Teléfono',
+      whatsapp: 'WhatsApp',
+      email: 'Correo electrónico',
+      address: 'Dirección',
+      sendMessage: 'Enviar mensaje'
+    },
+
+    cta: {
+      title: '¿Necesitas una cita?',
+      description: 'Agenda tu consulta veterinaria hoy mismo. Nuestro equipo está listo para cuidar de tu mascota con la mejor atención médica.',
+      bookAppointment: 'Agendar cita',
+      callUs: 'Llamar ahora'
+    }
+  },
+
+  adoption: {
+    badge: "Adopción",
+    title: "Encuentra tu Compañero Perfecto",
+    subtitle: "Cada mascota merece un hogar lleno de amor",
+    introduction: "Explora nuestras mascotas disponibles y encuentra a tu compañero ideal. Todos nuestros animales están vacunados, desparasitados y listos para formar parte de tu familia.",
+    filters: {
+      title: "Filtra tu Búsqueda",
+      clearAll: "Limpiar Filtros",
+      petType: "Tipo de Mascota",
+      allTypes: "Todos los Tipos",
+      age: "Edad",
+      allAges: "Todas las Edades",
+      size: "Tamaño",
+      allSizes: "Todos los Tamaños",
+      gender: "Género",
+      allGenders: "Todos los Géneros",
+      traits: "Características",
+      selectTraits: "Selecciona características",
+      showing: "Mostrando",
+      results: "resultados"
+    },
+    types: {
+      all: "Todos",
+      dog: "Perros",
+      cat: "Gatos",
+      other: "Otros"
+    },
+    ages: {
+      all: "Todas las Edades",
+      puppy: "Cachorro/Gatito (0-1 año)",
+      young: "Joven (1-3 años)",
+      adult: "Adulto (3-7 años)",
+      senior: "Senior (7+ años)"
+    },
+    sizes: {
+      all: "Todos los Tamaños",
+      small: "Pequeño",
+      medium: "Mediano",
+      large: "Grande"
+    },
+    genders: {
+      all: "Todos",
+      male: "Macho",
+      female: "Hembra"
+    },
+    traits: {
+      friendly: "Amigable",
+      energetic: "Energético",
+      calm: "Tranquilo",
+      trained: "Entrenado",
+      goodWithKids: "Bueno con Niños",
+      goodWithPets: "Bueno con Otras Mascotas",
+      vaccinated: "Vacunado",
+      sterilized: "Esterilizado",
+      playful: "Juguetón",
+      independent: "Independiente",
+      affectionate: "Cariñoso",
+      protective: "Protector",
+      intelligent: "Inteligente",
+      loyal: "Leal"
+    },
+    status: {
+      available: "Disponible",
+      reserved: "Reservado",
+      urgent: "Urgente",
+      adopted: "Adoptado"
+    },
+    badges: {
+      featured: "Destacado",
+      urgent: "Adopción Urgente",
+      new: "Nuevo",
+      senior: "Senior",
+      special: "Necesidades Especiales"
+    },
+    view: {
+      grid: "Vista Cuadrícula",
+      list: "Vista Lista"
+    },
+    actions: {
+      adopt: "Adóptame",
+      favorite: "Agregar a Favoritos",
+      share: "Compartir",
+      linkCopied: "¡Enlace copiado al portapapeles!"
+    },
+    pagination: {
+      page: "Página",
+      of: "de"
+    },
+    cta: {
+      title: "¿Tienes Preguntas sobre la Adopción?",
+      description: "Nuestro equipo está aquí para ayudarte en cada paso del camino. Contáctanos o revisa nuestras preguntas frecuentes.",
+      contact: "Contáctanos",
+      faq: "Ver Preguntas Frecuentes",
+      satisfaction: "Satisfacción"
+    }
+  }
 };
