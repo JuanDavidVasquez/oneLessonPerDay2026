@@ -190,7 +190,7 @@
           box-shadow: var(--shadow-md);
 
           &::before {
-            width: 300px;
+            width: 100%;
             height: 300px;
           }
         }
@@ -764,7 +764,7 @@
             transform: translateY(-2px) scale(1.02);
 
             &::before {
-              width: 300px;
+              width: 100%;
               height: 300px;
             }
           }
@@ -845,7 +845,7 @@
           }
 
           &:hover::before {
-            width: 300px;
+            width: 100%;
             height: 300px;
           }
 
