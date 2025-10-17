@@ -30,11 +30,15 @@
         <!-- Stats badges -->
         <div class="stats">
           <div class="stat-item">
-            <span class="stat-number">500+</span>
+             <Transition name="fade" appear>
+                       <span  class="stat-number">{{ adopciones }}+</span>
+              </Transition>
             <span class="stat-label">{{ t('common.adoption') }}</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">98%</span>
+              <Transition name="fade" appear>
+                      <span class="stat-number">{{satisfaction}}%</span>
+              </Transition>
             <span class="stat-label">{{ t('common.satisfaction') }}</span>
           </div>
           <div class="stat-item">
@@ -86,18 +90,46 @@
         </div>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
-      <span>{{ t('header.scrollHint') }}</span>
-      <i class="pi pi-arrow-down"></i>
-    </div>
   </header>
+
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
 const { t } = useI18n();
+const adopciones = ref(0);
+const totalAdoptions = 500;
+const duration = 2000;
+const satisfaction = ref(0);
+const totalSatisfaction = 98;
+const satisfactionDuration = 2000;
+
+onMounted(() => {
+  let start = 0;
+  const increment = totalAdoptions / (duration / 50);
+  const counter = setInterval(() => {
+    start += increment;
+    if (start >= totalAdoptions) {
+      adopciones.value = totalAdoptions;
+      clearInterval(counter);
+    } else {
+      adopciones.value = Math.floor(start);
+    }
+  }, 50);
+});
+onMounted(() => {
+  let start = 0;
+  const increment = totalSatisfaction / (satisfactionDuration / 50);
+  const counter = setInterval(() => {
+    start += increment;
+    if (start >= totalSatisfaction) {
+      satisfaction.value = totalSatisfaction;
+      clearInterval(counter);
+    } else {
+      satisfaction.value = Math.floor(start);
+    }
+  }, 50);
+});
 
 
 onMounted(() => {

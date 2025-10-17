@@ -53,7 +53,7 @@ const { t } = useI18n();
 
 const items = ref(menuItems);
 const isScrolled = ref(false);
-const handleMenuClick = (navigate?: () => void) => {
+const handleMenuClick = async (navigate?: () => void) => {
   if (navigate) navigate();
 };
 

@@ -8,6 +8,14 @@ export const menuItems = [
     }
   },
   {
+    label: 'about',
+    icon: 'pi pi-info-circle',
+    route: '/about',
+    command: () => {
+      navigateTo('/about');
+    }
+  },
+  {
     label: 'ethology',
     icon: 'pi pi-book',
     route: '/ethology',
@@ -30,5 +38,5 @@ export const menuItems = [
     command: () => {
       navigateTo('/veterinarians');
     }
-  }
+  },
 ];
