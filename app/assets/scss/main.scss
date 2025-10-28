@@ -1,16 +1,30 @@
 /* ===========================
    🐶 Sistema de Diseño - Etología & Veterinaria
    =========================== */
-@import './utils/fonts';
-@import './utils/variables';
-@import './components/theamButton';
-@import './components/menu';
-@import './components/header';
-@import './utils/general';
-@import './components/about';
-@import './components/ethology';
-@import './components/veterinarians';
-@import './components/adoption';
+
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+@import 'abstracts/placeholders';
+
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+
+
+@import 'layouts/header';
+
+@import 'components/menu';
+@import 'components/_theamButton';
+
+@import 'pages/about';
+@import 'pages/adoption';
+@import 'pages/ethology';
+@import 'pages/veterinarians';
+
+@import 'utils/global-imports';
 
 
 

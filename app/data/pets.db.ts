@@ -4,6 +4,17 @@
    =========================== */
 
 // Tipos e interfaces
+
+/**
+ * Información del albergue donde se encuentra la mascota
+ */
+export interface Shelter {
+  id: number
+  name: string
+  location: string
+  contact?: string
+}
+
 export interface Pet {
   id: number
   name: string
@@ -18,6 +29,8 @@ export interface Pet {
   image: string
   status: PetStatus
   badge: PetBadge | null
+  shelter: Shelter // Albergue donde se encuentra
+  shelterDate: string // Fecha de ingreso al albergue (formato ISO: YYYY-MM-DD)
   location?: string
   weight?: string
   color?: string
@@ -53,7 +66,42 @@ export interface FilterOptions {
   gender: string | null
   traits: string[]
   status?: string | null
+  shelterId?: number | null // Nuevo filtro por albergue
 }
+
+// Albergues disponibles
+export const sheltersDatabase: Shelter[] = [
+  {
+    id: 1,
+    name: 'Happy Paws Shelter',
+    location: 'Bogotá, Colombia',
+    contact: '+57 1 234-5678'
+  },
+  {
+    id: 2,
+    name: 'Loving Hearts Animal Rescue',
+    location: 'Medellín, Colombia',
+    contact: '+57 4 567-8901'
+  },
+  {
+    id: 3,
+    name: 'Second Chance Sanctuary',
+    location: 'Cali, Colombia',
+    contact: '+57 2 345-6789'
+  },
+  {
+    id: 4,
+    name: 'Furry Friends Haven',
+    location: 'Barranquilla, Colombia',
+    contact: '+57 5 678-9012'
+  },
+  {
+    id: 5,
+    name: 'Safe Haven Pet Shelter',
+    location: 'Cartagena, Colombia',
+    contact: '+57 5 890-1234'
+  }
+]
 
 // Base de datos simulada
 export const petsDatabase: Pet[] = [
@@ -71,6 +119,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/2409503/pexels-photo-2409503.jpeg?_gl=1*160r9rj*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE2NTIkajUxJGwwJGgw',
     status: 'available',
     badge: 'featured',
+    shelter: sheltersDatabase[0] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2023-06-15',
     location: 'Bogotá, Colombia',
     weight: '30 kg',
     color: 'Dorado',
@@ -90,6 +140,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/15660586/pexels-photo-15660586.jpeg?_gl=1*1qwhxuc*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE3MDgkajU5JGwwJGgw',
     status: 'available',
     badge: null,
+    shelter: sheltersDatabase[1] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2024-03-20',
     location: 'Medellín, Colombia',
     weight: '4 kg',
     color: 'Blanco y gris'
@@ -108,6 +160,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/333083/pexels-photo-333083.jpeg?_gl=1*1f79tfs*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE3MzYkajMxJGwwJGgw',
     status: 'reserved',
     badge: null,
+    shelter: sheltersDatabase[2] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2022-11-10',
     location: 'Cali, Colombia',
     weight: '35 kg',
     color: 'Negro y café'
@@ -126,6 +180,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/5200916/pexels-photo-5200916.jpeg?_gl=1*7742j*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE3NzgkajYwJGwwJGgw',
     status: 'urgent',
     badge: 'urgent',
+    shelter: sheltersDatabase[3] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2025-09-01',
     location: 'Barranquilla, Colombia',
     weight: '2 kg',
     color: 'Crema con puntos marrones',
@@ -145,6 +201,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/3039079/pexels-photo-3039079.jpeg?_gl=1*1b6kolf*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDIxNjUkajI3JGwwJGgw',
     status: 'available',
     badge: 'featured',
+    shelter: sheltersDatabase[4] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2024-01-15',
     location: 'Cartagena, Colombia',
     weight: '32 kg',
     color: 'Chocolate'
@@ -163,6 +221,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/1000602/pexels-photo-1000602.jpeg?_gl=1*pgnr1y*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE4NzgkajQxJGwwJGgw',
     status: 'available',
     badge: null,
+    shelter: sheltersDatabase[0] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2024-07-10',
     location: 'Bogotá, Colombia',
     weight: '12 kg',
     color: 'Tricolor'
@@ -181,6 +241,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/1671469/pexels-photo-1671469.jpeg?_gl=1*1667yhu*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE5MjgkajU5JGwwJGgw',
     status: 'available',
     badge: 'new',
+    shelter: sheltersDatabase[1] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2025-09-15',
     location: 'Medellín, Colombia',
     weight: '8 kg',
     color: 'Naranja atigrado'
@@ -199,6 +261,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/422220/pexels-photo-422220.jpeg?_gl=1*5pqjhb*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE5NTgkajI5JGwwJGgw',
     status: 'available',
     badge: null,
+    shelter: sheltersDatabase[2] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2024-12-01',
     location: 'Bucaramanga, Colombia',
     weight: '8 kg',
     color: 'Blanco con manchas café'
@@ -217,6 +281,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/1697100/pexels-photo-1697100.jpeg?_gl=1*1bk5iu5*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDE5OTEkajU5JGwwJGgw',
     status: 'available',
     badge: 'senior',
+    shelter: sheltersDatabase[3] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2023-03-10',
     location: 'Pereira, Colombia',
     weight: '5 kg',
     color: 'Gris perla',
@@ -236,6 +302,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/2853129/pexels-photo-2853129.jpeg?_gl=1*1ke9ffc*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDIyMTMkajQ0JGwwJGgw',
     status: 'available',
     badge: 'special',
+    shelter: sheltersDatabase[4] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2024-05-20',
     location: 'Manizales, Colombia',
     weight: '25 kg',
     color: 'Blanco y gris',
@@ -255,6 +323,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/1407167/pexels-photo-1407167.jpeg?_gl=1*vhw03m*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDIwNTgkajUyJGwwJGgw',
     status: 'available',
     badge: null,
+    shelter: sheltersDatabase[0] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2023-08-05',
     location: 'Bogotá, Colombia',
     weight: '7 kg',
     color: 'Blanco'
@@ -273,6 +343,8 @@ export const petsDatabase: Pet[] = [
     image: 'https://images.pexels.com/photos/34283814/pexels-photo-34283814.jpeg?_gl=1*1e1qmoi*_ga*MzM4ODYyNDk3LjE3NjA1NDQ2ODM.*_ga_8JE65Q40S6*czE3NjA3NDA1NzEkbzckZzEkdDE3NjA3NDIwODYkajI0JGwwJGgw',
     status: 'available',
     badge: 'new',
+    shelter: sheltersDatabase[1] ?? { id: 0, name: 'Unknown Shelter', location: 'Unknown', contact: '' },
+    shelterDate: '2025-08-10',
     location: 'Cúcuta, Colombia',
     weight: '3 kg',
     color: 'Naranja'
@@ -289,6 +361,20 @@ export const getAllPets = (): Pet[] => {
 }
 
 /**
+ * Obtiene todos los albergues
+ */
+export const getAllShelters = (): Shelter[] => {
+  return sheltersDatabase
+}
+
+/**
+ * Obtiene un albergue por ID
+ */
+export const getShelterById = (id: number): Shelter | undefined => {
+  return sheltersDatabase.find(shelter => shelter.id === id)
+}
+
+/**
  * Obtiene una mascota por ID
  */
 export const getPetById = (id: number): Pet | undefined => {
@@ -296,7 +382,39 @@ export const getPetById = (id: number): Pet | undefined => {
 }
 
 /**
- * Filtra mascotas según criterios
+ * Calcula cuánto tiempo lleva una mascota en el albergue
+ * Retorna un objeto con meses y años
+ */
+export const getTimeInShelter = (shelterDate: string): { months: number, years: number, totalDays: number } => {
+  const now = new Date()
+  const entryDate = new Date(shelterDate)
+  const diffTime = Math.abs(now.getTime() - entryDate.getTime())
+  const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
+  const years = Math.floor(totalDays / 365)
+  const months = Math.floor((totalDays % 365) / 30)
+  
+  return { months, years, totalDays }
+}
+
+/**
+ * Formatea el tiempo en el albergue de manera legible
+ */
+export const formatTimeInShelter = (shelterDate: string): string => {
+  const { months, years } = getTimeInShelter(shelterDate)
+  
+  if (years > 0 && months > 0) {
+    return `${years} ${years === 1 ? 'año' : 'años'} y ${months} ${months === 1 ? 'mes' : 'meses'}`
+  } else if (years > 0) {
+    return `${years} ${years === 1 ? 'año' : 'años'}`
+  } else if (months > 0) {
+    return `${months} ${months === 1 ? 'mes' : 'meses'}`
+  } else {
+    return 'Menos de 1 mes'
+  }
+}
+
+/**
+ * Filtra mascotas según criterios (incluye filtro por albergue)
  */
 export const filterPets = (filters: FilterOptions): Pet[] => {
   return petsDatabase.filter(pet => {
@@ -315,6 +433,9 @@ export const filterPets = (filters: FilterOptions): Pet[] => {
     // Filtro por estado
     if (filters.status && pet.status !== filters.status) return false
     
+    // Filtro por albergue (NUEVO)
+    if (filters.shelterId && pet.shelter.id !== filters.shelterId) return false
+    
     // Filtro por características
     if (filters.traits.length > 0) {
       const hasAllTraits = filters.traits.every(trait => 
@@ -325,6 +446,34 @@ export const filterPets = (filters: FilterOptions): Pet[] => {
     
     return true
   })
+}
+
+/**
+ * Obtiene mascotas por albergue
+ */
+export const getPetsByShelter = (shelterId: number): Pet[] => {
+  return petsDatabase.filter(pet => pet.shelter.id === shelterId)
+}
+
+/**
+ * Ordena mascotas por tiempo en el albergue
+ * @param pets - Array de mascotas a ordenar
+ * @param order - 'asc' (menos tiempo primero) o 'desc' (más tiempo primero)
+ */
+export const sortPetsByTimeInShelter = (pets: Pet[], order: 'asc' | 'desc' = 'desc'): Pet[] => {
+  return [...pets].sort((a, b) => {
+    const timeA = getTimeInShelter(a.shelterDate).totalDays
+    const timeB = getTimeInShelter(b.shelterDate).totalDays
+    
+    return order === 'desc' ? timeB - timeA : timeA - timeB
+  })
+}
+
+/**
+ * Obtiene mascotas ordenadas por tiempo en el albergue (los que más tiempo llevan primero)
+ */
+export const getPetsByLongestInShelter = (): Pet[] => {
+  return sortPetsByTimeInShelter(petsDatabase, 'desc')
 }
 
 /**
@@ -362,7 +511,8 @@ export const searchPets = (query: string): Pet[] => {
   const lowerQuery = query.toLowerCase()
   return petsDatabase.filter(pet => 
     pet.name.toLowerCase().includes(lowerQuery) ||
-    pet.breed.toLowerCase().includes(lowerQuery)
+    pet.breed.toLowerCase().includes(lowerQuery) ||
+    pet.shelter.name.toLowerCase().includes(lowerQuery)
   )
 }
 
@@ -377,7 +527,12 @@ export const getPetStatistics = () => {
     urgent: petsDatabase.filter(p => p.status === 'urgent').length,
     dogs: petsDatabase.filter(p => p.type === 'dog').length,
     cats: petsDatabase.filter(p => p.type === 'cat').length,
-    others: petsDatabase.filter(p => p.type === 'other').length
+    others: petsDatabase.filter(p => p.type === 'other').length,
+    byShelter: sheltersDatabase.map(shelter => ({
+      shelterId: shelter.id,
+      shelterName: shelter.name,
+      count: petsDatabase.filter(p => p.shelter.id === shelter.id).length
+    }))
   }
 }
 

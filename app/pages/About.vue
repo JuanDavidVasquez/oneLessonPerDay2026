@@ -106,21 +106,6 @@
               </div>
             </div>
           </div>
-
-          <!-- CTA -->
-          <div class="about-cta">
-            <p class="cta-text">{{ t('about.ctaText') }}</p>
-            <div class="cta-buttons">
-              <NuxtLink to="/voluntarios" class="btn-primary">
-                <i class="pi pi-hand-heart"></i>
-                <span>{{ t('about.becomeVolunteer') }}</span>
-              </NuxtLink>
-              <NuxtLink to="/donar" class="btn-secondary">
-                <i class="pi pi-gift"></i>
-                <span>{{ t('about.donate') }}</span>
-              </NuxtLink>
-            </div>
-          </div>
         </div>
       </div>
 

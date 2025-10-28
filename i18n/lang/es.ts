@@ -507,7 +507,27 @@ export default {
       traits: "Características",
       selectTraits: "Selecciona características",
       showing: "Mostrando",
-      results: "resultados"
+      results: "resultados",
+      shelter: "Albergue",
+      sortBy: "Ordenar por",
+      longest: "Más tiempo en el albergue",
+      newest: "Más nuevo",
+      oldest: "Más antiguo",
+      shortest: "Menos tiempo en el albergue",
+      all: "Todos",
+      dogs: "Perros",
+      cats: "Gatos",
+      others: "Otros",
+      allShelters: "Todos los Albergues",
+      puppy: "Cachorro/Gatito (0-1 año)",
+      young: "Joven (1-3 años)",
+      adult: "Adulto (3-7 años)",
+      senior: "Senior (7+ años)",
+      small: "Pequeño",
+      medium: "Mediano",
+      large: "Grande",
+      male: "Macho",
+      female: "Hembra"
     },
     types: {
       all: "Todos",
@@ -570,7 +590,10 @@ export default {
       adopt: "Adóptame",
       favorite: "Agregar a Favoritos",
       share: "Compartir",
-      linkCopied: "¡Enlace copiado al portapapeles!"
+      linkCopied: "¡Enlace copiado al portapapeles!",
+      moreInfo: "Más Información",
+      reserved: "Adóptame",
+      urgent: "Adóptame Urgente"
     },
     pagination: {
       page: "Página",
@@ -582,6 +605,31 @@ export default {
       contact: "Contáctanos",
       faq: "Ver Preguntas Frecuentes",
       satisfaction: "Satisfacción"
-    }
+    },
+    // Agregar estas traducciones a la sección adoption en es.ts:
+
+hero: {
+  title: "Encuentra a Tu Nuevo Mejor Amigo",
+  subtitle: "Adopta con Amor",
+  description: "Miles de mascotas están esperando un hogar. Dale una segunda oportunidad a un amigo peludo."
+},
+stats: {
+  available: "Disponibles",
+  urgent: "Urgentes",
+  shelters: "Albergues"
+},
+results: {
+  found: "mascotas encontradas"
+},
+noResults: {
+  title: "No se encontraron mascotas",
+  description: "Intenta ajustar tus filtros para encontrar más resultados",
+  clear: "Limpiar todos los filtros"
+},
+urgentCta: {
+  title: "¡Mascotas que Necesitan Hogar Urgente!",
+  description: "Hay {count} mascotas que necesitan adopción urgente. ¿Puedes ayudar?",
+  action: "Ver mascotas urgentes"
+}
   }
 };

@@ -1,7 +1,5 @@
 import {en,es} from "./lang";
 
-
-
 export default {
   legacy: false,
   locale: 'es',

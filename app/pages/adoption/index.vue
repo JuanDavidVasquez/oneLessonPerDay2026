@@ -1,6 +1,6 @@
 <template>
   <section class="adoption-section">
-    <!-- Elementos decorativos de fondo -->
+    <!-- Decoración de fondo -->
     <div class="background-decoration">
       <div class="deco-shape shape-1"></div>
       <div class="deco-shape shape-2"></div>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="adoption-container">
-      <!-- Header de la sección -->
+      <!-- Header de sección -->
       <div class="section-header" ref="sectionHeader">
         <div class="header-badge">
           <i class="pi pi-heart"></i>
@@ -24,15 +24,51 @@
         </p>
       </div>
 
-      <!-- Filtros de búsqueda -->
-      <div class="search-filters" ref="filtersSection">
+      <!-- Estadísticas rápidas -->
+      <div class="stats-banner" ref="statsRef">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="pi pi-heart"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ stats.available }}</span>
+            <span class="stat-label">{{ t('adoption.stats.available') }}</span>
+          </div>
+        </div>
+        <div class="stat-item urgent">
+          <div class="stat-icon">
+            <i class="pi pi-exclamation-triangle"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ stats.urgent }}</span>
+            <span class="stat-label">{{ t('adoption.stats.urgent') }}</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="pi pi-building"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ shelters.length }}</span>
+            <span class="stat-label">{{ t('adoption.stats.shelters') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="search-filters" ref="filtersRef">
         <div class="filters-header">
           <h3>
             <i class="pi pi-filter"></i>
             {{ t('adoption.filters.title') }}
           </h3>
-          <button class="clear-filters" @click="clearFilters">
-            {{ t('adoption.filters.clearAll') }}
+          <button 
+            class="clear-filters" 
+            @click="clearFilters"
+            v-if="hasActiveFilters"
+          >
+            <i class="pi pi-times"></i>
+            {{ t('adoption.filters.clear') }}
           </button>
         </div>
 
@@ -40,81 +76,112 @@
           <!-- Tipo de mascota -->
           <div class="filter-group">
             <label>{{ t('adoption.filters.petType') }}</label>
-            <Dropdown 
-              v-model="filters.petType" 
-              :options="petTypes" 
-              :placeholder="t('adoption.filters.allTypes')"
-              optionLabel="label"
-              optionValue="value"
-            />
+            <select v-model="filters.petType" class="filter-select">
+              <option :value="null">{{ t('adoption.filters.all') }}</option>
+              <option value="dog">{{ t('adoption.filters.dogs') }}</option>
+              <option value="cat">{{ t('adoption.filters.cats') }}</option>
+              <option value="other">{{ t('adoption.filters.others') }}</option>
+            </select>
+          </div>
+
+          <!-- Albergue (NUEVO) -->
+          <div class="filter-group">
+            <label>
+              <i class="pi pi-building"></i>
+              {{ t('adoption.filters.shelter') }}
+            </label>
+            <select v-model="filters.shelterId" class="filter-select">
+              <option :value="null">{{ t('adoption.filters.allShelters') }}</option>
+              <option 
+                v-for="shelter in shelters" 
+                :key="shelter.id" 
+                :value="shelter.id"
+              >
+                {{ shelter.name }}
+              </option>
+            </select>
           </div>
 
           <!-- Edad -->
           <div class="filter-group">
             <label>{{ t('adoption.filters.age') }}</label>
-            <Dropdown 
-              v-model="filters.age" 
-              :options="ageRanges" 
-              :placeholder="t('adoption.filters.allAges')"
-              optionLabel="label"
-              optionValue="value"
-            />
+            <select v-model="filters.age" class="filter-select">
+              <option :value="null">{{ t('adoption.filters.allAges') }}</option>
+              <option value="puppy">{{ t('adoption.filters.puppy') }}</option>
+              <option value="young">{{ t('adoption.filters.young') }}</option>
+              <option value="adult">{{ t('adoption.filters.adult') }}</option>
+              <option value="senior">{{ t('adoption.filters.senior') }}</option>
+            </select>
           </div>
 
           <!-- Tamaño -->
           <div class="filter-group">
             <label>{{ t('adoption.filters.size') }}</label>
-            <Dropdown 
-              v-model="filters.size" 
-              :options="sizes" 
-              :placeholder="t('adoption.filters.allSizes')"
-              optionLabel="label"
-              optionValue="value"
-            />
+            <select v-model="filters.size" class="filter-select">
+              <option :value="null">{{ t('adoption.filters.allSizes') }}</option>
+              <option value="small">{{ t('adoption.filters.small') }}</option>
+              <option value="medium">{{ t('adoption.filters.medium') }}</option>
+              <option value="large">{{ t('adoption.filters.large') }}</option>
+            </select>
           </div>
 
           <!-- Género -->
           <div class="filter-group">
             <label>{{ t('adoption.filters.gender') }}</label>
-            <Dropdown 
-              v-model="filters.gender" 
-              :options="genders" 
-              :placeholder="t('adoption.filters.allGenders')"
-              optionLabel="label"
-              optionValue="value"
-            />
+            <select v-model="filters.gender" class="filter-select">
+              <option :value="null">{{ t('adoption.filters.allGenders') }}</option>
+              <option value="male">{{ t('adoption.filters.male') }}</option>
+              <option value="female">{{ t('adoption.filters.female') }}</option>
+            </select>
           </div>
 
-          <!-- Características especiales -->
+          <!-- Ordenar por (NUEVO) -->
           <div class="filter-group">
-            <label>{{ t('adoption.filters.traits') }}</label>
-            <MultiSelect 
-              v-model="filters.traits" 
-              :options="traits" 
-              :placeholder="t('adoption.filters.selectTraits')"
-              optionLabel="label"
-              optionValue="value"
-              display="chip"
-            />
+            <label>
+              <i class="pi pi-sort-alt"></i>
+              {{ t('adoption.filters.sortBy') }}
+            </label>
+            <select v-model="sortOrder" class="filter-select">
+              <option value="newest">{{ t('adoption.filters.newest') }}</option>
+              <option value="longest">{{ t('adoption.filters.longest') }}</option>
+              <option value="shortest">{{ t('adoption.filters.shortest') }}</option>
+            </select>
           </div>
         </div>
 
+        <!-- Características -->
+        <div class="traits-filter">
+          <label>{{ t('adoption.filters.traits') }}</label>
+          <div class="traits-chips">
+            <button
+              v-for="trait in availableTraits"
+              :key="trait.value"
+              :class="['trait-chip', { active: filters.traits.includes(trait.value) }]"
+              @click="toggleTrait(trait.value)"
+            >
+              <i :class="`pi ${trait.icon}`"></i>
+              <span>{{ trait.label }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats de búsqueda -->
         <div class="search-stats">
           <div class="results-count">
-            {{ t('adoption.filters.showing') }} <strong>{{ filteredPets.length }}</strong> {{ t('adoption.filters.results') }}
+            {{ t('adoption.filters.showing') }} 
+            <strong>{{ filteredPets.length }}</strong> 
+            {{ t('adoption.results.found') }}
           </div>
           <div class="view-toggle">
             <button 
-              :class="{ active: viewMode === 'grid' }" 
+              :class="{ active: viewMode === 'grid' }"
               @click="viewMode = 'grid'"
-              :title="t('adoption.view.grid')"
             >
               <i class="pi pi-th-large"></i>
             </button>
             <button 
-              :class="{ active: viewMode === 'list' }" 
+              :class="{ active: viewMode === 'list' }"
               @click="viewMode = 'list'"
-              :title="t('adoption.view.list')"
             >
               <i class="pi pi-list"></i>
             </button>
@@ -124,152 +191,171 @@
 
       <!-- Grid de mascotas -->
       <div 
-        class="pets-grid" 
-        :class="{ 'list-view': viewMode === 'list', 'animate-in': true }" 
-        ref="petsGrid"
+        :class="['pets-grid', { 'list-view': viewMode === 'list', 'animate-in': true }]" 
+        ref="petsGridRef"
       >
-        <div 
-          v-for="pet in paginatedPets" 
-          :key="pet.id" 
-          class="pet-card"
-          :class="{ 'list-view': viewMode === 'list' }"
+        <div
+          v-for="pet in paginatedPets"
+          :key="pet.id"
+          :class="['pet-card', { 'list-view': viewMode === 'list' }]"
         >
+          <!-- Imagen -->
           <div class="pet-image">
             <img :src="pet.image" :alt="pet.name">
             
             <!-- Status badge -->
-            <div class="pet-status" :class="pet.status">
-              <i :class="`pi pi-${getStatusIcon(pet.status)}`"></i>
-              <span>{{ t(`adoption.status.${pet.status}`) }}</span>
-            </div>
-
-            <!-- Special badge -->
-            <div v-if="pet.badge" class="pet-badge">
-              {{ t(`adoption.badges.${pet.badge}`) }}
+            <div v-if="pet.badge" :class="['pet-status', pet.badge]">
+              <i :class="getBadgeIcon(pet.badge)"></i>
+              <span>{{ t(`adoption.badges.${pet.badge}`) }}</span>
             </div>
 
             <!-- Quick actions -->
             <div class="quick-actions">
-              <button 
-                class="favorite" 
-                :class="{ active: isFavorite(pet.id) }"
-                @click="toggleFavorite(pet.id)"
-                :title="t('adoption.actions.favorite')"
-              >
-                <i class="pi pi-heart-fill"></i>
+              <button class="action-btn favorite" title="Agregar a favoritos">
+                <i class="pi pi-heart"></i>
               </button>
-              <button 
-                @click="sharePet(pet)"
-                :title="t('adoption.actions.share')"
-              >
+              <button class="action-btn share" title="Compartir">
                 <i class="pi pi-share-alt"></i>
               </button>
             </div>
           </div>
 
+          <!-- Información -->
           <div class="pet-info">
-            <div class="pet-main-info">
-              <div class="pet-header">
-                <div class="pet-name-age">
-                  <h3>{{ pet.name }}</h3>
-                  <div class="pet-age">
-                    <i class="pi pi-calendar"></i>
-                    <span>{{ pet.age }}</span>
-                  </div>
-                </div>
-                <div class="pet-gender" :class="pet.gender">
+            <div class="pet-header">
+              <div class="pet-name-gender">
+                <h4 class="pet-name">{{ pet.name }}</h4>
+                <span :class="['pet-gender', pet.gender]">
                   <i :class="`pi pi-${pet.gender === 'male' ? 'mars' : 'venus'}`"></i>
-                </div>
+                </span>
               </div>
+              <span class="pet-breed">{{ pet.breed }}</span>
+            </div>
 
-              <div class="pet-breed">
-                <i class="pi pi-tag"></i>
-                <span>{{ pet.breed }}</span>
+            <div class="pet-details">
+              <span class="detail-item">
+                <i class="pi pi-calendar"></i>
+                {{ pet.age }}
+              </span>
+              <span class="detail-item">
+                <i class="pi pi-box"></i>
+                {{ t(`adoption.sizes.${pet.size}`) }}
+              </span>
+              <span class="detail-item">
+                <i class="pi pi-map-marker"></i>
+                {{ pet.location }}
+              </span>
+            </div>
+
+            <!-- Shelter info (NUEVO) -->
+            <div class="pet-shelter-info">
+              <div class="shelter-name">
+                <i class="pi pi-building"></i>
+                <span>{{ pet.shelter.name }}</span>
               </div>
-
-              <p class="pet-description">{{ pet.description }}</p>
-
-              <div class="pet-traits">
-                <div v-for="trait in pet.traits" :key="trait" class="trait">
-                  <i class="pi pi-check"></i>
-                  <span>{{ t(`adoption.traits.${trait}`) }}</span>
-                </div>
+              <div class="shelter-time">
+                <i class="pi pi-clock"></i>
+                <span>{{ formatTimeInShelter(pet.shelterDate) }}</span>
               </div>
             </div>
 
+            <div class="pet-traits">
+              <span 
+                v-for="trait in pet.traits.slice(0, 4)" 
+                :key="trait"
+                class="trait-badge"
+              >
+                {{ t(`adoption.traits.${trait}`) }}
+              </span>
+            </div>
+
+            <p class="pet-description">{{ pet.description }}</p>
+
+            <!-- Acciones -->
             <div class="pet-actions">
-              <button class="btn-adopt" @click="openAdoptionForm(pet)">
-                <i class="pi pi-heart"></i>
-                <span>{{ t('adoption.actions.adopt') }}</span>
-              </button>
-              <button class="btn-details" @click="viewPetDetails(pet)">
-                <i class="pi pi-eye"></i>
-              </button>
+              <NuxtLink 
+                :to="`/adoption/${pet.id}`" 
+                :class="['btn-details', pet.status]"
+              >
+                <i class="pi pi-arrow-right"></i>
+                <span>
+                  {{ pet.status === 'urgent' 
+                    ? t('adoption.actions.urgent') 
+                    : pet.status === 'reserved' 
+                      ? t('adoption.actions.reserved')
+                      : t('adoption.actions.adopt') 
+                  }}
+                </span>
+              </NuxtLink>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Sin resultados -->
+      <div v-if="filteredPets.length === 0" class="no-results">
+        <div class="no-results-icon">
+          <i class="pi pi-search"></i>
+        </div>
+        <h3>{{ t('adoption.noResults.title') }}</h3>
+        <p>{{ t('adoption.noResults.description') }}</p>
+        <button class="btn-primary" @click="clearFilters">
+          <i class="pi pi-refresh"></i>
+          {{ t('adoption.noResults.clear') }}
+        </button>
       </div>
 
       <!-- Paginación -->
-      <div class="pagination" v-if="totalPages > 1">
-        <button @click="goToPage(1)" :disabled="currentPage === 1">
-          <i class="pi pi-angle-double-left"></i>
-        </button>
-        <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1">
-          <i class="pi pi-angle-left"></i>
+      <div v-if="totalPages > 1" class="pagination" ref="paginationRef">
+        <button 
+          class="pagination-btn prev"
+          :disabled="currentPage === 1"
+          @click="currentPage--"
+        >
+          <i class="pi pi-chevron-left"></i>
         </button>
         
+        <div class="pagination-numbers">
+          <button
+            v-for="page in visiblePages"
+            :key="page"
+            :class="['page-btn', { active: currentPage === page }]"
+            @click="currentPage = page"
+          >
+            {{ page }}
+          </button>
+        </div>
+
         <button 
-          v-for="page in visiblePages" 
-          :key="page"
-          :class="{ active: page === currentPage }"
-          @click="goToPage(page)"
+          class="pagination-btn next"
+          :disabled="currentPage === totalPages"
+          @click="currentPage++"
         >
-          {{ page }}
+          <i class="pi pi-chevron-right"></i>
         </button>
 
-        <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages">
-          <i class="pi pi-angle-right"></i>
-        </button>
-        <button @click="goToPage(totalPages)" :disabled="currentPage === totalPages">
-          <i class="pi pi-angle-double-right"></i>
-        </button>
-
-        <span class="page-info">
+        <div class="page-info">
           {{ t('adoption.pagination.page') }} {{ currentPage }} {{ t('adoption.pagination.of') }} {{ totalPages }}
-        </span>
+        </div>
       </div>
 
-      <!-- Call to Action -->
-      <div class="adoption-cta" ref="ctaSection">
+      <!-- CTA de urgencia -->
+      <div v-if="stats.urgent > 0" class="adoption-cta" ref="urgentCtaRef">
         <div class="cta-content">
           <div class="cta-icon">
-            <i class="pi pi-question-circle"></i>
+            <i class="pi pi-exclamation-circle"></i>
           </div>
-          <h2>{{ t('adoption.cta.title') }}</h2>
-          <p>{{ t('adoption.cta.description') }}</p>
+          <h2>{{ t('adoption.urgentCta.title') }}</h2>
+          <p>{{ t('adoption.urgentCta.description', { count: stats.urgent }) }}</p>
           <div class="cta-buttons">
-            <NuxtLink to="/contacto" class="btn-primary">
-              <i class="pi pi-phone"></i>
-              <span>{{ t('adoption.cta.contact') }}</span>
-            </NuxtLink>
-            <NuxtLink to="/faq" class="btn-secondary">
-              <i class="pi pi-info-circle"></i>
-              <span>{{ t('adoption.cta.faq') }}</span>
-            </NuxtLink>
+            <button class="btn-primary" @click="showUrgentOnly">
+              <i class="pi pi-heart"></i>
+              {{ t('adoption.urgentCta.action') }}
+            </button>
           </div>
         </div>
         <div class="cta-image">
-          <img src="/adoption-cta.jpg" alt="Adopción feliz">
-          <div class="image-badge">
-            <div class="badge-icon">
-              <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="badge-text">
-              <span class="badge-number">100%</span>
-              <span class="badge-label">{{ t('adoption.cta.satisfaction') }}</span>
-            </div>
-          </div>
+          <img src="/cat-behavior.jpg" alt="Adopción urgente">
         </div>
       </div>
     </div>
@@ -278,88 +364,94 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import Dropdown from 'primevue/dropdown'
-import MultiSelect from 'primevue/multiselect'
-import { 
-  getAllPets, 
+import {   getAllPets, 
+  getAllShelters,
   filterPets, 
-  type Pet, 
-  type FilterOptions 
-} from '~/data/pets.db'
+  getPetStatistics,
+  sortPetsByTimeInShelter,
+  formatTimeInShelter,
+  getTimeInShelter,
+  type FilterOptions,
+  type Pet,
+  type Shelter } from '~/data/pets.db'
+
 
 const { t } = useI18n()
 
 // Refs para animaciones
 const sectionHeader = ref(null)
-const filtersSection = ref(null)
-const petsGrid = ref(null)
-const ctaSection = ref(null)
+const statsRef = ref(null)
+const filtersRef = ref(null)
+const petsGridRef = ref(null)
+const paginationRef = ref(null)
+const urgentCtaRef = ref(null)
 
-// Estado de filtros
+// Estados
+const viewMode = ref<'grid' | 'list'>('grid')
+const currentPage = ref(1)
+const itemsPerPage = 12
+const sortOrder = ref<'newest' | 'longest' | 'shortest'>('longest')
+
+// Datos
+const pets = ref<Pet[]>(getAllPets())
+const shelters = ref<Shelter[]>(getAllShelters())
+const stats = computed(() => getPetStatistics())
+
+// Filtros
 const filters = ref<FilterOptions>({
   petType: null,
   age: null,
   size: null,
   gender: null,
-  traits: []
+  traits: [],
+  status: null,
+  shelterId: null
 })
 
-// Vista y paginación
-const viewMode = ref('grid')
-const currentPage = ref(1)
-const itemsPerPage = 12
-const favorites = ref<number[]>([])
-
-// Cargar todas las mascotas desde la base de datos
-const allPets = ref<Pet[]>(getAllPets())
-
-// Opciones de filtros
-const petTypes = computed(() => [
-  { label: t('adoption.types.all'), value: null },
-  { label: t('adoption.types.dog'), value: 'dog' },
-  { label: t('adoption.types.cat'), value: 'cat' },
-  { label: t('adoption.types.other'), value: 'other' }
+// Características disponibles
+const availableTraits = computed(() => [
+  { value: 'friendly', label: t('adoption.traits.friendly'), icon: 'pi-heart' },
+  { value: 'energetic', label: t('adoption.traits.energetic'), icon: 'pi-bolt' },
+  { value: 'calm', label: t('adoption.traits.calm'), icon: 'pi-check-circle' },
+  { value: 'trained', label: t('adoption.traits.trained'), icon: 'pi-verified' },
+  { value: 'goodWithKids', label: t('adoption.traits.goodWithKids'), icon: 'pi-users' },
+  { value: 'goodWithPets', label: t('adoption.traits.goodWithPets'), icon: 'pi-star' },
+  { value: 'vaccinated', label: t('adoption.traits.vaccinated'), icon: 'pi-shield' },
+  { value: 'sterilized', label: t('adoption.traits.sterilized'), icon: 'pi-check' }
 ])
 
-const ageRanges = computed(() => [
-  { label: t('adoption.ages.all'), value: null },
-  { label: t('adoption.ages.puppy'), value: 'puppy' },
-  { label: t('adoption.ages.young'), value: 'young' },
-  { label: t('adoption.ages.adult'), value: 'adult' },
-  { label: t('adoption.ages.senior'), value: 'senior' }
-])
+// Computed
+const hasActiveFilters = computed(() => {
+  return filters.value.petType !== null ||
+         filters.value.age !== null ||
+         filters.value.size !== null ||
+         filters.value.gender !== null ||
+         filters.value.status !== null ||
+         filters.value.shelterId !== null ||
+         filters.value.traits.length > 0
+})
 
-const sizes = computed(() => [
-  { label: t('adoption.sizes.all'), value: null },
-  { label: t('adoption.sizes.small'), value: 'small' },
-  { label: t('adoption.sizes.medium'), value: 'medium' },
-  { label: t('adoption.sizes.large'), value: 'large' }
-])
-
-const genders = computed(() => [
-  { label: t('adoption.genders.all'), value: null },
-  { label: t('adoption.genders.male'), value: 'male' },
-  { label: t('adoption.genders.female'), value: 'female' }
-])
-
-const traits = computed(() => [
-  { label: t('adoption.traits.friendly'), value: 'friendly' },
-  { label: t('adoption.traits.energetic'), value: 'energetic' },
-  { label: t('adoption.traits.calm'), value: 'calm' },
-  { label: t('adoption.traits.trained'), value: 'trained' },
-  { label: t('adoption.traits.goodWithKids'), value: 'goodWithKids' },
-  { label: t('adoption.traits.goodWithPets'), value: 'goodWithPets' },
-  { label: t('adoption.traits.vaccinated'), value: 'vaccinated' },
-  { label: t('adoption.traits.sterilized'), value: 'sterilized' }
-])
-
-// Computed properties
 const filteredPets = computed(() => {
-  return filterPets(filters.value)
+  let result = filterPets(filters.value)
+  
+  // Aplicar ordenamiento por tiempo en albergue
+  if (sortOrder.value === 'longest') {
+    result = sortPetsByTimeInShelter(result, 'desc')
+  } else if (sortOrder.value === 'shortest') {
+    result = sortPetsByTimeInShelter(result, 'asc')
+  } else {
+    // newest - ordenar por shelterDate descendente (más recientes primero)
+    result = [...result].sort((a, b) => 
+      new Date(b.shelterDate).getTime() - new Date(a.shelterDate).getTime()
+    )
+  }
+  
+  return result
 })
 
-const totalPages = computed(() => Math.ceil(filteredPets.value.length / itemsPerPage))
+const totalPages = computed(() => 
+  Math.ceil(filteredPets.value.length / itemsPerPage)
+)
 
 const paginatedPets = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage
@@ -385,72 +477,53 @@ const visiblePages = computed(() => {
 })
 
 // Métodos
+const toggleTrait = (trait: string) => {
+  const index = filters.value.traits.indexOf(trait)
+  if (index > -1) {
+    filters.value.traits.splice(index, 1)
+  } else {
+    filters.value.traits.push(trait)
+  }
+  currentPage.value = 1
+}
+
 const clearFilters = () => {
   filters.value = {
     petType: null,
     age: null,
     size: null,
     gender: null,
-    traits: []
+    traits: [],
+    status: null,
+    shelterId: null
   }
+  sortOrder.value = 'longest'
   currentPage.value = 1
 }
 
-const goToPage = (page: number) => {
-  currentPage.value = page
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+const showUrgentOnly = () => {
+  clearFilters()
+  filters.value.status = 'urgent'
+  currentPage.value = 1
 }
 
-const getStatusIcon = (status: 'available' | 'reserved' | 'urgent' | 'adopted') => {
-  const icons = {
-    available: 'check-circle',
-    reserved: 'clock',
-    urgent: 'exclamation-triangle',
-    adopted: 'heart'
+const getBadgeIcon = (badge: string) => {
+  const icons: Record<string, string> = {
+    featured: 'pi-star-fill',
+    urgent: 'pi-exclamation-triangle',
+    new: 'pi-sparkles',
+    senior: 'pi-heart',
+    special: 'pi-certificate'
   }
-  return icons[status] || 'circle'
+  return icons[badge] || 'pi-tag'
 }
 
-const isFavorite = (petId: number) => {
-  return favorites.value.includes(petId)
-}
+// Watch para resetear página cuando cambian filtros
+watch([filters, sortOrder], () => {
+  currentPage.value = 1
+}, { deep: true })
 
-const toggleFavorite = (petId: number) => {
-  const index = favorites.value.indexOf(petId)
-  if (index > -1) {
-    favorites.value.splice(index, 1)
-  } else {
-    favorites.value.push(petId)
-  }
-}
-
-const sharePet = (pet: any) => {
-  if (navigator.share) {
-    navigator.share({
-      title: `Adopta a ${pet.name}`,
-      text: pet.description,
-      url: window.location.href
-    })
-  } else {
-    // Fallback: copiar al portapapeles
-    navigator.clipboard.writeText(window.location.href)
-    alert(t('adoption.actions.linkCopied'))
-  }
-}
-
-const openAdoptionForm = (pet: any) => {
-  // Aquí iría la lógica para abrir un formulario de adopción
-  console.log('Abrir formulario de adopción para:', pet.name)
-  // Podrías usar un modal o navegar a otra página
-}
-
-const viewPetDetails = (pet: any) => {
-  // Aquí iría la lógica para ver detalles completos
-  console.log('Ver detalles de:', pet.name)
-  // Podrías navegar a una página de detalles
-}
-
-// Intersection Observer para animaciones
+// Animaciones al montar
 onMounted(() => {
   const observerOptions = {
     threshold: 0.1,
@@ -466,8 +539,225 @@ onMounted(() => {
   }, observerOptions)
 
   if (sectionHeader.value) observer.observe(sectionHeader.value)
-  if (filtersSection.value) observer.observe(filtersSection.value)
-  if (petsGrid.value) observer.observe(petsGrid.value)
-  if (ctaSection.value) observer.observe(ctaSection.value)
+  if (statsRef.value) observer.observe(statsRef.value)
+  if (filtersRef.value) observer.observe(filtersRef.value)
+  if (petsGridRef.value) observer.observe(petsGridRef.value)
+  if (paginationRef.value) observer.observe(paginationRef.value)
+  if (urgentCtaRef.value) observer.observe(urgentCtaRef.value)
 })
 </script>
+
+<style lang="scss">
+
+/* Estilos adicionales para los nuevos elementos */
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-6;
+  margin-bottom: $spacing-12;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stat-item {
+    background: var(--color-surface);
+    padding: $spacing-6;
+    border-radius: $radius-2xl;
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    box-shadow: var(--shadow-sm);
+    transition: all $transition-base;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    &.urgent {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+      border: 1px solid rgba(239, 68, 68, 0.2);
+
+      .stat-icon {
+        background: linear-gradient(135deg, #EF4444, #DC2626);
+      }
+
+      .stat-number {
+        color: #DC2626;
+      }
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: $radius-xl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      i {
+        color: white;
+        font-size: $font-size-xl;
+      }
+    }
+
+    .stat-content {
+      display: flex;
+      flex-direction: column;
+
+      .stat-number {
+        font-size: $font-size-3xl;
+        font-weight: $font-weight-bold;
+        color: var(--color-primary);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: $font-size-sm;
+        color: var(--color-text-secondary);
+        margin-top: $spacing-1;
+      }
+    }
+  }
+}
+
+.traits-filter {
+  margin-top: $spacing-6;
+
+  label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-3;
+  }
+
+  .traits-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+
+    .trait-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-2;
+      padding: $spacing-2 $spacing-4;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: $radius-full;
+      font-size: $font-size-sm;
+      cursor: pointer;
+      transition: all $transition-base;
+
+      i {
+        font-size: $font-size-xs;
+      }
+
+      &:hover {
+        border-color: var(--color-primary);
+        background: var(--color-primary-50);
+      }
+
+      &.active {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+.pet-shelter-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  margin: $spacing-4 0;
+  padding: $spacing-3;
+  background: var(--color-bg-secondary);
+  border-radius: $radius-lg;
+  border-left: 3px solid var(--color-primary);
+
+  .shelter-name,
+  .shelter-time {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-size: $font-size-sm;
+    color: var(--color-text-secondary);
+
+    i {
+      color: var(--color-primary);
+      font-size: $font-size-xs;
+    }
+
+    span {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .shelter-time {
+    i {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: $spacing-16;
+  
+  .no-results-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto $spacing-6;
+    background: var(--color-bg-secondary);
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: $font-size-3xl;
+      color: var(--color-text-tertiary);
+    }
+  }
+
+  h3 {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: var(--color-heading);
+    margin-bottom: $spacing-4;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: var(--color-text-secondary);
+    margin-bottom: $spacing-6;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-shelter-info {
+    font-size: $font-size-xs;
+  }
+}
+</style>

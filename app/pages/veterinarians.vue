@@ -281,7 +281,7 @@ const teamMembers = computed(() => [
     name: 'Dra. María González',
     role: t('veterinarians.team.member1.role'),
     description: t('veterinarians.team.member1.description'),
-    image: '/vet-1.jpg',
+    image: 'https://st4.depositphotos.com/1043073/24997/i/1600/depositphotos_249978000-stock-photo-female-doctor-showing-blank-area.jpg',
     specialties: [
       t('veterinarians.team.member1.specialty1'),
       t('veterinarians.team.member1.specialty2'),

@@ -9,7 +9,7 @@
     </div>
 
     <div class="ethology-container">
-      <!-- Header de la sección -->
+      <!-- Header de la secciÃ³n -->
       <div class="section-header" ref="sectionHeader">
         <div class="header-badge">
           <i class="pi pi-book"></i>
@@ -67,7 +67,7 @@
                   </div>
                 </div>
 
-                <!-- Señales de calma -->
+                <!-- SeÃ±ales de calma -->
                 <div class="calming-signals">
                   <h3>{{ t('ethology.dogs.calmingSignals') }}</h3>
                   <div class="signals-grid">
@@ -132,9 +132,9 @@
                   <p>{{ t('ethology.generalTips.description') }}</p>
                 </div>
 
-                <!-- Categorías de consejos -->
+                <!-- CategorÃ­as de consejos -->
                 <div class="tips-categories">
-                  <!-- Preparación del hogar -->
+                  <!-- PreparaciÃ³n del hogar -->
                   <div class="tip-category">
                     <div class="category-header">
                       <i class="pi pi-home"></i>
@@ -151,7 +151,7 @@
                     </div>
                   </div>
 
-                  <!-- Socialización -->
+                  <!-- SocializaciÃ³n -->
                   <div class="tip-category">
                     <div class="category-header">
                       <i class="pi pi-users"></i>
@@ -214,11 +214,11 @@
         </div>
       </div>
 
-      <!-- Sección de recursos adicionales -->
+      <!-- SecciÃ³n de recursos adicionales -->
       <div class="resources-section" ref="resourcesSection">
         <h2 class="resources-title">{{ t('ethology.resources.title') }}</h2>
         <div class="resources-grid">
-          <!-- Guías descargables -->
+          <!-- GuÃ­as descargables -->
           <div class="resource-card">
             <div class="resource-icon">
               <i class="pi pi-download"></i>
@@ -340,7 +340,7 @@ const dogBehaviors = ref([
   }
 ])
 
-// Señales de calma
+// SeÃ±ales de calma
 const calmingSignals = ref([
   {
     name: t('ethology.dogs.signals.yawn'),
@@ -419,7 +419,7 @@ const catBodyLanguage = ref([
   }
 ])
 
-// Consejos de preparación del hogar
+// Consejos de preparaciÃ³n del hogar
 const homePreparationTips = ref([
   {
     title: t('ethology.tips.home.safe'),
@@ -435,7 +435,7 @@ const homePreparationTips = ref([
   }
 ])
 
-// Consejos de socialización
+// Consejos de socializaciÃ³n
 const socializationTips = ref([
   {
     title: t('ethology.tips.social.gradual'),

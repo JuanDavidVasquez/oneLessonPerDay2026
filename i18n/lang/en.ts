@@ -146,6 +146,7 @@ export default {
 
       barking: {
         title: "Barking",
+        subtitle: "Understanding the reasons behind barking",
         description:
           "Barking is one of the main ways dogs communicate. It can express alertness, excitement, anxiety, or the need for attention.",
         tip1: "Avoid scolding your dog for barking; identify the root cause instead.",
@@ -155,6 +156,7 @@ export default {
 
       marking: {
         title: "Territorial Marking",
+        subtitle: "Why dogs mark their territory",
         description:
           "Marking is a natural behavior used by dogs to communicate boundaries or presence to others.",
         tip1: "If your dog marks indoors, clean with enzymatic products to eliminate scent traces.",
@@ -163,6 +165,7 @@ export default {
 
       anxiety: {
         title: "Separation Anxiety",
+        subtitle: "Understanding separation anxiety in dogs",
         description:
           "Some dogs experience stress when left alone, which may result in howling, destruction, or inappropriate urination.",
         tip1: "Gradually increase the duration of your absences.",
@@ -194,6 +197,7 @@ export default {
 
       scratching: {
         title: "Scratching",
+        subtitle: "Understanding why cats scratch",
         description:
           "Scratching is a natural behavior that helps cats maintain their claws, stretch, and mark their territory.",
         tip1: "Provide both vertical and horizontal scratching posts in several areas.",
@@ -202,6 +206,7 @@ export default {
 
       nocturnal: {
         title: "Nighttime Activity",
+        subtitle: "Understanding nighttime behavior in cats",
         description:
           "Cats are crepuscular, meaning they are most active at dawn and dusk.",
         tip1: "Play with your cat before bedtime to help them burn off energy.",
@@ -211,6 +216,7 @@ export default {
 
       hiding: {
         title: "Hiding",
+        subtitle: "Why cats hide",
         description:
           "This is a natural behavior that helps cats feel safe or take a break when they’re stressed.",
         tip1: "Provide safe spaces where your cat can retreat undisturbed.",

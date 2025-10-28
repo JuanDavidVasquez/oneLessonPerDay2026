@@ -44,6 +44,21 @@ export default defineNuxtConfig({
     baseURL: "/",
     buildAssetsDir: "/assets/",
     pageTransition: { name: "page", mode: "out-in", },
+     head: {
+      titleTemplate: '%s - One Lesson Per Day',
+      title: 'One Lesson Per Day',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'google', content: 'notranslate' },
+        {
+          id: 'description',
+          name: 'description',
+          content: 'One Lesson Per Day - Learn something new every day with our bite-sized lessons designed to fit into your busy schedule.',
+        },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
   css: ["animate.css", "@/assets/scss/main.scss", "primeicons/primeicons.css"],
   experimental: {
@@ -75,7 +90,7 @@ export default defineNuxtConfig({
         scss: {
           additionalData: `
             @use "sass:math";
-            @use "~/assets/scss/utils/_variables" as *;
+            @use "~/assets/scss/abstracts/_variables" as *;
           `,
         },
       },

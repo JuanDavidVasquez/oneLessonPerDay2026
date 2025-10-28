@@ -1,0 +1,401 @@
+/* ===========================
+   🎯 PLACEHOLDERS REUTILIZABLES
+   Sistema de Diseño - Etología & Veterinaria
+   =========================== */
+
+/* ===========================
+   🪟 GLASSMORPHISM PLACEHOLDERS
+   =========================== */
+
+%glass-card {
+  @include glass-medium;
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow-md);
+  transition: all $transition-base $ease-out;
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+%glass-container {
+  @include glass-light;
+  border-radius: $radius-xl;
+  padding: $spacing-8;
+  box-shadow: var(--shadow-lg);
+}
+
+%glass-button {
+  @include glass-medium;
+  border-radius: $radius-full;
+  padding: $spacing-3 $spacing-6;
+  font-weight: $font-weight-medium;
+  transition: all $transition-base $ease-out;
+  
+  &:hover {
+    @include glass-strong;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* ===========================
+   📐 LAYOUT PLACEHOLDERS
+   =========================== */
+
+%container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-6;
+  
+  @media (max-width: 768px) {
+    padding: 0 $spacing-4;
+  }
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-6;
+}
+
+/* ===========================
+   🎨 EFECTOS Y DECORACIÓN
+   =========================== */
+
+%card-hover-effect {
+  transition: all $transition-base $ease-out;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+%smooth-transition {
+  transition: all $transition-base $ease-in-out;
+}
+
+%focus-visible {
+  &:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+  }
+}
+
+/* ===========================
+   📝 TIPOGRAFÍA
+   =========================== */
+
+%heading-primary {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  color: var(--color-heading);
+  line-height: $line-height-tight;
+}
+
+%heading-secondary {
+  font-family: $font-heading;
+  font-weight: $font-weight-semibold;
+  color: var(--color-text-primary);
+  line-height: $line-height-normal;
+}
+
+%body-text {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: var(--color-text-secondary);
+}
+
+%text-display {
+  font-family: $font-display;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+}
+
+%text-muted {
+  font-size: $font-size-sm;
+  color: var(--color-text-muted);
+  font-weight: $font-weight-normal;
+}
+
+/* ===========================
+   🔘 BOTONES Y CONTROLES
+   =========================== */
+
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  padding: $spacing-3 $spacing-6;
+  border: none;
+  border-radius: $radius-md;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-base $ease-out;
+  text-decoration: none;
+  
+  @extend %focus-visible;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+%button-primary {
+  @extend %button-base;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+    box-shadow: var(--shadow-primary);
+    transform: translateY(-2px);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+%button-secondary {
+  @extend %button-base;
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-secondary-dark);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+%button-outline {
+  @extend %button-base;
+  background: transparent;
+  border: $border-width-md solid var(--color-primary);
+  color: var(--color-primary);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+}
+
+%button-ghost {
+  @extend %button-base;
+  background: transparent;
+  color: var(--color-text-primary);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-bg-secondary);
+  }
+}
+
+/* ===========================
+   📦 TARJETAS
+   =========================== */
+
+%card-base {
+  background: var(--color-surface);
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow-sm);
+  padding: $spacing-6;
+  transition: all $transition-base $ease-out;
+}
+
+%card-interactive {
+  @extend %card-base;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+%card-bordered {
+  @extend %card-base;
+  border: $border-width solid var(--color-border);
+  box-shadow: none;
+  
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}
+
+/* ===========================
+   🖼️ IMÁGENES Y MEDIA
+   =========================== */
+
+%image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+%image-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+%image-rounded {
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+%avatar-circle {
+  border-radius: $radius-full;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* ===========================
+   🎭 ANIMACIONES
+   =========================== */
+
+%fade-in {
+  animation: fadeIn $transition-base $ease-out;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+%slide-up {
+  animation: slideUp $transition-slow $ease-out;
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+%pulse {
+  animation: pulse $transition-slower $ease-in-out infinite;
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ===========================
+   ⚠️ ESTADOS
+   =========================== */
+
+%state-success {
+  background: color-mix(in srgb, var(--color-success) 10%, transparent);
+  border: $border-width solid var(--color-success);
+  color: var(--color-success);
+}
+
+%state-warning {
+  background: color-mix(in srgb, var(--color-warning) 10%, transparent);
+  border: $border-width solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+%state-danger {
+  background: color-mix(in srgb, var(--color-danger) 10%, transparent);
+  border: $border-width solid var(--color-danger);
+  color: var(--color-danger);
+}
+
+%state-info {
+  background: color-mix(in srgb, var(--color-info) 10%, transparent);
+  border: $border-width solid var(--color-info);
+  color: var(--color-info);
+}
+
+/* ===========================
+   🔍 ACCESIBILIDAD
+   =========================== */
+
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+%disabled-state {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+%loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
