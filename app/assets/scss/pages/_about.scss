@@ -547,6 +547,7 @@
           width: 60px;
           height: 2px;
           background: linear-gradient(90deg, var(--color-primary), transparent);
+          z-index: 999 !important;
 
           &::after {
             content: '';
@@ -559,6 +560,7 @@
             border-left: 8px solid var(--color-primary);
             border-top: 4px solid transparent;
             border-bottom: 4px solid transparent;
+            z-index: 999 !important;
           }
         }
       }

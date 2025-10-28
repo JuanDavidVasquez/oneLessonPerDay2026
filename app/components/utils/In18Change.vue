@@ -43,7 +43,7 @@ import { useMainStore } from '~/store/main.store'
 
 // 📦 Store de Pinia
 const mainStore = useMainStore()
-const { locale, t } = useI18n() // 🌍 Acceso al i18n global
+const { locale, t } = useI18n()
 
 const selectedLang = ref<'es' | 'en'>(mainStore.locale as 'es' | 'en')
 
@@ -52,19 +52,15 @@ const languages = [
   { code: 'en', name: 'English', flag: '/flags/en.svg' }
 ]
 
-// 🚀 Cambio manual desde el Dropdown
 const handleChange = () => {
-  console.log('🔄 Cambiando idioma a:', selectedLang.value)
   mainStore.changeLanguage(selectedLang.value)
-  locale.value = selectedLang.value // Actualiza i18n global
+  locale.value = selectedLang.value 
 }
-
-// 🏁 Sincronizar store → componente + i18n
 watch(
   () => mainStore.locale,
   (newLocale) => {
     if (!newLocale) return
-    console.log('🌍 Store cambió a:', newLocale)
+   
     selectedLang.value = newLocale as 'es' | 'en'
     locale.value = newLocale as 'es' | 'en'
   },
@@ -73,11 +69,9 @@ watch(
 
 onMounted(() => {
   selectedLang.value = mainStore.locale as 'es' | 'en'
-  locale.value = mainStore.locale as 'es' | 'en' // Inicializa i18n con valor del store
-  console.log('🎬 I18nSwitcher montado, idioma inicial:', mainStore.locale)
+  locale.value = mainStore.locale as 'es' | 'en'
 })
 
-// Utils para mostrar idioma y bandera
 const getFlag = (code: string) =>
   languages.find((l) => l.code === code)?.flag || ''
 const getName = (code: string) =>
