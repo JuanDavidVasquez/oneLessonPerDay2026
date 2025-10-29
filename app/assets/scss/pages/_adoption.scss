@@ -514,6 +514,22 @@
           gap: $spacing-2;
           margin-bottom: $spacing-4;
 
+          .trait-badge{
+            font-size: $font-size-xs;
+            color: var(--color-text-secondary);
+            background: var(--color-bg-secondary);
+            padding: $spacing-1 $spacing-3;
+            border-radius: $radius-full;
+            display: flex;
+            align-items: center;
+            gap: $spacing-1;
+
+            i {
+              font-size: 10px;
+              color: var(--color-primary);
+            }
+          }
+
           .trait {
             background: var(--color-bg-primary);
             padding: $spacing-1 $spacing-3;
