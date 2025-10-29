@@ -1,5 +1,3 @@
-import { et } from "@nuxt/ui/runtime/locale/index.js";
-
 export default {
   // Common
   common: {
@@ -49,7 +47,7 @@ export default {
   // Navigation
   nav: {
     home: "Inicio",
-    about: "Acerca de",
+    about: "Nosotros",
     contact: "Contacto",
     products: "Productos",
     services: "Servicios",
@@ -527,7 +525,8 @@ export default {
       medium: "Mediano",
       large: "Grande",
       male: "Macho",
-      female: "Hembra"
+      female: "Hembra",
+      clear: "Limpiar"
     },
     types: {
       all: "Todos",
@@ -608,28 +607,185 @@ export default {
     },
     // Agregar estas traducciones a la sección adoption en es.ts:
 
-hero: {
-  title: "Encuentra a Tu Nuevo Mejor Amigo",
-  subtitle: "Adopta con Amor",
-  description: "Miles de mascotas están esperando un hogar. Dale una segunda oportunidad a un amigo peludo."
-},
-stats: {
-  available: "Disponibles",
-  urgent: "Urgentes",
-  shelters: "Albergues"
-},
-results: {
-  found: "mascotas encontradas"
-},
-noResults: {
-  title: "No se encontraron mascotas",
-  description: "Intenta ajustar tus filtros para encontrar más resultados",
-  clear: "Limpiar todos los filtros"
-},
-urgentCta: {
-  title: "¡Mascotas que Necesitan Hogar Urgente!",
-  description: "Hay {count} mascotas que necesitan adopción urgente. ¿Puedes ayudar?",
-  action: "Ver mascotas urgentes"
-}
+    hero: {
+      title: "Encuentra a Tu Nuevo Mejor Amigo",
+      subtitle: "Adopta con Amor",
+      description: "Miles de mascotas están esperando un hogar. Dale una segunda oportunidad a un amigo peludo."
+    },
+    stats: {
+      available: "Disponibles",
+      urgent: "Urgentes",
+      shelters: "Albergues"
+    },
+    results: {
+      found: "mascotas encontradas"
+    },
+    noResults: {
+      title: "No se encontraron mascotas",
+      description: "Intenta ajustar tus filtros para encontrar más resultados",
+      clear: "Limpiar todos los filtros"
+    },
+    urgentCta: {
+      title: "¡Mascotas que Necesitan Hogar Urgente!",
+      description: "Hay {count} mascotas que necesitan adopción urgente. ¿Puedes ayudar?",
+      action: "Ver mascotas urgentes"
+    }
+  },
+  contact:{
+    tag: 'Contáctanos',
+    titleAccent: 'Estamos aquí',
+    titleMain: 'para ayudarte',
+    description: 'Ponte en contacto con nosotros para cualquier consulta sobre adopciones, servicios veterinarios o cómo puedes ayudar a nuestros animales.',
+
+    // Información de contacto
+    infoTitle: 'Información de contacto',
+    infoDescription: 'Estamos disponibles para responder todas tus preguntas y brindarte la mejor atención.',
+    
+    phoneLabel: 'Teléfono',
+    emailLabel: 'Correo electrónico',
+    locationLabel: 'Ubicación',
+    scheduleLabel: 'Horario de atención',
+    scheduleValue: 'Lun - Vie: 9:00 AM - 6:00 PM',
+
+    // Redes sociales
+    socialTitle: 'Síguenos en redes',
+
+    // Emergencias
+    emergencyTitle: '¿Emergencia veterinaria?',
+    emergencyText: 'Si tu mascota requiere atención urgente, contáctanos inmediatamente a nuestro número de emergencias.',
+
+    // Formulario
+    formTitle: 'Envíanos un mensaje',
+    nameLabel: 'Nombre completo',
+    namePlaceholder: 'Tu nombre',
+    emailPlaceholder: `contactonelessonperday.com`,
+    phonePlaceholder: '+57 300 123 4567',
+    subjectLabel: 'Asunto',
+    subjectPlaceholder: 'Selecciona un asunto',
+    subjectAdoption: 'Adopción de mascotas',
+    subjectVeterinary: 'Servicios veterinarios',
+    subjectVolunteer: 'Voluntariado',
+    subjectDonation: 'Donaciones',
+    subjectOther: 'Otro',
+    messageLabel: 'Mensaje',
+    messagePlaceholder: 'Escribe tu mensaje aquí...',
+    sendButton: 'Enviar mensaje',
+    sending: 'Enviando...',
+    formNote: 'Nos comprometemos a responder tu mensaje en un plazo máximo de 24 horas hábiles.',
+    successMessage: '¡Mensaje enviado con éxito! Te responderemos pronto.',
+
+    // FAQ
+    faqTitle: 'Preguntas frecuentes',
+    faq1Question: '¿Cuál es el horario de visitas?',
+    faq1Answer: 'Puedes visitarnos de lunes a viernes de 9:00 AM a 6:00 PM y sábados de 10:00 AM a 2:00 PM. Te recomendamos agendar una cita previa.',
+    faq2Question: '¿Qué documentos necesito para adoptar?',
+    faq2Answer: 'Necesitas una identificación oficial, comprobante de domicilio y completar nuestro formulario de adopción. También realizamos una visita domiciliaria.',
+    faq3Question: '¿Dónde están ubicados?',
+    faq3Answer: 'Nos encontramos en Bogotá, Colombia. Puedes contactarnos para obtener la dirección exacta y cómo llegar a nuestras instalaciones.',
+    faq4Question: '¿Cómo puedo ayudar?',
+    faq4Answer: 'Puedes ayudar mediante donaciones, convirtiéndote en voluntario, siendo familia temporal o compartiendo nuestras publicaciones en redes sociales.'
+
+  },
+ appointments: {
+    badge: 'Reserva tu Cita',
+    title: 'Agenda tu Cita Veterinaria',
+    subtitle: 'Proceso guiado paso a paso para agendar la mejor atención para tu mascota',
+    years: 'años',
+
+    petTypes: {
+      dog: 'Perro',
+      cat: 'Gato',
+      bird: 'Ave',
+      rabbit: 'Conejo',
+      other: 'Otro'
+    },
+
+    steps: {
+      selectPet: {
+        title: 'Selecciona tu Mascota',
+        description: 'Elige la mascota para la cual deseas agendar la cita',
+        short: 'Elige tu mascota',
+        addNew: 'Agregar Nueva Mascota',
+        addNewDescription: 'Registra una nueva mascota'
+      },
+      selectService: {
+        title: 'Selecciona el Servicio',
+        description: 'Elige el tipo de atención que necesita tu mascota',
+        short: 'Selecciona servicio'
+      },
+      schedule: {
+        title: 'Agenda tu Cita',
+        description: 'Selecciona fecha, hora y proporciona detalles adicionales',
+        short: 'Fecha y hora'
+      }
+    },
+
+    services: {
+      ethology: {
+        title: 'Etología',
+        description: 'Consulta especializada en comportamiento animal para resolver problemas de conducta'
+      },
+      surgery: {
+        title: 'Cirugía',
+        description: 'Procedimientos quirúrgicos con equipamiento moderno y anestesia segura'
+      },
+      consultation: {
+        title: 'Consulta General',
+        description: 'Examen médico completo y preventivo para mantener la salud de tu mascota'
+      },
+      vaccination: {
+        title: 'Vacunación',
+        description: 'Programas de vacunación completos según edad y necesidades'
+      },
+      diagnostics: {
+        title: 'Diagnóstico',
+        description: 'Análisis y estudios para detección temprana de enfermedades'
+      }
+    },
+
+    form: {
+      fields: {
+        petName: 'Nombre de la Mascota',
+        petType: 'Tipo de Mascota',
+        petBreed: 'Raza',
+        petAge: 'Edad (años)',
+        veterinarian: 'Veterinario de Preferencia',
+        date: 'Fecha',
+        time: 'Hora',
+        reason: 'Motivo de la Consulta',
+        reasonPlaceholder: 'Describe brevemente el motivo de tu visita y cualquier síntoma que hayas observado...',
+        terms: 'Acepto los términos y condiciones y la política de privacidad'
+      },
+      options: {
+        veterinarians: {
+          any: 'Sin Preferencia'
+        }
+      },
+      submit: 'Agendar Cita'
+    },
+
+    summary: {
+      pet: 'Mascota',
+      service: 'Servicio'
+    },
+
+    addPet: {
+      title: 'Agregar Nueva Mascota'
+    },
+
+    sidebar: {
+      progress: 'Progreso',
+      scheduleTitle: 'Horarios de Atención',
+      emergencyTitle: 'Emergencias 24/7',
+      emergencyDescription: 'Servicio de urgencias disponible las 24 horas. Llama al +57 312 345 6789',
+      contactTitle: 'Contacto'
+    },
+
+    success: {
+      title: '¡Cita Agendada con Éxito!',
+      message: 'Tu cita ha sido agendada exitosamente. Recibirás un correo de confirmación.',
+      confirmation: 'Te enviaremos un recordatorio 24 horas antes de tu cita.',
+      close: 'Entendido'
+    }
   }
 };

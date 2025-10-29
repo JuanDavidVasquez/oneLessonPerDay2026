@@ -18,11 +18,11 @@
           {{ t('header.heroSubtitle') }}
         </p>
         <div class="cta-buttons">
-          <NuxtLink to="/adopcion" class="btn-primary">
+          <NuxtLink to="/adoption" class="btn-primary">
             <span>{{ t('common.adoptNow') }}</span>
             <i class="pi pi-arrow-right"></i>
           </NuxtLink>
-          <NuxtLink to="/etologia" class="btn-secondary">
+          <NuxtLink to="/ethology" class="btn-secondary">
             <span>{{ t('common.learnMore') }}</span>
           </NuxtLink>
         </div>
@@ -70,7 +70,6 @@
           <span class="highlight-line large">{{ t('header.pet') }}</span>
           <span class="divider">{{ t('common.y') }}</span>
           <span class="highlight-line">{{ t('header.changeALife') }}</span>
-          <span class="highlight-line large">{{ t('header.aLife') }}</span>
         </h2>
         
         <!-- Características -->

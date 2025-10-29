@@ -265,11 +265,11 @@
           <h2>{{ t('ethology.cta.title') }}</h2>
           <p>{{ t('ethology.cta.description') }}</p>
           <div class="cta-buttons">
-            <NuxtLink to="/adopcion" class="btn-primary">
+            <NuxtLink to="/adoption" class="btn-primary">
               <i class="pi pi-heart"></i>
               {{ t('ethology.cta.adoptButton') }}
             </NuxtLink>
-            <NuxtLink to="/contacto" class="btn-secondary">
+            <NuxtLink to="/contact" class="btn-secondary">
               <i class="pi pi-phone"></i>
               {{ t('ethology.cta.contactButton') }}
             </NuxtLink>

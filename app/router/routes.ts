@@ -39,4 +39,12 @@ export const menuItems = [
       navigateTo('/veterinarians');
     }
   },
+  {
+    label: 'contact',
+    icon: 'pi pi-phone',
+    route: '/contact',
+    command: () => {
+      navigateTo('/contact');
+    }
+  }
 ];

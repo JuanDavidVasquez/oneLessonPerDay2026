@@ -526,7 +526,8 @@ export default {
       medium: "Medium",
       large: "Large",
       male: "Male",
-      female: "Female"
+      female: "Female",
+      clear: "Clear",
     },
     types: {
       all: "All",
@@ -629,5 +630,170 @@ export default {
       description: "There are {count} pets that need urgent adoption. Can you help?",
       action: "View urgent pets"
     }
+  },
+  contact:{
+       // Header
+    tag: 'Contact Us',
+    titleAccent: 'We\'re here',
+    titleMain: 'to help you',
+    description: 'Get in touch with us for any questions about adoptions, veterinary services, or how you can help our animals.',
+
+    // Contact information
+    infoTitle: 'Contact Information',
+    infoDescription: 'We are available to answer all your questions and provide you with the best care.',
+    
+    phoneLabel: 'Phone',
+    emailLabel: 'Email',
+    locationLabel: 'Location',
+    scheduleLabel: 'Office Hours',
+    scheduleValue: 'Mon - Fri: 9:00 AM - 6:00 PM',
+
+    // Social media
+    socialTitle: 'Follow us',
+
+    // Emergency
+    emergencyTitle: 'Veterinary Emergency?',
+    emergencyText: 'If your pet requires urgent care, contact us immediately at our emergency number.',
+
+    // Form
+    formTitle: 'Send us a message',
+    nameLabel: 'Full name',
+    namePlaceholder: 'Your name',
+    emailPlaceholder: `contactonelessonperday.com`,
+    phonePlaceholder: '+1 234 567 8900',
+    subjectLabel: 'Subject',
+    subjectPlaceholder: 'Select a subject',
+    subjectAdoption: 'Pet Adoption',
+    subjectVeterinary: 'Veterinary Services',
+    subjectVolunteer: 'Volunteering',
+    subjectDonation: 'Donations',
+    subjectOther: 'Other',
+    messageLabel: 'Message',
+    messagePlaceholder: 'Write your message here...',
+    sendButton: 'Send message',
+    sending: 'Sending...',
+    formNote: 'We are committed to responding to your message within 24 business hours.',
+    successMessage: 'Message sent successfully! We will respond soon.',
+
+    // FAQ
+    faqTitle: 'Frequently Asked Questions',
+    faq1Question: 'What are your visiting hours?',
+    faq1Answer: 'You can visit us Monday through Friday from 9:00 AM to 6:00 PM and Saturdays from 10:00 AM to 2:00 PM. We recommend scheduling an appointment in advance.',
+    faq2Question: 'What documents do I need to adopt?',
+    faq2Answer: 'You need an official ID, proof of address, and to complete our adoption form. We also conduct a home visit.',
+    faq3Question: 'Where are you located?',
+    faq3Answer: 'We are located in Bogotá, Colombia. You can contact us to get the exact address and directions to our facilities.',
+    faq4Question: 'How can I help?',
+    faq4Answer: 'You can help through donations, becoming a volunteer, being a foster family, or sharing our posts on social media.'
+ 
+  },
+  
+ appointments: {
+    badge: 'Book your Appointment',
+    title: 'Schedule your Veterinary Appointment',
+    subtitle: 'Guided step-by-step process to schedule the best care for your pet',
+    years: 'years',
+
+    petTypes: {
+      dog: 'Dog',
+      cat: 'Cat',
+      bird: 'Bird',
+      rabbit: 'Rabbit',
+      other: 'Other'
+    },
+
+    steps: {
+      selectPet: {
+        title: 'Select your Pet',
+        description: 'Choose the pet for which you want to schedule the appointment',
+        short: 'Choose your pet',
+        addNew: 'Add New Pet',
+        addNewDescription: 'Register a new pet'
+      },
+      selectService: {
+        title: 'Select Service',
+        description: 'Choose the type of care your pet needs',
+        short: 'Select service'
+      },
+      schedule: {
+        title: 'Schedule your Appointment',
+        description: 'Select date, time and provide additional details',
+        short: 'Date and time'
+      }
+    },
+
+    services: {
+      ethology: {
+        title: 'Ethology',
+        description: 'Specialized consultation in animal behavior to solve behavioral problems'
+      },
+      surgery: {
+        title: 'Surgery',
+        description: 'Surgical procedures with modern equipment and safe anesthesia'
+      },
+      consultation: {
+        title: 'General Consultation',
+        description: 'Complete medical and preventive examination to maintain your pet\'s health'
+      },
+      vaccination: {
+        title: 'Vaccination',
+        description: 'Complete vaccination programs according to age and needs'
+      },
+      diagnostics: {
+        title: 'Diagnostics',
+        description: 'Analysis and studies for early detection of diseases'
+      }
+    },
+
+    form: {
+      fields: {
+        petName: 'Pet Name',
+        petType: 'Pet Type',
+        petBreed: 'Breed',
+        petAge: 'Age (years)',
+        veterinarian: 'Preferred Veterinarian',
+        date: 'Date',
+        time: 'Time',
+        reason: 'Reason for Visit',
+        reasonPlaceholder: 'Briefly describe the reason for your visit and any symptoms you have observed...',
+        terms: 'I accept the terms and conditions and privacy policy'
+      },
+      options: {
+        veterinarians: {
+          any: 'No Preference'
+        }
+      },
+      submit: 'Schedule Appointment'
+    },
+
+    summary: {
+      pet: 'Pet',
+      service: 'Service'
+    },
+
+    addPet: {
+      title: 'Add New Pet'
+    },
+
+    sidebar: {
+      progress: 'Progress',
+      scheduleTitle: 'Office Hours',
+      emergencyTitle: '24/7 Emergency',
+      emergencyDescription: 'Emergency service available 24 hours. Call +57 312 345 6789',
+      contactTitle: 'Contact'
+    },
+
+    success: {
+      title: 'Appointment Scheduled Successfully!',
+      message: 'Your appointment has been successfully scheduled. You will receive a confirmation email.',
+      confirmation: 'We will send you a reminder 24 hours before your appointment.',
+      close: 'Got it'
+    }
   }
 };
+
+
+
+
+
+

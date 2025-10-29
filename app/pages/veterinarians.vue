@@ -163,7 +163,7 @@
             </div>
           </div>
           <div class="contact-form-link">
-            <NuxtLink to="/contacto" class="btn-contact">
+            <NuxtLink to="/contact" class="btn-contact">
               <i class="pi pi-send"></i>
               <span>{{ t('veterinarians.contact.sendMessage') }}</span>
             </NuxtLink>
@@ -179,11 +179,11 @@
         <h2 class="cta-title">{{ t('veterinarians.cta.title') }}</h2>
         <p class="cta-description">{{ t('veterinarians.cta.description') }}</p>
         <div class="cta-buttons">
-          <NuxtLink to="/citas" class="btn-primary">
+          <NuxtLink to="/appointments" class="btn-primary">
             <i class="pi pi-calendar-plus"></i>
             <span>{{ t('veterinarians.cta.bookAppointment') }}</span>
           </NuxtLink>
-          <NuxtLink to="/contacto" class="btn-secondary">
+          <NuxtLink to="/contact" class="btn-secondary">
             <i class="pi pi-phone"></i>
             <span>{{ t('veterinarians.cta.callUs') }}</span>
           </NuxtLink>
