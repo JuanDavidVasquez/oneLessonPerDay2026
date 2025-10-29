@@ -51,11 +51,11 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'google', content: 'notranslate' },
-        {
-          id: 'description',
-          name: 'description',
-          content: 'One Lesson Per Day - Learn something new every day with our bite-sized lessons designed to fit into your busy schedule.',
-        },
+           {
+        id: 'description',
+        name: 'description',
+        content: 'One Lesson Per Day – Veterinary clinic focused on adoptions, behavior, and animal well-being. Learning from every life to care better.',
+      },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },

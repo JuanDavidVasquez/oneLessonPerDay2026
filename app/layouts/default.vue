@@ -3,4 +3,5 @@
     <UtilsMenu />
     <slot />
   </main>
+   <AppFooter />
 </template>
