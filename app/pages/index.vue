@@ -94,6 +94,49 @@
 </template>
 
 <script setup lang="ts">
+const { setSeo } = useSeo();
+setSeo({
+  title: 'One Lesson Per Day',
+  description: 'Adopción responsable de mascotas, servicios veterinarios profesionales y educación en etología. Encuentra tu compañero perfecto en Bogotá, Colombia.',
+  keywords: [
+    'adopción mascotas bogotá',
+    'veterinaria bogotá',
+    'etología animal',
+    'adopción perros',
+    'adopción gatos',
+    'servicios veterinarios colombia'
+  ],
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'One Lesson Per Day',
+    description: 'Organización dedicada a la adopción responsable y cuidado veterinario',
+    url: 'https://onelessonperday.com',
+    logo: 'https://onelessonperday.com/logo.png',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle 123 #45-67',
+      addressLocality: 'Bogotá',
+      addressRegion: 'DC',
+      postalCode: '110111',
+      addressCountry: 'CO'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+57-312-345-6789',
+      contactType: 'Customer Service',
+      email: 'contacto@onelessonperday.com',
+      availableLanguage: ['Spanish', 'English']
+    },
+    sameAs: [
+      'https://facebook.com/onelessonperday',
+      'https://instagram.com/onelessonperday',
+      'https://twitter.com/onelessonperday'
+    ]
+  }
+});
+
+
 import { onMounted } from 'vue'
 const { t } = useI18n();
 const adopciones = ref(0);

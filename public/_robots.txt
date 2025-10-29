@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Bloquear rutas privadas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://onelessonperday.com/sitemap.xml

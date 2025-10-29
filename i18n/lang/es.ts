@@ -4,7 +4,7 @@ export default {
     appFirstName: "One Lesson",
     appSecondName: "Per Day",
     appName: "One Lesson Per Day",
-    content:'One Lesson Per Day, clínica veterinaria centrada en adopciones, comportamiento y bienestar animal. Aprendiendo de cada vida para brindar una mejor atención.',
+    content: 'One Lesson Per Day, clínica veterinaria centrada en adopciones, comportamiento y bienestar animal. Aprendiendo de cada vida para brindar una mejor atención.',
     welcome: "Bienvenido",
     loading: "Cargando...",
     error: "Error",
@@ -124,11 +124,11 @@ export default {
     postAdoptionFollowUp: "Seguimiento post-adopción",
     scrollHint: "Desliza",
   },
- footer: {
+  footer: {
     // Sobre nosotros
     aboutTitle: 'Sobre Nosotros',
     aboutText: 'Clínica veterinaria dedicada al cuidado integral de tu mascota con más de 15 años de experiencia. Nuestro equipo está comprometido con la salud y bienestar de tu mejor amigo.',
-    
+
     // Enlaces rápidos
     quickLinksTitle: 'Enlaces Rápidos',
     about: 'Acerca de',
@@ -137,22 +137,22 @@ export default {
     veterinarians: 'Veterinarios',
     ethology: 'Etología',
     contact: 'Contacto',
-    
+
     // Contacto
     contactTitle: 'Contacto',
     phoneLabel: 'Teléfono',
     emailLabel: 'Email',
     addressLabel: 'Dirección',
-    
+
     // Redes sociales
     followUsTitle: 'Síguenos',
-    
+
     // Newsletter
     newsletterText: 'Suscríbete a nuestro boletín para recibir consejos y noticias',
     newsletterLabel: 'Correo electrónico para newsletter',
     newsletterPlaceholder: `{'contact@onelessonperday.com'}`,
     newsletterSubmit: 'Suscribirse al boletín',
-    
+
     // Footer inferior
     companyName: 'One Lesson Per Day',
     rightsReserved: 'Todos los derechos reservados',
@@ -668,7 +668,7 @@ export default {
       action: "Ver mascotas urgentes"
     }
   },
-  contact:{
+  contact: {
     tag: 'Contáctanos',
     titleAccent: 'Estamos aquí',
     titleMain: 'para ayudarte',
@@ -677,7 +677,7 @@ export default {
     // Información de contacto
     infoTitle: 'Información de contacto',
     infoDescription: 'Estamos disponibles para responder todas tus preguntas y brindarte la mejor atención.',
-    
+
     phoneLabel: 'Teléfono',
     emailLabel: 'Correo electrónico',
     locationLabel: 'Ubicación',
@@ -723,7 +723,7 @@ export default {
     faq4Answer: 'Puedes ayudar mediante donaciones, convirtiéndote en voluntario, siendo familia temporal o compartiendo nuestras publicaciones en redes sociales.'
 
   },
- appointments: {
+  appointments: {
     badge: 'Reserva tu Cita',
     title: 'Agenda tu Cita Veterinaria',
     subtitle: 'Proceso guiado paso a paso para agendar la mejor atención para tu mascota',
@@ -823,6 +823,322 @@ export default {
       message: 'Tu cita ha sido agendada exitosamente. Recibirás un correo de confirmación.',
       confirmation: 'Te enviaremos un recordatorio 24 horas antes de tu cita.',
       close: 'Entendido'
+    }
+  },
+  privacy: {
+    title: "Política de Privacidad",
+    lastUpdated: "Última actualización: Octubre 2025",
+    intro: "En One Lesson Per Day (https://onelessonperday.com) valoramos y respetamos la privacidad de nuestros usuarios, clientes y visitantes. Esta Política de Privacidad explica cómo recopilamos, utilizamos, protegemos y compartimos la información personal que nos proporcionas a través de nuestro sitio web, redes sociales y formularios en línea.",
+
+    section1: {
+      title: "📋 Información que recopilamos",
+      intro: "Recopilamos la siguiente información de manera voluntaria o automática:",
+      item1Title: "Datos personales:",
+      item1Text: "nombre, número de teléfono, correo electrónico, ciudad y cualquier otra información suministrada al agendar una cita, registrarse o realizar una solicitud.",
+      item2Title: "Datos de navegación:",
+      item2Text: "dirección IP, tipo de dispositivo, sistema operativo, navegador, páginas visitadas y duración de la sesión.",
+      item3Title: "Cookies y tecnologías similares:",
+      item3Text: "para mejorar la experiencia del usuario, analizar tráfico y personalizar contenido."
+    },
+
+    section2: {
+      title: "🐶 Finalidad del tratamiento de los datos",
+      intro: "Usamos tu información personal para:",
+      item1: "Procesar solicitudes de adopción y agendamiento de citas veterinarias.",
+      item2: "Enviar recordatorios, confirmaciones o información relacionada con los servicios solicitados.",
+      item3: "Mejorar nuestros servicios educativos en etología animal.",
+      item4: "Analizar el uso del sitio y optimizar la experiencia del usuario.",
+      item5: "Enviar información, promociones o contenidos de valor relacionados con bienestar animal (solo con tu consentimiento previo)."
+    },
+
+    section3: {
+      title: "🧩 Uso de cookies",
+      intro: "Utilizamos cookies propias y de terceros para:",
+      item1: "Guardar preferencias de idioma o sesión.",
+      item2: "Analizar el tráfico del sitio mediante herramientas como Google Analytics.",
+      item3: "Mostrar contenido relevante según la interacción del usuario.",
+      note: "Puedes desactivar las cookies desde la configuración de tu navegador, aunque algunas funciones del sitio pueden dejar de estar disponibles."
+    },
+
+    section4: {
+      title: "🔒 Seguridad de la información",
+      text: "Implementamos medidas técnicas, administrativas y organizativas razonables para proteger tus datos personales frente a accesos no autorizados, pérdida o alteración. Sin embargo, ningún sistema de transmisión o almacenamiento en Internet es completamente seguro. Por tanto, no podemos garantizar seguridad absoluta."
+    },
+
+    section5: {
+      title: "👩‍⚖️ Derechos del titular de los datos",
+      intro: "De acuerdo con la Ley 1581 de 2012 (Colombia), tienes derecho a:",
+      right1: "Acceder, actualizar, corregir o eliminar tus datos personales.",
+      right2: "Solicitar prueba del consentimiento otorgado.",
+      right3: "Ser informado sobre el uso que se ha dado a tu información.",
+      right4: "Revocar la autorización para el tratamiento de tus datos.",
+      contact: "Puedes ejercer estos derechos escribiéndonos a:"
+    },
+
+    section6: {
+      title: "🤝 Transferencia y divulgación de datos",
+      intro: "No vendemos ni alquilamos tus datos personales. Solo compartiremos tu información cuando:",
+      item1: "Sea necesario para prestar los servicios solicitados (por ejemplo, procesadores de pago o plataformas de correo electrónico).",
+      item2: "Exista obligación legal o requerimiento de autoridad competente.",
+      item3: "Tú hayas otorgado consentimiento explícito."
+    },
+
+    section7: {
+      title: "🌍 Enlaces externos",
+      text: "Nuestro sitio puede contener enlaces a otras páginas web. No somos responsables del contenido ni de las políticas de privacidad de dichos sitios. Te recomendamos revisar sus políticas antes de proporcionar cualquier información personal."
+    },
+
+    section8: {
+      title: "🕓 Conservación de datos",
+      text: "Conservamos tus datos personales durante el tiempo necesario para cumplir las finalidades descritas o mientras la ley lo exija. Posteriormente, la información será eliminada de forma segura."
+    },
+
+    section9: {
+      title: "✉️ Cambios a esta política",
+      text: "One Lesson Per Day puede modificar esta Política de Privacidad en cualquier momento. La versión más reciente estará disponible siempre en https://onelessonperday.com/politica-de-privacidad."
+    },
+
+    section10: {
+      title: "🐕 Contacto",
+      intro: "Si tienes dudas sobre esta Política de Privacidad o el tratamiento de tus datos personales, puedes escribirnos a:"
+    },
+
+    cta: {
+      title: "¿Tienes alguna pregunta?",
+      text: "Estamos aquí para ayudarte con cualquier duda sobre el manejo de tus datos personales.",
+      button: "Volver al Inicio"
+    }
+  },
+  terms: {
+    title: "Términos y Condiciones",
+    lastUpdated: "Última actualización: Octubre 2025",
+    intro: "Bienvenido a One Lesson Per Day. Al acceder y utilizar nuestro sitio web y servicios, aceptas cumplir con los siguientes términos y condiciones. Por favor, léelos cuidadosamente antes de usar nuestros servicios.",
+
+    section1: {
+      title: "✅ Aceptación de Términos",
+      text: "Al acceder o utilizar cualquier parte de nuestro sitio web, servicios de adopción, veterinaria o etología, aceptas estar vinculado por estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, no debes usar nuestros servicios. El uso continuo de nuestros servicios constituye la aceptación de cualquier modificación a estos términos."
+    },
+
+    section2: {
+      title: "📖 Definiciones",
+      def1Title: "Usuario:",
+      def1Text: "Toda persona que accede, navega o utiliza los servicios de One Lesson Per Day.",
+      def2Title: "Servicios:",
+      def2Text: "Incluye adopción de mascotas, consultas veterinarias, servicios de etología animal, y cualquier otro servicio ofrecido a través de nuestra plataforma.",
+      def3Title: "Plataforma:",
+      def3Text: "El sitio web https://onelessonperday.com y cualquier aplicación móvil o digital asociada.",
+      def4Title: "Contenido:",
+      def4Text: "Textos, imágenes, videos, logos, y cualquier material disponible en la plataforma."
+    },
+
+    section3: {
+      title: "🎁 Servicios Ofrecidos",
+      intro: "One Lesson Per Day ofrece los siguientes servicios:",
+      service1: "Facilitar procesos de adopción responsable de mascotas",
+      service2: "Servicios veterinarios profesionales (consultas, vacunación, cirugía, diagnóstico)",
+      service3: "Asesoría en etología y comportamiento animal",
+      service4: "Contenido educativo sobre cuidado y bienestar animal",
+      note: "Nos reservamos el derecho de modificar, suspender o descontinuar cualquier servicio en cualquier momento sin previo aviso."
+    },
+
+    section4: {
+      title: "💻 Uso del Sitio Web",
+      intro: "Al utilizar nuestro sitio web, te comprometes a NO:",
+      prohibited1: "Usar el sitio para fines ilegales o no autorizados",
+      prohibited2: "Intentar acceder a áreas restringidas del sistema sin autorización",
+      prohibited3: "Transmitir virus, malware o cualquier código malicioso",
+      prohibited4: "Interferir con el funcionamiento normal del sitio",
+      prohibited5: "Recopilar información de otros usuarios sin su consentimiento"
+    },
+
+    section5: {
+      title: "🐾 Proceso de Adopción",
+      intro: "El proceso de adopción incluye los siguientes pasos:",
+      step1: "Solicitud de adopción: El usuario debe completar un formulario con información personal y del hogar.",
+      step2: "Evaluación: Nuestro equipo revisará la solicitud para asegurar la compatibilidad entre la mascota y el adoptante.",
+      step3: "Entrevista: Se realizará una entrevista (presencial o virtual) para conocer mejor al adoptante.",
+      step4: "Visita domiciliaria: En algunos casos, se realizará una visita al hogar del adoptante.",
+      step5: "Firma de contrato: Se formalizará la adopción mediante un contrato de adopción responsable.",
+      warning: "One Lesson Per Day se reserva el derecho de rechazar cualquier solicitud de adopción que no cumpla con nuestros criterios de bienestar animal."
+    },
+
+    section6: {
+      title: "🏥 Servicios Veterinarios",
+      text1: "Los servicios veterinarios son proporcionados por profesionales licenciados y certificados. Al utilizar nuestros servicios veterinarios, entiendes que:",
+      text2: "Los diagnósticos y tratamientos están sujetos a la evaluación profesional del veterinario. No garantizamos resultados específicos, pero nos comprometemos a brindar atención de la más alta calidad basada en las mejores prácticas veterinarias.",
+      note: "En caso de emergencia veterinaria, te recomendamos buscar atención inmediata en la clínica más cercana o comunicarte con nuestro servicio de urgencias 24/7."
+    },
+
+    section7: {
+      title: "💳 Pagos y Facturación",
+      intro: "Con respecto a los pagos:",
+      item1: "Los precios de los servicios están sujetos a cambio sin previo aviso.",
+      item2: "Los pagos deben realizarse en el momento de la prestación del servicio o según lo acordado.",
+      item3: "Aceptamos múltiples métodos de pago incluyendo efectivo, tarjetas de crédito/débito y transferencias bancarias.",
+      item4: "Todas las transacciones son procesadas de forma segura cumpliendo con los estándares PCI DSS."
+    },
+
+    section8: {
+      title: "🔄 Cancelaciones y Reembolsos",
+      adoptionTitle: "Adopciones:",
+      adoptionText: "Las tarifas de adopción no son reembolsables una vez completado el proceso. Sin embargo, si surgen circunstancias excepcionales dentro de los primeros 30 días, podemos evaluar el caso individualmente.",
+      appointmentTitle: "Citas veterinarias:",
+      appointmentText: "Las cancelaciones deben realizarse con al menos 24 horas de anticipación. Las cancelaciones tardías o inasistencias pueden estar sujetas a un cargo del 50% del valor de la consulta."
+    },
+
+    section9: {
+      title: "©️ Propiedad Intelectual",
+      text: "Todo el contenido presente en One Lesson Per Day, incluyendo pero no limitado a textos, gráficos, logos, imágenes, videos y software, es propiedad de One Lesson Per Day o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual colombianas e internacionales. Queda prohibida la reproducción, distribución o modificación del contenido sin autorización escrita."
+    },
+
+    section10: {
+      title: "⚠️ Limitación de Responsabilidad",
+      text1: "One Lesson Per Day no será responsable por daños indirectos, incidentales, especiales o consecuentes que resulten del uso o la imposibilidad de usar nuestros servicios. Esto incluye, pero no se limita a, pérdida de datos, lucro cesante o interrupción del negocio.",
+      text2: "Hacemos nuestro mejor esfuerzo por proporcionar información precisa y actualizada, pero no garantizamos que el sitio web esté libre de errores o que el servicio sea ininterrumpido."
+    },
+
+    section11: {
+      title: "⚖️ Indemnización",
+      text: "Aceptas indemnizar y mantener indemne a One Lesson Per Day, sus directores, empleados y afiliados de cualquier reclamación, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluyendo honorarios de abogados) que surjan del uso de nuestros servicios o de la violación de estos términos."
+    },
+
+    section12: {
+      title: "📝 Modificaciones",
+      text: "Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web. Es tu responsabilidad revisar periódicamente estos términos. El uso continuo de nuestros servicios después de cualquier modificación constituye la aceptación de dichas modificaciones."
+    },
+
+    section13: {
+      title: "🇨🇴 Ley Aplicable y Jurisdicción",
+      text: "Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes de la República de Colombia. Cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales de Bogotá, Colombia."
+    },
+
+    section14: {
+      title: "📧 Contacto",
+      intro: "Si tienes preguntas sobre estos Términos y Condiciones, puedes contactarnos a través de:"
+    },
+
+    cta: {
+      title: "¿Listo para comenzar?",
+      text: "Ahora que conoces nuestros términos y condiciones, estás listo para disfrutar de todos nuestros servicios.",
+      homeButton: "Ir al Inicio",
+      contactButton: "Contáctanos"
+    }
+  },
+  cookies: {
+    title: "Política de Cookies",
+    lastUpdated: "Última actualización: Octubre 2025",
+    intro: "Esta política explica cómo One Lesson Per Day utiliza cookies y tecnologías similares para mejorar tu experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido.",
+
+    section1: {
+      title: "🤔 ¿Qué son las cookies?",
+      text1: "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (ordenador, tablet o móvil) cuando visitas un sitio web. Estos archivos permiten que el sitio recuerde tus acciones y preferencias durante un período de tiempo.",
+      text2: "Las cookies no dañan tu dispositivo y nos ayudan a ofrecerte una mejor experiencia de navegación, recordar tus preferencias, entender cómo interactúas con nuestro sitio y mejorar nuestros servicios."
+    },
+
+    section2: {
+      title: "📊 Tipos de Cookies que Utilizamos",
+      intro: "En One Lesson Per Day utilizamos diferentes tipos de cookies según su finalidad:",
+      required: "Obligatoria",
+      optional: "Opcional",
+      examples: "Ejemplos:",
+      providers: "Proveedores:",
+
+      essential: {
+        title: "Cookies Esenciales",
+        description: "Son necesarias para el funcionamiento básico del sitio web. Sin estas cookies, algunas funciones no estarían disponibles.",
+        example1: "Mantener tu sesión iniciada",
+        example2: "Recordar los artículos en tu carrito",
+        example3: "Permitir la navegación segura"
+      },
+
+      analytics: {
+        title: "Cookies de Análisis",
+        description: "Recopilan información anónima sobre cómo los visitantes utilizan nuestro sitio web, ayudándonos a mejorar su rendimiento y experiencia.",
+        example1: "Google Analytics (_ga, _gid)",
+        example2: "Número de visitantes y páginas vistas",
+        example3: "Tiempo de permanencia en el sitio",
+        duration: "Duración: 1-24 meses"
+      },
+
+      personalization: {
+        title: "Cookies de Personalización",
+        description: "Almacenan tus preferencias para ofrecerte una experiencia personalizada en futuras visitas.",
+        example1: "Preferencia de idioma seleccionado",
+        example2: "Configuración de visualización",
+        example3: "Recordar tus filtros de búsqueda",
+        duration: "Duración: 6-12 meses"
+      },
+
+      thirdparty: {
+        title: "Cookies de Terceros",
+        description: "Instaladas por servicios externos integrados en nuestro sitio web, como mapas, videos o redes sociales.",
+        provider1: "YouTube (para videos integrados)",
+        provider2: "Google Maps (para ubicaciones)",
+        provider3: "Facebook (botones de compartir)",
+        provider4: "Instagram (feed integrado)"
+      }
+    },
+
+    section3: {
+      title: "🎯 Finalidad del Uso de Cookies",
+      intro: "Utilizamos cookies para:",
+      purpose1: "Garantizar el correcto funcionamiento del sitio web y sus características de seguridad",
+      purpose2: "Recordar tus preferencias y configuraciones personalizadas",
+      purpose3: "Analizar el tráfico web y comprender cómo los usuarios interactúan con nuestro sitio",
+      purpose4: "Mejorar la experiencia de usuario y optimizar nuestros servicios",
+      purpose5: "Mostrar contenido relevante según tus intereses y comportamiento de navegación"
+    },
+
+    section4: {
+      title: "✅ Consentimiento y Control",
+      text1: "Al continuar navegando en nuestro sitio web, aceptas el uso de cookies conforme a esta política. La primera vez que visitas nuestro sitio, te mostramos un banner informativo sobre el uso de cookies.",
+      text2: "Puedes aceptar todas las cookies, rechazar las opcionales (manteniendo solo las esenciales), o configurar tus preferencias de forma personalizada en cualquier momento.",
+      note: "Recuerda: Las cookies esenciales son necesarias para el funcionamiento del sitio y no se pueden desactivar. Las demás cookies son opcionales y puedes gestionarlas según tus preferencias."
+    },
+
+    section5: {
+      title: "⚙️ Cómo Gestionar y Eliminar Cookies",
+      intro: "Tienes control total sobre las cookies. Puedes eliminarlas, bloquearlas o configurar tus preferencias desde tu navegador:",
+      browsersTitle: "Guías por navegador:",
+      warning: "⚠️ Importante: Si deshabilitas o eliminas las cookies, es posible que algunas funciones del sitio web no funcionen correctamente o que tu experiencia de navegación se vea afectada."
+    },
+
+    section6: {
+      title: "📋 Cookies Específicas Utilizadas",
+      intro: "A continuación, detallamos las principales cookies que utiliza One Lesson Per Day:",
+      tableName: "Nombre",
+      tableProvider: "Proveedor",
+      tablePurpose: "Finalidad",
+      tableDuration: "Duración",
+
+      cookie1Purpose: "Mantener la sesión del usuario activa",
+      cookie1Duration: "Sesión",
+
+      cookie2Purpose: "Guardar la preferencia de idioma",
+      cookie2Duration: "12 meses",
+
+      cookie3Purpose: "Distinguir usuarios únicos",
+      cookie3Duration: "24 meses",
+
+      cookie4Purpose: "Distinguir sesiones de usuario",
+      cookie4Duration: "24 horas"
+    },
+
+    section7: {
+      title: "🔄 Actualizaciones de esta Política",
+      text: "Podemos actualizar esta Política de Cookies periódicamente para reflejar cambios en las cookies que utilizamos o por razones operativas, legales o reglamentarias. Te recomendamos revisar esta política regularmente para estar informado sobre cómo utilizamos las cookies."
+    },
+
+    section8: {
+      title: "📧 Contacto",
+      intro: "Si tienes preguntas sobre nuestra Política de Cookies o sobre cómo gestionamos las cookies, puedes contactarnos en:"
+    },
+
+    cta: {
+      title: "Tu Privacidad es Importante",
+      text: "Nos comprometemos a ser transparentes sobre cómo utilizamos las cookies y a darte el control sobre tus datos.",
+      homeButton: "Ir al Inicio",
+      privacyButton: "Ver Política de Privacidad"
     }
   }
 };

@@ -1,9 +1,9 @@
 <template>
   <div class="i18n-switcher">
-    <label for="language-select" class="label">
+   <!--  <label for="language-select" class="label">
       <i class="pi pi-globe" style="margin-right: 0.4rem"></i>
       {{ t('common.language') || 'Idioma' }}
-    </label>
+    </label> -->
 
     <Dropdown
       id="language-select"
@@ -48,7 +48,7 @@ const { locale, t } = useI18n()
 const selectedLang = ref<'es' | 'en'>(mainStore.locale as 'es' | 'en')
 
 const languages = [
-  { code: 'es', name: 'Español', flag: '/flags/es.svg' },
+  { code: 'es', name: 'Latino', flag: '/flags/co.svg' },
   { code: 'en', name: 'English', flag: '/flags/en.svg' }
 ]
 

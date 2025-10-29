@@ -230,6 +230,24 @@
 import { ref, computed, onMounted } from 'vue'
 
 const { t } = useI18n()
+const { setSeo } = useSeo();
+
+setSeo({
+  title: 'Contacto - Escríbenos',
+  description: 'Contáctanos para adopción, consultas veterinarias o información sobre nuestros servicios. Estamos en Bogotá, Colombia.',
+  keywords: [
+    'contacto onelessonperday',
+    'veterinaria bogotá contacto',
+    'adopción contacto',
+    'whatsapp veterinaria'
+  ],
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contacto',
+    description: 'Contáctanos para más información'
+  }
+});
 
 // Referencias para animaciones
 const sectionHeader = ref(null)

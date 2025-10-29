@@ -286,6 +286,35 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 const { t } = useI18n()
+const { setSeo } = useSeo();
+
+setSeo({
+  title: 'Etología Animal - Comportamiento de Mascotas',
+  description: 'Aprende sobre comportamiento canino y felino. Guías educativas sobre etología, entrenamiento positivo y cuidado responsable de mascotas.',
+  keywords: [
+    'etología animal',
+    'comportamiento canino',
+    'comportamiento felino',
+    'entrenamiento perros',
+    'educación mascotas',
+    'etólogo bogotá'
+  ],
+  image: '/images/ethology-education.jpg',
+  type: 'article',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'One Lesson Per Day - Etología',
+    description: 'Educación en comportamiento y bienestar animal',
+    knowsAbout: [
+      'Comportamiento Canino',
+      'Comportamiento Felino',
+      'Entrenamiento Positivo',
+      'Bienestar Animal'
+    ],
+    teaches: 'Etología y Comportamiento Animal'
+  }
+});
 
 // Refs para animaciones
 const sectionHeader = ref(null)

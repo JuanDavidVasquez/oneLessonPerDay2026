@@ -377,6 +377,42 @@ import {   getAllPets,
 
 
 const { t } = useI18n()
+const { setSeo } = useSeo();
+
+setSeo({
+  title: 'Adopción de Mascotas en Bogotá',
+  description: 'Encuentra perros y gatos en adopción. Todas nuestras mascotas están vacunadas, esterilizadas y listas para un hogar amoroso. Adopción responsable en Bogotá.',
+  keywords: [
+    'adopción perros bogotá',
+    'adopción gatos bogotá',
+    'mascotas en adopción',
+    'adopción responsable',
+    'perritos en adopción',
+    'refugio de animales bogotá'
+  ],
+  image: '/images/adoption-hero.jpg',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Servicio de Adopción de Mascotas',
+    description: 'Programa de adopción responsable de perros y gatos',
+    provider: {
+      '@type': 'Organization',
+      name: 'One Lesson Per Day'
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Bogotá',
+      '@id': 'https://www.wikidata.org/wiki/Q2841'
+    },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      price: '0',
+      priceCurrency: 'COP'
+    }
+  }
+});
 
 // Refs para animaciones
 const sectionHeader = ref(null)

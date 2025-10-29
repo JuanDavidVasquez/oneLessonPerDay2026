@@ -149,7 +149,7 @@
               </div>
               <div class="method-info">
                 <p class="method-label">{{ t('veterinarians.contact.email') }}</p>
-                <p class="method-value">veterinaria@huellas.com</p>
+                <p class="method-value">{{ t('footer.newsletterPlaceholder') }}</p>
               </div>
             </div>
             <div class="contact-method">
@@ -197,6 +197,80 @@
 import { ref, onMounted, computed } from 'vue'
 
 const { t } = useI18n()
+const { setSeo } = useSeo();
+
+setSeo({
+  title: 'Servicios Veterinarios Profesionales',
+  description: 'Clínica veterinaria 24/7 en Bogotá. Consultas, vacunación, cirugías, emergencias y más. Equipo profesional dedicado al cuidado de tu mascota.',
+  keywords: [
+    'veterinaria bogotá',
+    'clínica veterinaria',
+    'veterinario 24 horas',
+    'consulta veterinaria',
+    'vacunación mascotas',
+    'cirugía veterinaria',
+    'emergencias veterinarias'
+  ],
+  image: '/images/veterinary-services.jpg',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'VeterinaryCare',
+    name: 'One Lesson Per Day - Servicios Veterinarios',
+    description: 'Atención veterinaria profesional 24/7',
+    telephone: '+57-312-345-6789',
+    email: 'citas@onelessonperday.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle 123 #45-67',
+      addressLocality: 'Bogotá',
+      addressRegion: 'DC',
+      postalCode: '110111',
+      addressCountry: 'CO'
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '09:00',
+        closes: '14:00'
+      }
+    ],
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios Veterinarios',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Consulta General'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Vacunación'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Cirugía'
+          }
+        }
+      ]
+    }
+  }
+});
 
 // Refs para animaciones
 const sectionHeader = ref(null)
