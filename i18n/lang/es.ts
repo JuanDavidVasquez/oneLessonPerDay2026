@@ -124,25 +124,41 @@ export default {
     postAdoptionFollowUp: "Seguimiento post-adopción",
     scrollHint: "Desliza",
   },
-   "footer": {
-    aboutTitle: "Sobre Nosotros",
-    aboutText: "Nos dedicamos a transformar la vida de las mascotas abandonadas conectándolas con familias llenas de amor.",
-    quickLinksTitle: "Enlaces Rápidos",
-    contactTitle: "Contáctanos",
-    phoneLabel: "Teléfono",
-    emailLabel: "Correo Electrónico",
-    addressLabel: "Dirección",
-    followUsTitle: "Síguenos",
-    rightsReserved: "Todos los derechos reservados.",
-    rights: "Todos los derechos reservados.",
-    about: "Nosotros",
-    privacy: "Política de Privacidad",
-    terms: "Términos del Servicio",
-    services: "Servicios",
-    adoption: "Adopción",
-    veterinarians: "Veterinarios",
-    ethology: "Etología",
-    contact: "Contacto"
+ footer: {
+    // Sobre nosotros
+    aboutTitle: 'Sobre Nosotros',
+    aboutText: 'Clínica veterinaria dedicada al cuidado integral de tu mascota con más de 15 años de experiencia. Nuestro equipo está comprometido con la salud y bienestar de tu mejor amigo.',
+    
+    // Enlaces rápidos
+    quickLinksTitle: 'Enlaces Rápidos',
+    about: 'Acerca de',
+    services: 'Servicios',
+    adoption: 'Adopción',
+    veterinarians: 'Veterinarios',
+    ethology: 'Etología',
+    contact: 'Contacto',
+    
+    // Contacto
+    contactTitle: 'Contacto',
+    phoneLabel: 'Teléfono',
+    emailLabel: 'Email',
+    addressLabel: 'Dirección',
+    
+    // Redes sociales
+    followUsTitle: 'Síguenos',
+    
+    // Newsletter
+    newsletterText: 'Suscríbete a nuestro boletín para recibir consejos y noticias',
+    newsletterLabel: 'Correo electrónico para newsletter',
+    newsletterPlaceholder: `{'contact@onelessonperday.com'}`,
+    newsletterSubmit: 'Suscribirse al boletín',
+    
+    // Footer inferior
+    companyName: 'One Lesson Per Day',
+    rightsReserved: 'Todos los derechos reservados',
+    privacy: 'Política de Privacidad',
+    terms: 'Términos y Condiciones',
+    cookies: 'Política de Cookies'
   },
   ethology: {
     badge: "Comportamiento Animal",

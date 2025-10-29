@@ -126,25 +126,41 @@ export default {
     postAdoptionFollowUp: "Post-Adoption Follow-Up",
     scrollHint: "Scroll",
   },
-  footer:{
-    aboutTitle: "About Us",
-    aboutText: "We are dedicated to changing the lives of abandoned pets by connecting them with loving families.",
-    quickLinksTitle: "Quick Links",
-    contactTitle: "Contact Us",
-    phoneLabel: "Phone",
-    emailLabel: "Email",
-    addressLabel: "Address",
-    followUsTitle: "Follow Us",
-    rightsReserved: "All rights reserved.",
-    rights: "All rights reserved.",
-    about: "About",
-    privacy: "Privacy Policy",
-    terms: "Terms of Service",
-    services: "Services",
-    adoption: "Adoption",
-    veterinarians: "Veterinarians",
-    ethology: "Ethology",
-    contact: "Contact",
+   footer: {
+    // About us
+    aboutTitle: 'About Us',
+    aboutText: 'Veterinary clinic dedicated to comprehensive care of your pet with over 15 years of experience. Our team is committed to the health and wellbeing of your best friend.',
+    
+    // Quick links
+    quickLinksTitle: 'Quick Links',
+    about: 'About',
+    services: 'Services',
+    adoption: 'Adoption',
+    veterinarians: 'Veterinarians',
+    ethology: 'Ethology',
+    contact: 'Contact',
+    
+    // Contact
+    contactTitle: 'Contact',
+    phoneLabel: 'Phone',
+    emailLabel: 'Email',
+    addressLabel: 'Address',
+    
+    // Social media
+    followUsTitle: 'Follow Us',
+    
+    // Newsletter
+    newsletterText: 'Subscribe to our newsletter for tips and news',
+    newsletterLabel: 'Email for newsletter',
+    newsletterPlaceholder: `{'contact@onelessonperday.com'}`,
+    newsletterSubmit: 'Subscribe to newsletter',
+    
+    // Footer bottom
+    companyName: 'One Lesson Per Day',
+    rightsReserved: 'All rights reserved',
+    privacy: 'Privacy Policy',
+    terms: 'Terms and Conditions',
+    cookies: 'Cookie Policy'
   },
   ethology: {
     badge: "Animal Behavior",
