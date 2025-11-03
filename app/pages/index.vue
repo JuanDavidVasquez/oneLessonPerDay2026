@@ -24,7 +24,7 @@
           </NuxtLink>
           <NuxtLink to="/ethology" class="btn-secondary">
             <span>{{ t('common.learnMore') }}</span>
-          </NuxtLink>
+          </NuxtLink>               
         </div>
         
         <!-- Stats badges -->
@@ -90,7 +90,6 @@
       </div>
     </div>
   </header>
-
 </template>
 
 <script setup lang="ts">

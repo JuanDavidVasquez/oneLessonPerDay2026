@@ -1143,5 +1143,32 @@ export default {
       homeButton: "Go to Home",
       privacyButton: "View Privacy Policy"
     }
+  },
+  login: {
+    title: "Login",
+    emailPlaceholder: "Email address",
+    passwordPlaceholder: "Password",
+    acceptTermsLabel: "I accept the terms and conditions",
+    submitButton: "Sign in",
+    orContinueWith: "or continue with",
+    googleButton: "Continue with Google",
+    success: "Login successful",
+    error: "Login failed. Please check your credentials and try again.",
+
+    validation: {
+      emailRequired: "Email is required",
+      emailInvalid: "Please enter a valid email address",
+      passwordMin: "Password must be at least 8 characters long",
+      passwordUpper: "Must contain at least one uppercase letter",
+      passwordLower: "Must contain at least one lowercase letter",
+      passwordNumber: "Must contain at least one number",
+      acceptTerms: "You must accept the terms and conditions",
+      emailPlaceholder: "Please enter your email address",
+      passwordPlaceholder: "Please enter your password",
+      acceptTermsLabel: "You must accept the terms and conditions",
+      orContinueWith: "or continue with",
+      googleButton: "Continue with Google",
+      submitButton: "Sign in"
+    }
   }
 };

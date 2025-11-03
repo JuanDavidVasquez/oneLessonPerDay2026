@@ -1140,5 +1140,37 @@ export default {
       homeButton: "Ir al Inicio",
       privacyButton: "Ver Política de Privacidad"
     }
+  },
+  login: {
+    title: "Iniciar Sesión",
+    emailPlaceholder: "Correo electrónico",
+    passwordPlaceholder: "Contraseña",
+    acceptTermsLabel: "Acepto los términos y condiciones",
+    submitButton: "Iniciar sesión",
+    orContinueWith: "o continuar con",
+    googleButton: "Continuar con Google",
+    success: "Inicio de sesión exitoso",
+    error: "Error al iniciar sesión, verifica tus datos e inténtalo de nuevo.",
+    registerPrompt: "¿No tienes una cuenta? ",
+    registerLink: "Regístrate aquí",
+    errorGoogle: "Error al iniciar sesión con Google, inténtalo de nuevo.",
+    registering: "Iniciando sesión...",
+
+    validation: {
+      emailRequired: "El correo es obligatorio",
+      emailInvalid: "Debe ser un correo electrónico válido",
+      passwordMin: "La contraseña debe tener al menos 8 caracteres",
+      passwordUpper: "Debe contener al menos una letra mayúscula",
+      passwordLower: "Debe contener al menos una letra minúscula",
+      passwordNumber: "Debe contener al menos un número",
+      acceptTerms: "Debe aceptar los términos y condiciones",
+      emailPlaceholder: "Por favor ingresa tu correo electrónico",
+      passwordPlaceholder: "Por favor ingresa tu contraseña",
+      acceptTermsLabel: "Aceptas los términos y condiciones",
+      submitButton: "Iniciar sesión",
+      orContinueWith: "o continuar con",
+      googleButton: "Continuar con Google"
+    }
+
   }
 };

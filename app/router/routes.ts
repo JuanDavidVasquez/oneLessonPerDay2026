@@ -46,5 +46,13 @@ export const menuItems = [
     command: () => {
       navigateTo('/contact');
     }
+  },
+  {
+    label: 'login',
+    icon: 'pi pi-sign-in',
+    route: '/auth',
+    command: () => {
+      navigateTo('/auth');
+    }
   }
 ];
