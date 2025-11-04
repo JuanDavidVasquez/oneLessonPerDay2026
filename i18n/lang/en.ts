@@ -45,6 +45,8 @@ export default {
     privacyPolicy: "Privacy Policy",
     followUs: "Follow Us",
     language: "Language",
+    viewAll: "View all",
+    manage: "Manage",
   },
 
   // Navigation
@@ -1174,7 +1176,7 @@ export default {
     }
   },
   //Dashboard related translations
-   dashboard: {
+  dashboard: {
     welcome: 'Welcome',
     subtitle: 'Manage your pets, appointments and adoptions from here',
     myPets: 'My Pets',
@@ -1191,28 +1193,28 @@ export default {
     appliedOn: 'Applied on',
     viewDetails: 'View details',
     addFirstPet: 'Add your first pet',
-    
+
     // Sections
     upcomingAppointments: 'Upcoming Appointments',
     adoptionApplications: 'Adoption Applications',
     quickActions: 'Quick Actions',
     activeReminders: 'Active Reminders',
     recentActivity: 'Recent Activity',
-    
+
     // Quick actions
     newAppointment: 'New Appointment',
     adopt: 'Adopt',
     addReminder: 'Reminder',
     contactVet: 'Veterinarian',
   },
-  
+
   status: {
     confirmed: 'Confirmed',
     pending: 'Pending',
     cancelled: 'Cancelled',
     completed: 'Completed',
   },
-  
+
   applicationStatus: {
     pending: 'Under Review',
     approved: 'Approved',
@@ -1221,10 +1223,48 @@ export default {
     interview: 'Interview',
     homeVisit: 'Home Visit',
   },
-  
+
   healthStatus: {
     healthy: 'Healthy',
     warning: 'Attention',
     critical: 'Urgent',
   },
+  pet: {
+    upcomingAppointments: 'Upcoming Appointments',
+    healthRecords: 'Health Records',
+    vaccinationStatus: 'Vaccination Status',
+    lastCheckup: 'Last Check-up',
+    nextVaccination: 'Next Vaccination',
+    addHealthRecord: 'Add Health Record',
+    viewMedicalHistory: 'View Medical History',
+    noAppointments: 'No upcoming appointments',
+    noHealthRecords: 'No health records available',
+    noVaccinations: 'No vaccination records available',
+    age: 'Age',
+    breed: 'Breed',
+    weight: 'Weight',
+    gender: 'Gender',
+    sterilized: 'Sterilized',
+    vaccinated: 'Vaccinated',
+    editPet: 'Edit Pet Information',
+    deletePet: 'Delete Pet',
+    confirmDelete: 'Are you sure you want to delete this pet? This action cannot be undone.',
+    cancel: 'Cancel',
+    delete: 'Delete',
+    scheduleAppointment: 'Schedule Appointment',
+    addReminder: 'Add Reminder',
+    medicalHistory: 'Medical History',
+    vaccinations: 'Vaccinations',
+    healthRecordsList: 'Health Records List',
+    noHealthRecordsText: 'No health records found. Click the button below to add one.',
+    addRecord: 'Add Record',
+    notes: 'Notes',
+    recentMedicalHistory: 'Recent Medical History',
+    viewAllRecords: 'View All Records',
+    noReminders: 'No reminders set for this pet',
+    addFirstReminder: 'Add your first reminder',
+    setReminder: 'Set Reminder',
+    activeReminders: 'Active Reminders',
+    completedReminders: 'Completed Reminders'
+  }
 };

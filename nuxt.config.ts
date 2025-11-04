@@ -106,9 +106,10 @@ export default defineNuxtConfig({
         '/about',
         '/contact',
         '/veterinarians',
-        '/ethology', // ✅ Agregado
-        '/adoption', // ✅ Agregado
+        '/ethology',
+        '/adoption',
         '/appointments',
+        '/pets',
       ]
     }
   },
@@ -132,7 +133,7 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Adopción responsable de mascotas, servicios veterinarios 24/7 y educación en etología animal en Bogotá. Encuentra tu compañero perfecto.',
         },
-        { name: 'keywords', content: 'adopción mascotas bogotá, veterinaria bogotá, etología animal, adopción perros, adopción gatos, servicios veterinarios' }, // ✅ Agregado
+        { name: 'keywords', content: 'adopción mascotas bogotá, veterinaria bogotá, etología animal, adopción perros, adopción gatos, servicios veterinarios' }, 
         { name: 'robots', content: 'index, follow' },
         { name: 'author', content: 'One Lesson Per Day' },
         { name: 'theme-color', content: '#10b981' }, // ✅ Color verde veterinario
@@ -145,13 +146,13 @@ export default defineNuxtConfig({
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'One Lesson Per Day' },
-        { property: 'og:locale', content: 'es_CO' }, // ✅ Agregado
+        { property: 'og:locale', content: 'es_CO' }, 
         { property: 'og:title', content: 'One Lesson Per Day | Adopción y Veterinaria en Bogotá' },
         { property: 'og:description', content: 'Adopción responsable de mascotas y servicios veterinarios profesionales en Bogotá. Educación en etología y cuidado animal.' },
         { property: 'og:image', content: 'https://onelessonperday.com/og-image.jpg' },
-        { property: 'og:image:width', content: '1200' }, // ✅ Agregado
-        { property: 'og:image:height', content: '630' }, // ✅ Agregado
-        { property: 'og:image:alt', content: 'One Lesson Per Day - Adopción y Veterinaria' }, // ✅ Agregado
+        { property: 'og:image:width', content: '1200' }, 
+        { property: 'og:image:height', content: '630' }, 
+        { property: 'og:image:alt', content: 'One Lesson Per Day - Adopción y Veterinaria' }, 
         { property: 'og:url', content: 'https://onelessonperday.com' },
         
         // Twitter Card
@@ -159,7 +160,7 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'One Lesson Per Day | Adopción y Veterinaria' },
         { name: 'twitter:description', content: 'Adopción responsable de mascotas y servicios veterinarios en Bogotá.' },
         { name: 'twitter:image', content: 'https://onelessonperday.com/og-image.jpg' },
-        // { name: 'twitter:site', content: '@onelessonperday' }, // ✅ Descomentar si tienes Twitter
+        // { name: 'twitter:site', content: '@onelessonperday' }, 
         
         // ✅ Mobile Web App
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
@@ -185,23 +186,23 @@ export default defineNuxtConfig({
             url: 'https://onelessonperday.com',
             logo: 'https://onelessonperday.com/logo.png',
             image: 'https://onelessonperday.com/og-image.jpg',
-            telephone: '+57-312-345-6789', // ✅ Agregado (cambiar por tu número real)
-            email: 'contacto@onelessonperday.com', // ✅ Agregado
-            priceRange: '$$', // ✅ Agregado
+            telephone: '+57-312-345-6789',
+            email: 'contacto@onelessonperday.com', 
+            priceRange: '$$', 
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Calle 123 #45-67', // ✅ Agregado (cambiar por dirección real)
+              streetAddress: 'Calle 123 #45-67',
               addressLocality: 'Bogotá',
               addressRegion: 'Bogotá D.C.',
-              postalCode: '110111', // ✅ Agregado (cambiar por código real)
+              postalCode: '110111',
               addressCountry: 'CO'
             },
-            geo: { // ✅ Agregado para SEO local
+            geo: {
               '@type': 'GeoCoordinates',
               latitude: '4.7110',
               longitude: '-74.0721'
             },
-            openingHoursSpecification: [ // ✅ Agregado
+            openingHoursSpecification: [ 
               {
                 '@type': 'OpeningHoursSpecification',
                 dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -217,12 +218,12 @@ export default defineNuxtConfig({
             ],
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+57-312-345-6789', // ✅ Agregado
+              telephone: '+57-312-345-6789', 
               contactType: 'Customer Service',
-              email: 'contacto@onelessonperday.com', // ✅ Agregado
+              email: 'contacto@onelessonperday.com', 
               availableLanguage: ['Spanish', 'English']
             },
-            sameAs: [ // ✅ Agregado (redes sociales)
+            sameAs: [
               // 'https://facebook.com/onelessonperday',
               // 'https://instagram.com/onelessonperday',
               // 'https://twitter.com/onelessonperday'
@@ -233,7 +234,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["animate.css", "@/assets/scss/main.scss", "primeicons/primeicons.css"],
+  css: ["animate.css", "@/assets/scss/main.scss", "primeicons/primeicons.css","@fortawesome/fontawesome-free/css/all.css"],
 
   experimental: {
     payloadExtraction: false,

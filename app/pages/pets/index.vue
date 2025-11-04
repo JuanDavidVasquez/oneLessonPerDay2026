@@ -328,13 +328,14 @@ import { useRouter } from 'vue-router'
 import { useMainStore } from '~/store/main.store'
 import { useI18n } from 'vue-i18n'
 import { getMockDashboardData } from '~/data/dashboard.data'
-import type {
+import type { 
   Pet,
   AdoptionApplication,
   Appointment,
   Reminder,
   Activity,
-} from '~/types/dashboard.interface'
+ } from '~/interfaces/dashboard.interface'
+
 
 definePageMeta({
   layout: 'authenticated',
@@ -392,7 +393,7 @@ const recentActivity = computed(() => {
 // Cargar datos del usuario
 onMounted(async () => {
   if (!mainStore.user) {
-    router.push('/login')
+    router.push('/auth')
     return
   }
 
@@ -402,7 +403,7 @@ onMounted(async () => {
     // const data = await $fetch(`/api/dashboard/${mainStore.user.id}`)
     
     // Por ahora usar datos mock
-    const data = await getMockDashboardData(mainStore.user.id)
+    const data = await getMockDashboardData(/* mainStore.user.id */1)
     
     pets.value = data.pets
     adoptionApplications.value = data.adoptionApplications
@@ -458,7 +459,9 @@ const completeReminder = async (id: number) => {
   // TODO: Marcar recordatorio como completado
   const reminderIndex = reminders.value.findIndex((r) => r.id === id)
   if (reminderIndex !== -1) {
-    reminders.value[reminderIndex].completed = true
+    if (reminders.value[reminderIndex]) {
+      reminders.value[reminderIndex].completed = true
+    }
   }
 }
 

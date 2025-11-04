@@ -43,6 +43,8 @@ export default {
     privacyPolicy: "Política de Privacidad",
     followUs: "Síguenos",
     language: "Idioma",
+    viewAll: "Ver todo",
+    manage: "Administrar",
   },
 
   // Navigation
@@ -1157,7 +1159,7 @@ export default {
     errorGoogle: "Error al iniciar sesión con Google, inténtalo de nuevo.",
     registering: "Iniciando sesión...",
     logout: "Cerrar sesión",
-    
+
 
     validation: {
       emailRequired: "El correo es obligatorio",
@@ -1178,9 +1180,9 @@ export default {
   },
 
   //Dashboard translations
-   dashboard: {
+  dashboard: {
     welcome: 'Bienvenido/a',
-    subtitle: 'Gestiona tus mascotas, citas y adopciones desde aquí',
+    subtitle: 'Gestiona tus acompañantes, citas y adopciones desde aquí',
     myPets: 'Mis Mascotas',
     applications: 'Postulaciones',
     nextAppointments: 'Próximas Citas',
@@ -1195,28 +1197,28 @@ export default {
     appliedOn: 'Aplicada el',
     viewDetails: 'Ver detalles',
     addFirstPet: 'Agregar tu primera mascota',
-    
+
     // Secciones
     upcomingAppointments: 'Próximas Citas',
     adoptionApplications: 'Postulaciones de Adopción',
     quickActions: 'Acciones Rápidas',
     activeReminders: 'Recordatorios Activos',
     recentActivity: 'Actividad Reciente',
-    
+
     // Acciones rápidas
     newAppointment: 'Nueva Cita',
     adopt: 'Adoptar',
     addReminder: 'Recordatorio',
     contactVet: 'Veterinario',
   },
-  
+
   status: {
     confirmed: 'Confirmada',
     pending: 'Pendiente',
     cancelled: 'Cancelada',
     completed: 'Completada',
   },
-  
+
   applicationStatus: {
     pending: 'En Revisión',
     approved: 'Aprobada',
@@ -1225,10 +1227,41 @@ export default {
     interview: 'Entrevista',
     homeVisit: 'Visita Domiciliaria',
   },
-  
+
   healthStatus: {
     healthy: 'Saludable',
     warning: 'Atención',
     critical: 'Urgente',
+  },
+  pet: {
+    upcomingAppointments: 'Próximas Citas',
+    healthRecords: 'Historial de Salud',
+    vaccinationStatus: 'Estado de Vacunación',
+    lastCheckup: 'Último Chequeo',
+    nextVaccination: 'Próxima Vacunación',
+    addHealthRecord: 'Agregar Registro de Salud',
+    viewMedicalHistory: 'Ver Historial Médico',
+    noAppointments: 'No hay citas programadas para esta mascota.',
+    noHealthRecords: 'No hay registros de salud disponibles.',
+    noVaccinations: 'No hay registros de vacunación disponibles.',
+    age: 'Edad',
+    breed: 'Raza',
+    weight: 'Peso',
+    sterilized: 'Esterilizado',
+    vaccinated: 'Vacunado',
+    editPet: 'Editar Mascota',
+    deletePet: 'Eliminar Mascota',
+    confirmDeleteTitle: '¿Eliminar esta mascota?',
+    confirmDeleteMessage: 'Esta acción no se puede deshacer. ¿Estás seguro de que deseas eliminar a {petName}?',
+    cancel: 'Cancelar',
+    delete: 'Eliminar',
+    scheduleAppointment: 'Agendar Cita',
+    addReminder: 'Agregar Recordatorio',
+    medicalHistory: 'Historial Médico',
+    notes: 'Notas',
+    recentMedicalHistory: 'Historial Médico Reciente',
+    viewAllRecords: 'Ver Todo el Historial Médico',
+    activeReminders: 'Recordatorios Activos',
+    noReminders: 'No hay recordatorios activos para esta mascota.'
   }
 };

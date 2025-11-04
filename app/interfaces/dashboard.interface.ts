@@ -8,7 +8,9 @@ export interface Pet {
   species: 'dog' | 'cat' | 'other'
   gender: 'male' | 'female'
   vaccinated: boolean
-  sterilized: boolean
+  sterilized: boolean,
+  weight?: number,
+  notes?: string
 }
 
 export interface AdoptionApplication {
