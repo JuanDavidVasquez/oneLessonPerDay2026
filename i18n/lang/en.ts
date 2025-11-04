@@ -1154,6 +1154,7 @@ export default {
     googleButton: "Continue with Google",
     success: "Login successful",
     error: "Login failed. Please check your credentials and try again.",
+    logout: "Logout",
 
     validation: {
       emailRequired: "Email is required",

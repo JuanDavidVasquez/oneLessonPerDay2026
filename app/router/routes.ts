@@ -1,58 +1,52 @@
-export const menuItems = [
+import { useMainStore } from "~/store/main.store";
+
+export const publicMenuItems = [
   {
     label: 'home',
     icon: 'pi pi-home',
     route: '/',
-    command: () => {
-      navigateTo('/');
-    }
   },
   {
     label: 'about',
     icon: 'pi pi-info-circle',
     route: '/about',
-    command: () => {
-      navigateTo('/about');
-    }
   },
   {
     label: 'ethology',
     icon: 'pi pi-book',
     route: '/ethology',
-    command: () => {
-      navigateTo('/ethology');
-    }
   },
   {
     label: 'adoption',
     icon: 'pi pi-heart',
     route: '/adoption',
-    command: () => {
-      navigateTo('/adoption');
-    }
   },
   {
     label: 'veterinarians',
     icon: 'pi pi-user-plus',
     route: '/veterinarians',
-    command: () => {
-      navigateTo('/veterinarians');
-    }
   },
   {
     label: 'contact',
     icon: 'pi pi-phone',
     route: '/contact',
-    command: () => {
-      navigateTo('/contact');
-    }
   },
   {
     label: 'login',
     icon: 'pi pi-sign-in',
     route: '/auth',
-    command: () => {
-      navigateTo('/auth');
-    }
+  }
+];
+
+export const authMenuItems = [
+  {
+    label: 'home',
+    icon: 'pi pi-home',
+    route: '/',
+  },
+  {
+    label: 'adoption',
+    icon: 'pi pi-heart',
+    route: '/adoption',
   }
 ];

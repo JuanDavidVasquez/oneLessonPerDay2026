@@ -1155,6 +1155,8 @@ export default {
     registerLink: "Regístrate aquí",
     errorGoogle: "Error al iniciar sesión con Google, inténtalo de nuevo.",
     registering: "Iniciando sesión...",
+    logout: "Cerrar sesión",
+    
 
     validation: {
       emailRequired: "El correo es obligatorio",

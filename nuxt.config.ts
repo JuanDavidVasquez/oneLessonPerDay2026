@@ -257,6 +257,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      imageDomains: ['lh3.googleusercontent.com'],
       secret: process.env.SECRET_KEY,
       API_BASE_URL: process.env.API_URL,
       SHORT_NAME: process.env.SHORT_NAME,

@@ -10,6 +10,7 @@ import { useMainStore } from "~/store/main.store";
 
 // 🔹 Store global
 const mainStore = useMainStore();
+const router = useRouter();
 
 declare global {
   interface Window {
@@ -17,7 +18,6 @@ declare global {
   }
 }
 
-// ✅ Traducciones
 const { t } = useI18n();
 
 // ✅ Esquema de validación con Zod
@@ -73,7 +73,10 @@ async function handleGoogleCredentialResponse(response: any) {
     alert(`✅ Bienvenido ${name}\n📧 ${email}`);
     console.log("🧩 Datos del usuario Google:", decoded);
 
-    // En producción, aquí enviarías el token al backend:
+    if(name){
+       router.push("/");
+    }
+    //TODO: token al backend:
     // await api.post("/auth/google", { token: googleToken });
 
   } catch (error) {
