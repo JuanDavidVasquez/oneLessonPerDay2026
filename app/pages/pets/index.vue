@@ -12,8 +12,8 @@
       <header class="dashboard-welcome">
         <div class="welcome-content">
           <div class="welcome-text">
-            <h1>🐾 {{ $t('dashboard.welcome') }}, {{ user?.name }}!</h1>
-            <p class="subtitle">{{ $t('dashboard.subtitle') }}</p>
+            <h1>🐾 {{ mainStore.user ? mainStore.user.name : '' }}!</h1>
+            <p class="subtitle">{{ t('dashboard.subtitle') }}</p>
           </div>
           <div class="welcome-date">
             <div class="date-card">
@@ -39,7 +39,7 @@
               </div>
               <div class="stat-content">
                 <h3>{{ pets.length }}</h3>
-                <p>{{ $t('dashboard.myPets') }}</p>
+                <p>{{ t('dashboard.myPets') }}</p>
               </div>
               <div class="stat-arrow">
                 <i class="fas fa-arrow-right"></i>
@@ -52,7 +52,7 @@
               </div>
               <div class="stat-content">
                 <h3>{{ adoptionApplications.length }}</h3>
-                <p>{{ $t('dashboard.applications') }}</p>
+                <p>{{ t('dashboard.applications') }}</p>
               </div>
               <div class="stat-arrow">
                 <i class="fas fa-arrow-right"></i>
@@ -65,7 +65,7 @@
               </div>
               <div class="stat-content">
                 <h3>{{ upcomingAppointments.length }}</h3>
-                <p>{{ $t('dashboard.nextAppointments') }}</p>
+                <p>{{ t('dashboard.nextAppointments') }}</p>
               </div>
               <div class="stat-arrow">
                 <i class="fas fa-arrow-right"></i>
@@ -78,7 +78,7 @@
               </div>
               <div class="stat-content">
                 <h3>{{ activeReminders.length }}</h3>
-                <p>{{ $t('dashboard.reminders') }}</p>
+                <p>{{ t('dashboard.reminders') }}</p>
               </div>
               <div class="stat-arrow">
                 <i class="fas fa-arrow-right"></i>
@@ -91,10 +91,10 @@
             <div class="section-header">
               <h2>
                 <i class="fas fa-calendar-alt"></i>
-                {{ $t('dashboard.upcomingAppointments') }}
+                {{ t('dashboard.upcomingAppointments') }}
               </h2>
               <button class="btn-text" @click="goToAppointments">
-                {{ $t('dashboard.viewAll') }}
+                {{ t('dashboard.viewAll') }}
                 <i class="fas fa-arrow-right"></i>
               </button>
             </div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="appointment-status">
                   <span :class="['status-badge', appointment.status]">
-                    {{ $t(`status.${appointment.status}`) }}
+                    {{ t(`status.${appointment.status}`) }}
                   </span>
                 </div>
               </div>
@@ -132,9 +132,9 @@
 
             <div class="empty-state" v-else>
               <i class="fas fa-calendar-times"></i>
-              <p>{{ $t('dashboard.noAppointments') }}</p>
+              <p>{{ t('dashboard.noAppointments') }}</p>
               <button class="btn-primary" @click="createAppointment">
-                {{ $t('dashboard.scheduleAppointment') }}
+                {{ t('dashboard.scheduleAppointment') }}
               </button>
             </div>
           </section>
@@ -144,10 +144,10 @@
             <div class="section-header">
               <h2>
                 <i class="fas fa-file-alt"></i>
-                {{ $t('dashboard.adoptionApplications') }}
+                {{ t('dashboard.adoptionApplications') }}
               </h2>
               <button class="btn-text" @click="goToAdoption">
-                {{ $t('dashboard.browseMore') }}
+                {{ t('dashboard.browseMore') }}
                 <i class="fas fa-arrow-right"></i>
               </button>
             </div>
@@ -161,14 +161,14 @@
                 <div class="application-image">
                   <img :src="application.petImage" :alt="application.petName" />
                   <span :class="['status-overlay', application.status]">
-                    {{ $t(`applicationStatus.${application.status}`) }}
+                    {{ t(`applicationStatus.${application.status}`) }}
                   </span>
                 </div>
                 <div class="application-info">
                   <h4>{{ application.petName }}</h4>
                   <p class="application-date">
                     <i class="fas fa-calendar"></i>
-                    {{ $t('dashboard.appliedOn') }} {{ formatDate(application.submittedDate) }}
+                    {{ t('dashboard.appliedOn') }} {{ formatDate(application.submittedDate) }}
                   </p>
                   <div class="application-progress">
                     <div class="progress-bar">
@@ -181,16 +181,16 @@
                   </div>
                 </div>
                 <button class="btn-outline-sm" @click="viewApplication(application.id)">
-                  {{ $t('dashboard.viewDetails') }}
+                  {{ t('dashboard.viewDetails') }}
                 </button>
               </div>
             </div>
 
             <div class="empty-state" v-else>
               <i class="fas fa-heart-broken"></i>
-              <p>{{ $t('dashboard.noApplications') }}</p>
+              <p>{{ t('dashboard.noApplications') }}</p>
               <button class="btn-primary" @click="goToAdoption">
-                {{ $t('dashboard.exploreAdoption') }}
+                {{ t('dashboard.exploreAdoption') }}
               </button>
             </div>
           </section>
@@ -200,23 +200,23 @@
         <aside class="sidebar-column">
           <!-- Acciones rápidas -->
           <section class="quick-actions">
-            <h3>{{ $t('dashboard.quickActions') }}</h3>
+            <h3>{{ t('dashboard.quickActions') }}</h3>
             <div class="actions-grid">
               <button class="action-btn" @click="createAppointment">
                 <i class="fas fa-calendar-plus"></i>
-                <span>{{ $t('dashboard.newAppointment') }}</span>
+                <span>{{ t('dashboard.newAppointment') }}</span>
               </button>
               <button class="action-btn" @click="goToAdoption">
                 <i class="fas fa-paw"></i>
-                <span>{{ $t('dashboard.adopt') }}</span>
+                <span>{{ t('dashboard.adopt') }}</span>
               </button>
               <button class="action-btn" @click="addReminder">
                 <i class="fas fa-bell-plus"></i>
-                <span>{{ $t('dashboard.addReminder') }}</span>
+                <span>{{ t('dashboard.addReminder') }}</span>
               </button>
               <button class="action-btn" @click="contactVet">
                 <i class="fas fa-user-md"></i>
-                <span>{{ $t('dashboard.contactVet') }}</span>
+                <span>{{ t('dashboard.contactVet') }}</span>
               </button>
             </div>
           </section>
@@ -226,7 +226,7 @@
             <div class="section-header-small">
               <h3>
                 <i class="fas fa-paw"></i>
-                {{ $t('dashboard.myPets') }}
+                {{ t('dashboard.myPets') }}
               </h3>
               <button class="btn-icon" @click="goToAllPets">
                 <i class="fas fa-arrow-right"></i>
@@ -253,7 +253,7 @@
 
             <button class="btn-outline-full" @click="goToAdoption" v-else>
               <i class="fas fa-plus"></i>
-              {{ $t('dashboard.addFirstPet') }}
+              {{ t('dashboard.addFirstPet') }}
             </button>
           </section>
 
@@ -262,7 +262,7 @@
             <div class="section-header-small">
               <h3>
                 <i class="fas fa-bell"></i>
-                {{ $t('dashboard.activeReminders') }}
+                {{ t('dashboard.activeReminders') }}
               </h3>
             </div>
 
@@ -287,7 +287,7 @@
             </div>
 
             <div class="empty-state-small" v-else>
-              <p>{{ $t('dashboard.noReminders') }}</p>
+              <p>{{ t('dashboard.noReminders') }}</p>
             </div>
           </section>
 
@@ -296,7 +296,7 @@
             <div class="section-header-small">
               <h3>
                 <i class="fas fa-history"></i>
-                {{ $t('dashboard.recentActivity') }}
+                {{ t('dashboard.recentActivity') }}
               </h3>
             </div>
 
@@ -325,23 +325,32 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { useAuth } from '~/composables/useAuth'
+import { useMainStore } from '~/store/main.store'
 import { useI18n } from 'vue-i18n'
+import { getMockDashboardData } from '~/data/dashboard.data'
+import type {
+  Pet,
+  AdoptionApplication,
+  Appointment,
+  Reminder,
+  Activity,
+} from '~/types/dashboard.interface'
 
 definePageMeta({
   layout: 'authenticated',
 })
 
 const router = useRouter()
-const { user } = useAuth()
+const mainStore = useMainStore()
 const { t } = useI18n()
 
 // Estado reactivo
-const pets = ref([])
-const adoptionApplications = ref([])
-const upcomingAppointments = ref([])
-const activeReminders = ref([])
-const recentActivity = ref([])
+const loading = ref(false)
+const pets = ref<Pet[]>([])
+const adoptionApplications = ref<AdoptionApplication[]>([])
+const appointments = ref<Appointment[]>([])
+const reminders = ref<Reminder[]>([])
+const activities = ref<Activity[]>([])
 
 // Fecha actual
 const currentDate = computed(() => {
@@ -352,78 +361,60 @@ const currentDate = computed(() => {
   }
 })
 
-// Cargar datos del usuario
-onMounted(async () => {
-  if (user.value) {
-    // TODO: Reemplazar con llamadas reales a la API
-    await loadUserData()
-  }
+// Citas futuras
+const upcomingAppointments = computed(() => {
+  const now = new Date()
+  return appointments.value
+    .filter((appointment) => new Date(appointment.date) > now)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 })
 
-const loadUserData = async () => {
-  // Simulación de carga de datos
-  pets.value = [
-    {
-      id: 1,
-      name: 'Luna',
-      breed: 'Golden Retriever',
-      age: '3 años',
-      image: '/images/pets/luna.jpg',
-      healthStatus: 'healthy',
-    },
-    {
-      id: 2,
-      name: 'Max',
-      breed: 'Bulldog Francés',
-      age: '2 años',
-      image: '/images/pets/max.jpg',
-      healthStatus: 'healthy',
-    },
-  ]
+// Recordatorios activos
+const activeReminders = computed(() => {
+  return reminders.value
+    .filter((reminder) => !reminder.completed)
+    .sort((a, b) => {
+      const priorityOrder = { high: 1, medium: 2, low: 3 }
+      if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+        return priorityOrder[a.priority] - priorityOrder[b.priority]
+      }
+      return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime()
+    })
+})
 
-  adoptionApplications.value = [
-    {
-      id: 1,
-      petName: 'Bella',
-      petImage: '/images/pets/bella.jpg',
-      submittedDate: '2025-10-25',
-      status: 'pending',
-      progress: 60,
-    },
-  ]
+// Actividad reciente
+const recentActivity = computed(() => {
+  return activities.value
+    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+    .slice(0, 10)
+})
 
-  upcomingAppointments.value = [
-    {
-      id: 1,
-      petName: 'Luna',
-      petImage: '/images/pets/luna.jpg',
-      date: '2025-11-05T10:00:00',
-      type: 'Chequeo general',
-      status: 'confirmed',
-    },
-  ]
+// Cargar datos del usuario
+onMounted(async () => {
+  if (!mainStore.user) {
+    router.push('/login')
+    return
+  }
 
-  activeReminders.value = [
-    {
-      id: 1,
-      title: 'Vacuna anual',
-      petName: 'Luna',
-      dueDate: '2025-11-10',
-      priority: 'high',
-      icon: 'syringe',
-    },
-  ]
-
-  recentActivity.value = [
-    {
-      id: 1,
-      description: 'Cita completada con Dr. García',
-      timestamp: '2025-10-28T14:30:00',
-      type: 'appointment',
-      icon: 'check-circle',
-    },
-  ]
-}
+  loading.value = true
+  try {
+    // TODO: Reemplazar con llamada real a la API
+    // const data = await $fetch(`/api/dashboard/${mainStore.user.id}`)
+    
+    // Por ahora usar datos mock
+    const data = await getMockDashboardData(mainStore.user.id)
+    
+    pets.value = data.pets
+    adoptionApplications.value = data.adoptionApplications
+    appointments.value = data.upcomingAppointments
+    reminders.value = data.activeReminders
+    activities.value = data.recentActivity
+  } catch (error) {
+    console.error('Error loading dashboard data:', error)
+  } finally {
+    loading.value = false
+  }
+})
 
 // Métodos de navegación
 const goToSection = (section: string) => {
@@ -463,9 +454,12 @@ const contactVet = () => {
   router.push('/veterinarians')
 }
 
-const completeReminder = (id: number) => {
+const completeReminder = async (id: number) => {
   // TODO: Marcar recordatorio como completado
-  console.log('Completar recordatorio:', id)
+  const reminderIndex = reminders.value.findIndex((r) => r.id === id)
+  if (reminderIndex !== -1) {
+    reminders.value[reminderIndex].completed = true
+  }
 }
 
 // Métodos de formato
@@ -506,4 +500,3 @@ const formatRelativeTime = (timestamp: string) => {
   return formatDate(timestamp)
 }
 </script>
-

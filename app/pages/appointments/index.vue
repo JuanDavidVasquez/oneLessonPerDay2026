@@ -227,7 +227,7 @@
                     <label>{{ $t('appointments.form.fields.date') }} *</label>
                     <Calendar 
                       v-model="scheduleForm.dateObject" 
-                      :min-date="minDateObject"
+                      :min-date="minDate"
                       date-format="dd/mm/yy"
                       :placeholder="$t('appointments.form.fields.date')"
                       class="w-full"

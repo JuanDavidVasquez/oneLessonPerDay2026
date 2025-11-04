@@ -5,7 +5,7 @@ export const useAuth = () => {
   const login = async (credentials: { email: string; password: string }) => {
     try {
       // Llamada a tu API
-      const response = await $fetch('/api/auth/login', {
+      const response = await $fetch<{ user: any; token: string }>('/api/auth/login', {
         method: 'POST',
         body: credentials
       })
@@ -35,7 +35,7 @@ export const useAuth = () => {
 
     try {
       // Verificar token con tu API
-      const response = await $fetch('/api/auth/me', {
+      const response = await $fetch<{ user: any }>('/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`
         }

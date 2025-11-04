@@ -62,7 +62,7 @@ export default {
     veterinarians: "Veterinarians",
     ethology: "Ethology",
     adoption: "Adoption",
-    pets: "Pets"
+    pets: "Dashboard"
   },
 
   // Forms
