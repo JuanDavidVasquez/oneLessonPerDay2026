@@ -13,7 +13,8 @@
         <NuxtLink v-ripple :href="href" :class="{ 'active-link': isActive }" v-bind="props.action"
           @click="() => handleMenuClick(navigate)">
           <span v-if="item.icon" :class="item.icon" />
-          <span class="menu-label">{{ t(`nav.${item.label}`) }}</span>
+          <span class="menu-label" style="margin-bottom: 2px;" v-if="item.label === 'login'"></span>
+          <span class="menu-label" v-else>{{ t(`nav.${item.label}`) }}</span>
         </NuxtLink>
       </router-link>
 
@@ -24,18 +25,14 @@
       </NuxtLink>
     </template>
 
-    <!-- 👇 Acciones a la derecha -->
+    <!-- Acciones a la derecha -->
     <template #end>
       <div class="menu-actions">
-        <!-- 👇 Si hay usuario logueado -->
+        <!-- Si hay usuario logueado -->
         <div v-if="mainStore.user" class="user-info">
           <span class="user-name">{{ mainStore.user.name }}</span>
           <img :src="mainStore.user.picture" alt="Avatar" class="user-avatar" />
-       <Button
-  icon="pi pi-sign-out"
-  class="logout-btn"
-  @click="handleLogout"
-/>
+          <Button icon="pi pi-sign-out" class="logout-btn" @click="handleLogout" />
 
         </div>
         <UtilsTeamButton />

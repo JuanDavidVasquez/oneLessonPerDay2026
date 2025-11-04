@@ -62,6 +62,7 @@ export default {
     veterinarians: "Veterinarians",
     ethology: "Ethology",
     adoption: "Adoption",
+    pets: "Pets"
   },
 
   // Forms
@@ -1171,5 +1172,59 @@ export default {
       googleButton: "Continue with Google",
       submitButton: "Sign in"
     }
-  }
+  },
+  //Dashboard related translations
+   dashboard: {
+    welcome: 'Welcome',
+    subtitle: 'Manage your pets, appointments and adoptions from here',
+    myPets: 'My Pets',
+    applications: 'Applications',
+    nextAppointments: 'Next Appointments',
+    reminders: 'Reminders',
+    viewAll: 'View all',
+    browseMore: 'Browse more',
+    scheduleAppointment: 'Schedule Appointment',
+    exploreAdoption: 'Explore Adoptions',
+    noAppointments: 'You have no scheduled appointments',
+    noApplications: 'You have no active applications',
+    noReminders: 'No pending reminders',
+    appliedOn: 'Applied on',
+    viewDetails: 'View details',
+    addFirstPet: 'Add your first pet',
+    
+    // Sections
+    upcomingAppointments: 'Upcoming Appointments',
+    adoptionApplications: 'Adoption Applications',
+    quickActions: 'Quick Actions',
+    activeReminders: 'Active Reminders',
+    recentActivity: 'Recent Activity',
+    
+    // Quick actions
+    newAppointment: 'New Appointment',
+    adopt: 'Adopt',
+    addReminder: 'Reminder',
+    contactVet: 'Veterinarian',
+  },
+  
+  status: {
+    confirmed: 'Confirmed',
+    pending: 'Pending',
+    cancelled: 'Cancelled',
+    completed: 'Completed',
+  },
+  
+  applicationStatus: {
+    pending: 'Under Review',
+    approved: 'Approved',
+    rejected: 'Rejected',
+    review: 'In Progress',
+    interview: 'Interview',
+    homeVisit: 'Home Visit',
+  },
+  
+  healthStatus: {
+    healthy: 'Healthy',
+    warning: 'Attention',
+    critical: 'Urgent',
+  },
 };

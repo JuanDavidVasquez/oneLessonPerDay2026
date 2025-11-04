@@ -40,9 +40,9 @@ export const publicMenuItems = [
 
 export const authMenuItems = [
   {
-    label: 'home',
-    icon: 'pi pi-home',
-    route: '/',
+    label: 'pets',
+    icon: 'pi pi-paw',
+    route: '/pets',
   },
   {
     label: 'adoption',

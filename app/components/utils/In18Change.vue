@@ -48,7 +48,7 @@ const { locale, t } = useI18n()
 const selectedLang = ref<'es' | 'en'>(mainStore.locale as 'es' | 'en')
 
 const languages = [
-  { code: 'es', name: 'Latino', flag: '/flags/co.svg' },
+  { code: 'es', name: 'Español', flag: '/flags/co.svg' },
   { code: 'en', name: 'English', flag: '/flags/en.svg' }
 ]
 

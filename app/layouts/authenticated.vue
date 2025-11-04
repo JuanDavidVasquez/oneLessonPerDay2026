@@ -1,5 +1,7 @@
 <template>
-    <div class="auth-layout">
-        <h1>Welcome to the Auth Page</h1>
-    </div>
+  <main class="default-layout">
+    <UtilsMenu />
+    <slot />
+  </main>
+   <AppFooter />
 </template>

@@ -74,7 +74,7 @@ async function handleGoogleCredentialResponse(response: any) {
     console.log("🧩 Datos del usuario Google:", decoded);
 
     if(name){
-       router.push("/");
+       router.push("/pets");
     }
     //TODO: token al backend:
     // await api.post("/auth/google", { token: googleToken });

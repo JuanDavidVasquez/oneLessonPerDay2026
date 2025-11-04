@@ -60,6 +60,7 @@ export default {
     veterinarians: "Médicos",
     ethology: "Etología",
     adoption: "Adopción",
+    pets: "Animal de Compañía",
   },
 
   // Forms
@@ -1174,5 +1175,60 @@ export default {
       googleButton: "Continuar con Google"
     }
 
+  },
+
+  //Dashboard translations
+   dashboard: {
+    welcome: 'Bienvenido/a',
+    subtitle: 'Gestiona tus mascotas, citas y adopciones desde aquí',
+    myPets: 'Mis Mascotas',
+    applications: 'Postulaciones',
+    nextAppointments: 'Próximas Citas',
+    reminders: 'Recordatorios',
+    viewAll: 'Ver todas',
+    browseMore: 'Explorar más',
+    scheduleAppointment: 'Agendar Cita',
+    exploreAdoption: 'Explorar Adopciones',
+    noAppointments: 'No tienes citas programadas',
+    noApplications: 'No tienes postulaciones activas',
+    noReminders: 'Sin recordatorios pendientes',
+    appliedOn: 'Aplicada el',
+    viewDetails: 'Ver detalles',
+    addFirstPet: 'Agregar tu primera mascota',
+    
+    // Secciones
+    upcomingAppointments: 'Próximas Citas',
+    adoptionApplications: 'Postulaciones de Adopción',
+    quickActions: 'Acciones Rápidas',
+    activeReminders: 'Recordatorios Activos',
+    recentActivity: 'Actividad Reciente',
+    
+    // Acciones rápidas
+    newAppointment: 'Nueva Cita',
+    adopt: 'Adoptar',
+    addReminder: 'Recordatorio',
+    contactVet: 'Veterinario',
+  },
+  
+  status: {
+    confirmed: 'Confirmada',
+    pending: 'Pendiente',
+    cancelled: 'Cancelada',
+    completed: 'Completada',
+  },
+  
+  applicationStatus: {
+    pending: 'En Revisión',
+    approved: 'Aprobada',
+    rejected: 'Rechazada',
+    review: 'En Proceso',
+    interview: 'Entrevista',
+    homeVisit: 'Visita Domiciliaria',
+  },
+  
+  healthStatus: {
+    healthy: 'Saludable',
+    warning: 'Atención',
+    critical: 'Urgente',
   }
 };
